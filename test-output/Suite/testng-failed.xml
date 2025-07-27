@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="ParallelTests(failed)">
+    <classes>
+      <class name="com.report.test.download">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="loadConfig"/>
+          <include name="downloadTransaction"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.report.test.download -->
+      <class name="com.report.test.transactionLog">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="loadConfig"/>
+          <include name="verifyTransactionLog"/>
+          <include name="tearDown"/>
+          <include name="verify_purchaseIDJson"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.report.test.transactionLog -->
+      <class name="com.report.test.bankTransactionTime">
+        <methods>
+          <include name="loadConfig"/>
+          <include name="beforeMethod"/>
+          <include name="tearDown"/>
+          <include name="verifyBankTransactionTimeReport"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.report.test.bankTransactionTime -->
+      <class name="com.report.test.transaction">
+        <methods>
+          <include name="selectMIDBasedOnBank"/>
+          <include name="status"/>
+          <include name="verify_downloadInvoice"/>
+          <include name="transactionUsingSelectBank"/>
+          <include name="allActionOnTransactionPage"/>
+          <include name="setUp"/>
+          <include name="verifyTransaCTIONidIn_ActionPage"/>
+          <include name="filter_Transaction_And_Open_Detail_Page"/>
+          <include name="setup"/>
+          <include name="transactionUsingSelectMerchant"/>
+          <include name="transactionUsingSelectStatus"/>
+          <include name="selectTimeZoneAndVerify"/>
+          <include name="selectDate"/>
+          <include name="loadConfig"/>
+          <include name="verifyErrorIn_downloadInvoice"/>
+          <include name="iterateAllTable_Pages"/>
+          <include name="selectDateRangeToAndFrom"/>
+          <include name="validtePaginationInEmailSummaryPage"/>
+          <include name="tearDown"/>
+          <include name="verifyPurchaseID_EmailSummaryPage"/>
+          <include name="selectCurrency"/>
+          <include name="endToEndFlowOfTransaction"/>
+          <include name="testClickFirstEmailOccurrence"/>
+        </methods>
+      </class> <!-- com.report.test.transaction -->
+      <class name="com.report.test.apiLog">
+        <methods>
+          <include name="loadConfig"/>
+          <include name="verifyAPILog"/>
+          <include name="beforeMethod"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.report.test.apiLog -->
+    </classes>
+  </test> <!-- ParallelTests(failed) -->
+</suite> <!-- Failed suite [Suite] -->
