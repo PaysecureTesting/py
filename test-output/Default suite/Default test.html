@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 28 21:59:05 IST 2025</td>
+<td>Started on:</td><td>Tue Jul 29 18:33:48 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>122 seconds (122296 ms)</td>
+<tr><td>Total time:</td><td>56 seconds (56425 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,30 +76,29 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.report.test.transaction.getBankMid()'><b>getBankMid</b><br>Test class: com.report.test.transaction<br>Parameters: a55<br/>
-<a href="#Output-1009111009" onClick='toggleBox("Output-1009111009", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.report.test.transaction.checkNewMID()'><b>checkNewMID</b><br>Test class: com.report.test.transaction<br/>
+<a href="#Output-116650158" onClick='toggleBox("Output-116650158", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1009111009" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1009111009">
-User Enter bank name in transaction sub module  :- a55<br/>
-User click on first match Bank<br/>
-User click on Select MID<br/>
+<a href="#Output-116650158" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-116650158">
 User Click on Bank Module<br/>
 User Click on All Bank Sub Module<br/>
 User is on the Banks Page<br/>
-User Enter Bank name on the Search Bank name field :- a55<br/>
+User Enter Bank name on the Search Bank name field :- TomJerry<br/>
 User click on search button<br/>
-User clicked on View MID button<br/>
 User clicked on View MID button<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElements(org.openqa.selenium.By)&quot; because &quot;driver&quot; is null
-	at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:221)
-	at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:218)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	at com.paysecure_Report.pages.transactionPage_first.viewMID(transactionPage_first.java:111)
-	at com.paysecure_Report.pages.transactionPage_first.compareMidLists(transactionPage_first.java:182)
-	at com.report.test.transaction.getBankMid(transaction.java:358)
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all elements located by By.xpath: //div[@class=&apos;bnk-sts&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61217}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61217/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 47a592571e2cd25d5da039830d1fc152
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.paysecure.bankPage.allBanks.viewMID(allBanks.java:168)
+	at com.report.test.transaction.checkNewMID(transaction.java:374)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -126,14 +125,17 @@ User clicked on View MID button<br/>
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1009111009", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1009111009'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElements(org.openqa.selenium.By)&quot; because &quot;driver&quot; is null
-	at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:221)
-	at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:218)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	at com.paysecure_Report.pages.transactionPage_first.viewMID(transactionPage_first.java:111)
-	at com.paysecure_Report.pages.transactionPage_first.compareMidLists(transactionPage_first.java:182)
-	at com.report.test.transaction.getBankMid(transaction.java:358)
+</pre></div><a href='#' onClick='toggleBox("stack-trace116650158", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace116650158'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all elements located by By.xpath: //div[@class=&apos;bnk-sts&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61217}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61217/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 47a592571e2cd25d5da039830d1fc152
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.paysecure.bankPage.allBanks.viewMID(allBanks.java:168)
+	at com.report.test.transaction.checkNewMID(transaction.java:374)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -161,8 +163,8 @@ User clicked on View MID button<br/>
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>105</td>
-<td>com.report.test.transaction@2ce86164</td></tr>
+<td>39</td>
+<td>com.report.test.transaction@51df223b</td></tr>
 </table><p>
 </body>
 </html>

@@ -27,6 +27,7 @@ import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
 import com.paysecure.actiondriver.ActionDriver;
+import com.paysecure.base.baseClass;
 
 public class transactionPage {
 
@@ -245,11 +246,17 @@ public class transactionPage {
 	// code
 
 	public void navigateUptoTransaction(WebDriver driver) throws InterruptedException {
-
+		//WebDriver driver = baseClass.getDriver();
+		
 		actionDriver.scrollToElement(analytics);
 		actionDriver.click(report);
+		
+	//	System.out.println( driver.getPageSource());
 
 		actionDriver.click(transactions);
+		
+		 
+	//	  System.out.println( driver.getPageSource());
 	
 
 	}
@@ -762,39 +769,40 @@ public class transactionPage {
 //		}
 
 	public void iterateAllTablePages(WebDriver driver) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    int totalRowCount = 0;
 
-		while (true) {
-			// Wait and fetch all rows on current page
-			List<WebElement> rows = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
-					By.xpath("(//table[@class='table table-bordered'])[2]/tbody[2]/tr")));
+	    while (true) {
+	        // Wait and fetch all rows on current page
+	        List<WebElement> rows = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+	                By.xpath("(//table[@class='table table-bordered'])[2]/tbody[2]/tr")));
 
-			System.out.println("Total rows on this page: " + rows.size());
+	        int currentPageRowCount = rows.size();
+	        totalRowCount += currentPageRowCount;
 
-			// Loop through rows (you can extract/validate each row as needed)
-			for (WebElement row : rows) {
-				String rowText = row.getText();
-				System.out.println("Row Data: " + rowText);
-			}
+	        System.out.println("Rows on this page: " + currentPageRowCount);
 
-			// Check if Next button is disabled
-			WebElement nextButtonContainer = driver.findElement(By.xpath("//li[contains(@class,'page-item next')]"));
+	        // Loop through rows
+	        for (WebElement row : rows) {
+	            System.out.println("Row Data: " + row.getText());
+	        }
 
-			String classAttr = nextButtonContainer.getAttribute("class");
+	        // Check if 'Next' button is disabled
+	        WebElement nextButtonContainer = driver.findElement(By.xpath("//li[contains(@class,'page-item next')]"));
+	        String classAttr = nextButtonContainer.getAttribute("class");
 
-			if (classAttr.contains("page-item next disabled")) {
-				System.out.println("Reached last page.");
-				break;
-			}
+	        if (classAttr.contains("disabled")) {
+	            System.out.println("Reached last page.");
+	            break;
+	        }
 
-			actionDriver.clickUsingJS(nextBtn);
+	        actionDriver.clickUsingJS(nextBtn); // Ensure nextBtn is globally defined and accessible
+	    }
 
-			// wait for some indicator that new page has loaded
-			//wait.until(ExpectedConditions.stalenessOf(rows.get(0)));
-
-		}
-
+	    // ✅ Final total row count print
+	    System.out.println("✅ Total rows across all pages: " + totalRowCount);
 	}
+
 
 	public void iterateAllTablePages1(WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

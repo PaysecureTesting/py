@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="27" total="28" passed="0" failed="1" skipped="0">
+<testng-results ignored="29" total="30" passed="0" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[User enter ID in Username field]]>
@@ -11,15 +11,6 @@
       <![CDATA[Click on submit button in login page]]>
     </line>
     <line>
-      <![CDATA[User Enter bank name in transaction sub module  :- a55]]>
-    </line>
-    <line>
-      <![CDATA[User click on first match Bank]]>
-    </line>
-    <line>
-      <![CDATA[User click on Select MID]]>
-    </line>
-    <line>
       <![CDATA[User Click on Bank Module]]>
     </line>
     <line>
@@ -29,7 +20,7 @@
       <![CDATA[User is on the Banks Page]]>
     </line>
     <line>
-      <![CDATA[User Enter Bank name on the Search Bank name field :- a55]]>
+      <![CDATA[User Enter Bank name on the Search Bank name field :- TomJerry]]>
     </line>
     <line>
       <![CDATA[User click on search button]]>
@@ -37,24 +28,21 @@
     <line>
       <![CDATA[User clicked on View MID button]]>
     </line>
-    <line>
-      <![CDATA[User clicked on View MID button]]>
-    </line>
   </reporter-output>
-  <suite started-at="2025-07-28T21:59:05 IST" name="Default suite" finished-at="2025-07-28T22:01:07 IST" duration-ms="122296">
+  <suite started-at="2025-07-29T18:33:48 IST" name="Default suite" finished-at="2025-07-29T18:34:44 IST" duration-ms="56425">
     <groups>
     </groups>
-    <test started-at="2025-07-28T21:59:05 IST" name="Default test" finished-at="2025-07-28T22:01:07 IST" duration-ms="122296">
+    <test started-at="2025-07-29T18:33:48 IST" name="Default test" finished-at="2025-07-29T18:34:44 IST" duration-ms="56425">
       <class name="com.report.test.transaction">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T21:59:05 IST" name="loadConfig" finished-at="2025-07-28T21:59:05 IST" duration-ms="36" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@51df223b]" started-at="2025-07-29T18:33:48 IST" name="loadConfig" finished-at="2025-07-29T18:33:48 IST" duration-ms="34" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T21:59:05 IST" name="setup" finished-at="2025-07-28T21:59:11 IST" duration-ms="6234" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@51df223b]" started-at="2025-07-29T18:33:48 IST" name="setup" finished-at="2025-07-29T18:33:54 IST" duration-ms="6398" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T21:59:11 IST" name="setUp" finished-at="2025-07-28T21:59:22 IST" duration-ms="10654" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@51df223b]" started-at="2025-07-29T18:33:54 IST" name="setUp" finished-at="2025-07-29T18:34:04 IST" duration-ms="9869" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[User enter ID in Username field]]>
@@ -67,26 +55,27 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="getBankMid(java.lang.String)[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T21:59:22 IST" name="getBankMid" data-provider="bankName" finished-at="2025-07-28T22:01:07 IST" duration-ms="105044" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[a55]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="checkNewMID()[pri:0, instance:com.report.test.transaction@51df223b]" started-at="2025-07-29T18:34:04 IST" name="checkNewMID" finished-at="2025-07-29T18:34:44 IST" duration-ms="39758" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElements(org.openqa.selenium.By)" because "driver" is null]]>
+              <![CDATA[Expected condition failed: waiting for visibility of all elements located by By.xpath: //div[@class='bnk-sts'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61217}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61217/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 47a592571e2cd25d5da039830d1fc152]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElements(org.openqa.selenium.By)" because "driver" is null
-at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:221)
-at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:218)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-at com.paysecure_Report.pages.transactionPage_first.viewMID(transactionPage_first.java:111)
-at com.paysecure_Report.pages.transactionPage_first.compareMidLists(transactionPage_first.java:182)
-at com.report.test.transaction.getBankMid(transaction.java:358)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all elements located by By.xpath: //div[@class='bnk-sts'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61217}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61217/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 47a592571e2cd25d5da039830d1fc152
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.paysecure.bankPage.allBanks.viewMID(allBanks.java:168)
+at com.report.test.transaction.checkNewMID(transaction.java:374)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -115,17 +104,8 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
-            <line>
-              <![CDATA[User Enter bank name in transaction sub module  :- a55]]>
-            </line>
-            <line>
-              <![CDATA[User click on first match Bank]]>
-            </line>
-            <line>
-              <![CDATA[User click on Select MID]]>
-            </line>
             <line>
               <![CDATA[User Click on Bank Module]]>
             </line>
@@ -136,7 +116,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[User is on the Banks Page]]>
             </line>
             <line>
-              <![CDATA[User Enter Bank name on the Search Bank name field :- a55]]>
+              <![CDATA[User Enter Bank name on the Search Bank name field :- TomJerry]]>
             </line>
             <line>
               <![CDATA[User click on search button]]>
@@ -144,23 +124,20 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             <line>
               <![CDATA[User clicked on View MID button]]>
             </line>
-            <line>
-              <![CDATA[User clicked on View MID button]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- getBankMid -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T22:01:07 IST" name="failurMethod" finished-at="2025-07-28T22:01:07 IST" duration-ms="149" status="PASS">
+        </test-method> <!-- checkNewMID -->
+        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.report.test.transaction@51df223b]" started-at="2025-07-29T18:34:44 IST" name="failurMethod" finished-at="2025-07-29T18:34:44 IST" duration-ms="174" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=getBankMid status=FAILURE method=transaction.getBankMid(java.lang.String)[pri:0, instance:com.report.test.transaction@2ce86164] output=User Enter bank name in transaction sub module  :- a55]]]>
+                <![CDATA[[TestResult name=checkNewMID status=FAILURE method=transaction.checkNewMID()[pri:0, instance:com.report.test.transaction@51df223b] output=User Click on Bank Module]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T22:01:07 IST" name="tearDown" finished-at="2025-07-28T22:01:07 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@51df223b]" started-at="2025-07-29T18:34:44 IST" name="tearDown" finished-at="2025-07-29T18:34:44 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

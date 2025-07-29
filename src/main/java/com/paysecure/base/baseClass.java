@@ -105,26 +105,13 @@ public class baseClass {
 		    WebDriverManager.chromedriver().setup();
 		    ChromeOptions options = new ChromeOptions();
 
-		    // ✅ Use modern headless mode (recommended for Chrome 109+)
-		  //  options.addArguments("--headless=new");
-		    
-
-		    // ✅ Viewport settings to simulate full-size browser window
-		   // options.addArguments("window-size=1920,1080");
-		    options.addArguments("start-maximized");
-
-		    // ✅ Disable features that can cause issues in headless
-		    options.addArguments("--disable-gpu"); // Not needed on Linux headless, but safe
-		    options.addArguments("--disable-dev-shm-usage");
-		    options.addArguments("--disable-notifications");
-		    options.addArguments("--disable-blink-features=AutomationControlled");
-
-		    // ✅ Modern user-agent (can be modified)
-		    options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/138.0.0.0 Safari/537.36");
-
-		    // ✅ Hide "Chrome is being controlled" message
-		    options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-		    options.setExperimentalOption("useAutomationExtension", false);
+		  
+	        //    options.addArguments("--headless");
+	            options.addArguments("--disable-gpu");
+	            options.addArguments("--window-size=1920,1080");
+	            options.addArguments("--disable-notifications");
+	            options.addArguments("--no-sandbox");
+	            options.addArguments("--disable-dev-shm-usage");
 
 		    // ✅ Disable credential prompts
 		    Map<String, Object> prefs = new HashMap<>();

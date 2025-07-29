@@ -6,10 +6,10 @@ import com.paysecure.bankPage.allBanks;
 import com.paysecure.base.baseClass;
 import com.paysecure.loginPage.loginPage;
 import com.paysecure.utilities.DataProviders;
+import com.paysecure_Report.pages.allModulesNameVerify;
 import com.paysecure_Report.pages.cardSummary_transactionPage;
 import com.paysecure_Report.pages.email_transactionPage;
 import com.paysecure_Report.pages.transactionPage;
-import com.paysecure_Report.pages.transactionPage_first;
 
 import java.io.IOException;
 import java.util.List;
@@ -30,8 +30,9 @@ public class transaction extends baseClass {
 	private loginPage lp;
 	email_transactionPage email;
 	cardSummary_transactionPage card;
-	transactionPage_first tpf;
+
 	allBanks bank;
+	allModulesNameVerify amny;
 
 	@BeforeMethod
 	public void setUp() throws IOException, InterruptedException {
@@ -41,8 +42,9 @@ public class transaction extends baseClass {
 		ts.navigateUptoTransaction(getDriver());
 		email = new email_transactionPage(getDriver());
 		card = new cardSummary_transactionPage(getDriver());
-		tpf = new transactionPage_first(getDriver());
+
 		bank = new allBanks(getDriver());
+		amny = new allModulesNameVerify(getDriver());
 	}
 
 	@Test(priority = -1, enabled = true)
@@ -183,7 +185,7 @@ public class transaction extends baseClass {
 	public void iterateAllTable_Pages() throws InterruptedException, TimeoutException {
 
 		ts.filterTransactionThroughSelectStatus("Error");
-		ts.selectDateRange(getDriver(), "Last 7 Days");
+		ts.selectDateRange(getDriver(), "Today");
 		ts.clickOnSearchButton(getDriver());
 
 		ts.iterateAllTablePages(getDriver());
@@ -340,47 +342,46 @@ public class transaction extends baseClass {
 
 	@Test
 	public void get_All_Bank_Name() throws InterruptedException {
-		tpf.getAllBankName(getDriver());
+		bank.getAllBankName(getDriver());
 		bank.navigateUptoAllBanks();
 		bank.getQuantityOfAllBank();
-		tpf.verifyQuantityOfBanks();
+		bank.verifyQuantityOfBanks();
 
 	}
 
 	@Test(dataProvider = "bankName", dataProviderClass = DataProviders.class)
 	public void getBankMid(String bank_Name) throws InterruptedException {
 
-		tpf.selectbank_Transaction(bank_Name);
+		bank.selectbank_Transaction(bank_Name);
 
 		bank.navigateUptoAllBanks();
-		tpf.searchBank(bank_Name);
-		tpf.viewMID(getDriver());
-		
-		
-		WebDriver driver = baseClass.getDriver();
+		bank.searchBank(bank_Name);
+		bank.viewMID(getDriver());
+		bank.compareBankAndTransactionMIDs();
+	}
 
-	    // Get the lists
-	    List<String> viewMIDs = tpf.viewMID(driver);
-	    List<String> transactionMIDs = tpf.selectbank_Transaction("a55");
+	@Test
+	public void checkAllModuleName() {
 
-	    // Compare them
-	    tpf.compareMidLists(viewMIDs, transactionMIDs);
-		
+		amny.getAllModuleName();
+
+	}
+
+	@Test
+	public void checkNewMID() {
+		bank.navigateUptoAllBanks();
+		bank.searchBank("TomJerry");
+		bank.viewMID(getDriver());
+		bank.addMidToBank("Nobita", "Nobi", "YWRtaW46cGFzc3dvcmQ");
+		bank.allowedCurrencyForcreateMID("USD");
+		bank.allowedCardsForCreateMID();
+		bank.submitMID();
 
 	}
 	
-	@Test
-	public void testCompareBankMIDs() throws InterruptedException {
-	    WebDriver driver = baseClass.getDriver();
-
-	    // Get the lists
-	    List<String> viewMIDs = tpf.viewMID(driver);
-	    List<String> transactionMIDs = tpf.selectbank_Transaction("a55");
-
-	    // Compare them
-	    tpf.compareMidLists(viewMIDs, transactionMIDs);
-	}
-
+	
+	
+	
 	// payment flow
 	// mid
 	// Issuerbank
@@ -388,5 +389,7 @@ public class transaction extends baseClass {
 	// PSP -payout/payin/accuring bank
 	// Risk factor
 	// rolling reserver
+
+	// xene pjbp ndna xrwd
 
 }

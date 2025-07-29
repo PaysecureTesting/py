@@ -9,8 +9,8 @@
           <include name="loadConfig"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="checkNewMID"/>
           <include name="setup"/>
-          <include name="getBankMid" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.report.test.transaction -->
     </classes>
