@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\LENOVO\AppData\Local\Temp\testng-eclipse-263223511\testng-customsuite.xml</span>
+                    <span>C:\Users\LENOVO\AppData\Local\Temp\testng-eclipse--295541141\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.report.test.transaction" class="method navigator-link" hash-for-method="get_All_Bank_Name">get_All_Bank_Name</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.report.test.transaction" class="method navigator-link" hash-for-method="getBankMid(a55)">getBankMid(a55)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -126,38 +126,17 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="get_All_Bank_Name">
-                  </a> <!-- get_All_Bank_Name -->
-                  <span class="method-name">get_All_Bank_Name</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//select[@id=&apos;bnk&apos;]&quot;}
-  (Session info: chrome=138.0.7204.158)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4d68e9cf8771f3c5a2e906c02caf9221, findElement {value=//select[@id=&apos;bnk&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.158, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49804}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49804/devtoo..., se:cdpVersion: 138.0.7204.158, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4d68e9cf8771f3c5a2e906c02caf9221
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy19.getTagName(Unknown Source)
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:43)
-	at com.paysecure_Report.pages.transactionPage_first.getAllBankName(transactionPage_first.java:52)
-	at com.report.test.transaction.get_All_Bank_Name(transaction.java:356)
+                  <a name="getBankMid(a55)">
+                  </a> <!-- getBankMid(a55) -->
+                  <span class="method-name">getBankMid</span>
+                  <span class="parameters">(a55)</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElements(org.openqa.selenium.By)&quot; because &quot;driver&quot; is null
+	at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:221)
+	at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:218)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at com.paysecure_Report.pages.transactionPage_first.viewMID(transactionPage_first.java:111)
+	at com.paysecure_Report.pages.transactionPage_first.compareMidLists(transactionPage_first.java:182)
+	at com.report.test.transaction.getBankMid(transaction.java:358)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -193,7 +172,7 @@ Session ID: 4d68e9cf8771f3c5a2e906c02caf9221
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\LENOVO\AppData\Local\Temp\testng-eclipse-263223511\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\LENOVO\AppData\Local\Temp\testng-eclipse--295541141\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -204,7 +183,7 @@ Session ID: 4d68e9cf8771f3c5a2e906c02caf9221
     &lt;classes&gt;
       &lt;class name=&quot;com.report.test.transaction&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;get_All_Bank_Name&quot;/&gt;
+          &lt;include name=&quot;getBankMid&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.report.test.transaction --&gt;
     &lt;/classes&gt;
@@ -248,14 +227,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'get_All_Bank_Name')
+data.setCell(0, 1, 'getBankMid')
 data.setCell(0, 2, 'com.report.test.transaction')
-data.setCell(0, 3, 183699);
+data.setCell(0, 3, 105044);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -266,67 +245,84 @@ return data;
             <span class="header-content">Reporter output for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">getBankMid(a55)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">User Enter bank name in transaction sub module  :- a55</span>
+                <span class="reporter-method-output">User click on first match Bank</span>
+                <span class="reporter-method-output">User click on Select MID</span>
+                <span class="reporter-method-output">User Click on Bank Module</span>
+                <span class="reporter-method-output">User Click on All Bank Sub Module</span>
+                <span class="reporter-method-output">User is on the Banks Page</span>
+                <span class="reporter-method-output">User Enter Bank name on the Search Bank name field :- a55</span>
+                <span class="reporter-method-output">User click on search button</span>
+                <span class="reporter-method-output">User clicked on View MID button</span>
+                <span class="reporter-method-output">User clicked on View MID button</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">26 ignored methods</span>
+            <span class="header-content">27 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.report.test.transaction</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyPurchaseID_EmailSummaryPage</span>
+                <span class="ignored-method-name">testTIDInHistoryCardSummarypage</span>
                 <br/>
                 <span class="ignored-method-name">transactionUsingSelectBank</span>
                 <br/>
-                <span class="ignored-method-name">verifyTransactionIDAndStatus_Paid123</span>
+                <span class="ignored-method-name">verifyPurchaseID_EmailSummaryPage</span>
+                <br/>
+                <span class="ignored-method-name">selectTimeZoneAndVerify</span>
                 <br/>
                 <span class="ignored-method-name">selectMIDBasedOnBank</span>
                 <br/>
-                <span class="ignored-method-name">selectTimeZoneAndVerify</span>
+                <span class="ignored-method-name">verifyTransactionIDAndStatus_Paid123</span>
+                <br/>
+                <span class="ignored-method-name">testClickFirstEmailOccurrenceOf_Card</span>
+                <br/>
+                <span class="ignored-method-name">allActionOnTransactionPage</span>
                 <br/>
                 <span class="ignored-method-name">selectDateRangeToAndFrom</span>
                 <br/>
                 <span class="ignored-method-name">verifyIfLastStatusIsCreatedExpiredErrorThenCheckForpaidOn</span>
                 <br/>
-                <span class="ignored-method-name">verifyIfLastStatusIsPaidChargebackThenCheckForpaidOn</span>
-                <br/>
-                <span class="ignored-method-name">validtePaginationInEmailSummaryPage</span>
-                <br/>
-                <span class="ignored-method-name">status</span>
-                <br/>
-                <span class="ignored-method-name">transactionUsingSelectMerchant</span>
-                <br/>
                 <span class="ignored-method-name">testClickFirstValid_TransactionOnCardOage</span>
                 <br/>
                 <span class="ignored-method-name">verifyTransactionIDAndStatus_Paid</span>
                 <br/>
-                <span class="ignored-method-name">testTIDInHistoryCardSummarypage</span>
+                <span class="ignored-method-name">transactionUsingSelectMerchant</span>
+                <br/>
+                <span class="ignored-method-name">status</span>
+                <br/>
+                <span class="ignored-method-name">get_All_Bank_Name</span>
                 <br/>
                 <span class="ignored-method-name">iterateAllTable_Pages</span>
                 <br/>
+                <span class="ignored-method-name">validtePaginationInEmailSummaryPage</span>
+                <br/>
                 <span class="ignored-method-name">verifyTransaCTIONidIn_ActionPage</span>
+                <br/>
+                <span class="ignored-method-name">filter_Transaction_And_Open_Detail_Page</span>
+                <br/>
+                <span class="ignored-method-name">testTIDInActionCardSummarypage</span>
+                <br/>
+                <span class="ignored-method-name">verifyErrorIn_downloadInvoice</span>
+                <br/>
+                <span class="ignored-method-name">verifyIfLastStatusIsPaidChargebackThenCheckForpaidOn</span>
+                <br/>
+                <span class="ignored-method-name">selectDate</span>
+                <br/>
+                <span class="ignored-method-name">verify_downloadInvoice</span>
+                <br/>
+                <span class="ignored-method-name">selectCurrency</span>
                 <br/>
                 <span class="ignored-method-name">endToEndFlowOfTransaction</span>
                 <br/>
                 <span class="ignored-method-name">transactionUsingSelectStatus</span>
-                <br/>
-                <span class="ignored-method-name">selectCurrency</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorIn_downloadInvoice</span>
-                <br/>
-                <span class="ignored-method-name">filter_Transaction_And_Open_Detail_Page</span>
-                <br/>
-                <span class="ignored-method-name">allActionOnTransactionPage</span>
-                <br/>
-                <span class="ignored-method-name">testClickFirstEmailOccurrenceOf_Card</span>
-                <br/>
-                <span class="ignored-method-name">testTIDInActionCardSummarypage</span>
-                <br/>
-                <span class="ignored-method-name">verify_downloadInvoice</span>
-                <br/>
-                <span class="ignored-method-name">selectDate</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -345,25 +341,25 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">97 ms</span>
+                <span class="method-start">111 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">158416 ms</span>
+                <span class="method-start">6452 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">get_All_Bank_Name</span>
-                <span class="method-start">730291 ms</span>
+                <span class="method-name">getBankMid(a55)</span>
+                <span class="method-start">17116 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">failurMethod([TestResult name=get_All_Bank_Name status=FAILURE method=transaction.get_All_Bank_Name()[pri:0, inst...)</span>
-                <span class="method-start">914007 ms</span>
+                <span class="method-name">failurMethod([TestResult name=getBankMid status=FAILURE method=transaction.getBankMid(java.lang.String)[pri:0, in...)</span>
+                <span class="method-start">122182 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">914085 ms</span>
+                <span class="method-start">122370 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

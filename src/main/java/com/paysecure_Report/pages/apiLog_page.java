@@ -8,6 +8,7 @@ import java.util.concurrent.TimeoutException;
 
 import org.apache.poi.hpsf.Array;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -74,11 +75,17 @@ public class apiLog_page {
 		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));
         Thread.sleep(1800);
 		// scroll to element
-    //    actionDriver.scrollToElement(analytics);
-		actionDriver.moveToElement(analytics);
-actionDriver.click(report);
+        WebElement analytics = w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Analytics']")));
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", analytics);
+      //  analytics.click();
+           actionDriver.click(report);
 	
-		Reporter.log("Click on Report Module", true);
+		
+		//actionDriver.click(report);
+	
+           Reporter.log("Click on Report Module", true);
+           
 		actionDriver.click(apiLog);
 		
 		Reporter.log("Click on Api Log Sub Module", true);

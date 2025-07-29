@@ -65,24 +65,24 @@ public class ActionDriver {
 
 	// Method to enter text into an input field --Avoid Code Duplication - fix the
 	// multiple calling method
-	public void enterText(By by, String value) {
+	public void enterText(By by, String textToEnter) {
 	    String elementDescription = getElementDescription(by);
 	    try {
-	        // Explicit wait for the element to be visible
 	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 	        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 
 	        applyBorder(by, "green");
 
 	        element.clear();
-	        element.sendKeys(value);
+	        element.sendKeys(textToEnter);
 
-	        logger.info("Entered text on " + elementDescription + " --> " + value);
+	        logger.info("Entered text '" + textToEnter + "' on " + elementDescription);
 	    } catch (Exception e) {
 	        applyBorder(by, "red");
-	        logger.error("Unable to enter the value on " + elementDescription + ": " + e.getMessage(), e);
+	        logger.error("Unable to enter text on " + elementDescription + ": " + e.getMessage(), e);
 	    }
 	}
+
 
 	
 
@@ -222,21 +222,24 @@ public class ActionDriver {
 	public void scrollToElement(By by) {
 	    String elementDescription = getElementDescription(by);
 	    try {
-	        // Wait for element to be visible before scrolling
 	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-	        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+	        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(by)); // 1
+
+	        // Ensure element is in view — especially important in headless
+	        ((JavascriptExecutor) driver).executeScript(
+	            "arguments[0].scrollIntoView({behavior: 'instant', block: 'center', inline: 'center'});", element); // 2
+
+	        // Wait again for visibility after scroll
+	        wait.until(ExpectedConditions.visibilityOf(element)); // 3
 
 	        applyBorder(by, "green");
-
-	        JavascriptExecutor js = (JavascriptExecutor) driver;
-	        js.executeScript("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", element);
-
 	        logger.info("Scrolled to element: " + elementDescription);
 	    } catch (Exception e) {
 	        applyBorder(by, "red");
 	        logger.error("Unable to scroll to element: " + elementDescription + ". Exception: " + e.getMessage(), e);
 	    }
 	}
+
 
 
 	// Wait for Element to be clickable

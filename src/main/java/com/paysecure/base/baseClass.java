@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +34,8 @@ import org.testng.asserts.SoftAssert;
 import com.paysecure.actiondriver.ActionDriver;
 import com.paysecure.utilities.ExtentManager;
 import com.paysecure.utilities.LoggerManager;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class baseClass {
 
@@ -99,63 +102,72 @@ public class baseClass {
 		String browser = prop.getProperty("browser");
 
 		if (browser.equalsIgnoreCase("chrome")) {
+		    WebDriverManager.chromedriver().setup();
+		    ChromeOptions options = new ChromeOptions();
 
-			// Create ChromeOptions
-			ChromeOptions options = new ChromeOptions();
-			//options.addArguments("--headless=new");  // ✅ More reliable than "--headless"
-			options.addArguments("--window-size=1920,1080");
-			options.addArguments("--no-sandbox");
-			options.addArguments("--disable-dev-shm-usage");
-			options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36");
-			options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-			options.setExperimentalOption("useAutomationExtension", false);
-			options.addArguments("--disable-notifications");
+		    // ✅ Use modern headless mode (recommended for Chrome 109+)
+		  //  options.addArguments("--headless=new");
+		    
 
-			Map<String, Object> prefs = new HashMap<>();
+		    // ✅ Viewport settings to simulate full-size browser window
+		   // options.addArguments("window-size=1920,1080");
+		    options.addArguments("start-maximized");
 
-			prefs.put("credentials_enable_service", false); // Disable save password popup
-			prefs.put("profile.password_manager_enabled", false);
+		    // ✅ Disable features that can cause issues in headless
+		    options.addArguments("--disable-gpu"); // Not needed on Linux headless, but safe
+		    options.addArguments("--disable-dev-shm-usage");
+		    options.addArguments("--disable-notifications");
+		    options.addArguments("--disable-blink-features=AutomationControlled");
 
-			options.setExperimentalOption("prefs", prefs);
-			
-			// driver = new ChromeDriver();
-			driver.set(new ChromeDriver(options)); // New Changes as per Thread
+		    // ✅ Modern user-agent (can be modified)
+		    options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/138.0.0.0 Safari/537.36");
 
-			ExtentManager.registerDriver(getDriver());
-			logger.info("ChromeDriver Instance is created.");
+		    // ✅ Hide "Chrome is being controlled" message
+		    options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+		    options.setExperimentalOption("useAutomationExtension", false);
+
+		    // ✅ Disable credential prompts
+		    Map<String, Object> prefs = new HashMap<>();
+		    prefs.put("credentials_enable_service", false);
+		    prefs.put("profile.password_manager_enabled", false);
+		    options.setExperimentalOption("prefs", prefs);
+
+		    // ✅ Set driver
+		    driver.set(new ChromeDriver(options));
+		    ExtentManager.registerDriver(getDriver());
+		    logger.info("ChromeDriver Instance is created in headless mode.");
 		} else if (browser.equalsIgnoreCase("firefox")) {
+	        WebDriverManager.firefoxdriver().setup();
+	        FirefoxOptions options = new FirefoxOptions();
+	        options.addArguments("--headless");
+	        options.addArguments("--disable-gpu");
+	        options.addArguments("--width=1920");
+	        options.addArguments("--height=1080");
+	        options.addArguments("--disable-notifications");
+	        options.addArguments("--no-sandbox");
+	        options.addArguments("--disable-dev-shm-usage");
 
-			// Create FirefoxOptions
-			FirefoxOptions options = new FirefoxOptions();
-			options.addArguments("--headless"); // Run Firefox in headless mode
-			options.addArguments("--disable-gpu"); // Disable GPU rendering (useful for headless mode)
-			options.addArguments("--width=1920"); // Set browser width
-			options.addArguments("--height=1080"); // Set browser height
-			options.addArguments("--disable-notifications"); // Disable browser notifications
-			options.addArguments("--no-sandbox"); // Needed for CI/CD environments
-			options.addArguments("--disable-dev-shm-usage"); // Prevent crashes in low-resource environments
+	        driver.set(new FirefoxDriver(options));
+	        ExtentManager.registerDriver(getDriver());
+	        logger.info("FirefoxDriver Instance is created.");
 
-			// driver = new FirefoxDriver();
-			driver.set(new FirefoxDriver(options)); // New Changes as per Thread
-			ExtentManager.registerDriver(getDriver());
-			logger.info("FirefoxDriver Instance is created.");
-		} else if (browser.equalsIgnoreCase("edge")) {
+	    } else if (browser.equalsIgnoreCase("edge")) {
+	        WebDriverManager.edgedriver().setup();
+	        EdgeOptions options = new EdgeOptions();
+	        options.addArguments("--headless");
+	        options.addArguments("--disable-gpu");
+	        options.addArguments("--window-size=1920,1080");
+	        options.addArguments("--disable-notifications");
+	        options.addArguments("--no-sandbox");
+	        options.addArguments("--disable-dev-shm-usage");
 
-			EdgeOptions options = new EdgeOptions();
-			// options.addArguments("--headless"); // Run Edge in headless mode
-			options.addArguments("--disable-gpu"); // Disable GPU acceleration
-			options.addArguments("--window-size=1920,1080"); // Set window size
-			options.addArguments("--disable-notifications"); // Disable pop-up notifications
-			options.addArguments("--no-sandbox"); // Needed for CI/CD
-			options.addArguments("--disable-dev-shm-usage"); // Prevent resource-limited crashes
+	        driver.set(new EdgeDriver(options));
+	        ExtentManager.registerDriver(getDriver());
+	        logger.info("EdgeDriver Instance is created.");
 
-			// driver = new EdgeDriver();
-			driver.set(new EdgeDriver(options)); // New Changes as per Thread
-			ExtentManager.registerDriver(getDriver());
-			logger.info("EdgeDriver Instance is created.");
-		} else {
-			throw new IllegalArgumentException("Browser Not Supported:" + browser);
-		}
+	    } else {
+	        throw new IllegalArgumentException("Browser Not Supported: " + browser);
+	    }
 	}
 
 	/*
@@ -241,15 +253,18 @@ public class baseClass {
 	
 	@AfterMethod
 	public void failurMethod(ITestResult result) {
-		if (ITestResult.FAILURE == result.getStatus()) {
-			try {
-				TakesScreenshot screenshot = (TakesScreenshot) driver;
-				File src = screenshot.getScreenshotAs(OutputType.FILE);
-				String timestamp = new SimpleDateFormat("yyyy-dd--hh-mm").format(new Date());
-				FileUtils.copyFile(src, new File(".\\screenshot\\" + " " + timestamp + ".png"));
-			} catch (Exception e) {
-				System.out.println("Exception while taking screenshot " + e.getMessage());
-			}
-		}}
+	    if (ITestResult.FAILURE == result.getStatus()) {
+	        try {
+	            TakesScreenshot screenshot = (TakesScreenshot) getDriver();
+	            File src = screenshot.getScreenshotAs(OutputType.FILE);
+	            String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
+	            File dest = new File(".\\screenshot\\" + result.getName() + "_" + timestamp + ".png");
+	            FileUtils.copyFile(src, dest);
+	            logger.error("Screenshot captured for failed test case: " + result.getName());
+	        } catch (Exception e) {
+	            logger.error("Exception while taking screenshot: " + e.getMessage(), e);
+	        }
+	    }
+	}
 
 }

@@ -10,7 +10,7 @@
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="get_All_Bank_Name"/>
+          <include name="getBankMid" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.report.test.transaction -->
     </classes>

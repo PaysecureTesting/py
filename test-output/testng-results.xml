@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="26" total="27" passed="0" failed="1" skipped="0">
+<testng-results ignored="27" total="28" passed="0" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[User enter ID in Username field]]>
@@ -10,21 +10,51 @@
     <line>
       <![CDATA[Click on submit button in login page]]>
     </line>
+    <line>
+      <![CDATA[User Enter bank name in transaction sub module  :- a55]]>
+    </line>
+    <line>
+      <![CDATA[User click on first match Bank]]>
+    </line>
+    <line>
+      <![CDATA[User click on Select MID]]>
+    </line>
+    <line>
+      <![CDATA[User Click on Bank Module]]>
+    </line>
+    <line>
+      <![CDATA[User Click on All Bank Sub Module]]>
+    </line>
+    <line>
+      <![CDATA[User is on the Banks Page]]>
+    </line>
+    <line>
+      <![CDATA[User Enter Bank name on the Search Bank name field :- a55]]>
+    </line>
+    <line>
+      <![CDATA[User click on search button]]>
+    </line>
+    <line>
+      <![CDATA[User clicked on View MID button]]>
+    </line>
+    <line>
+      <![CDATA[User clicked on View MID button]]>
+    </line>
   </reporter-output>
-  <suite started-at="2025-07-25T19:13:33 IST" name="Default suite" finished-at="2025-07-25T19:28:47 IST" duration-ms="913968">
+  <suite started-at="2025-07-28T21:59:05 IST" name="Default suite" finished-at="2025-07-28T22:01:07 IST" duration-ms="122296">
     <groups>
     </groups>
-    <test started-at="2025-07-25T19:13:33 IST" name="Default test" finished-at="2025-07-25T19:28:47 IST" duration-ms="913968">
+    <test started-at="2025-07-28T21:59:05 IST" name="Default test" finished-at="2025-07-28T22:01:07 IST" duration-ms="122296">
       <class name="com.report.test.transaction">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@172ca72b]" started-at="2025-07-25T19:13:33 IST" name="loadConfig" finished-at="2025-07-25T19:13:33 IST" duration-ms="43" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T21:59:05 IST" name="loadConfig" finished-at="2025-07-28T21:59:05 IST" duration-ms="36" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@172ca72b]" started-at="2025-07-25T19:13:34 IST" name="setup" finished-at="2025-07-25T19:16:12 IST" duration-ms="158142" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T21:59:05 IST" name="setup" finished-at="2025-07-28T21:59:11 IST" duration-ms="6234" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@172ca72b]" started-at="2025-07-25T19:16:12 IST" name="setUp" finished-at="2025-07-25T19:25:44 IST" duration-ms="571859" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T21:59:11 IST" name="setUp" finished-at="2025-07-28T21:59:22 IST" duration-ms="10654" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[User enter ID in Username field]]>
@@ -37,49 +67,26 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="get_All_Bank_Name()[pri:0, instance:com.report.test.transaction@172ca72b]" started-at="2025-07-25T19:25:44 IST" name="get_All_Bank_Name" finished-at="2025-07-25T19:28:47 IST" duration-ms="183699" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="getBankMid(java.lang.String)[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T21:59:22 IST" name="getBankMid" data-provider="bankName" finished-at="2025-07-28T22:01:07 IST" duration-ms="105044" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[a55]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//select[@id='bnk']"}
-  (Session info: chrome=138.0.7204.158)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.20.0', revision: '866c76ca80'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4d68e9cf8771f3c5a2e906c02caf9221, findElement {value=//select[@id='bnk'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.158, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49804}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49804/devtoo..., se:cdpVersion: 138.0.7204.158, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4d68e9cf8771f3c5a2e906c02caf9221]]>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElements(org.openqa.selenium.By)" because "driver" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@id='bnk']"}
-  (Session info: chrome=138.0.7204.158)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.20.0', revision: '866c76ca80'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4d68e9cf8771f3c5a2e906c02caf9221, findElement {value=//select[@id='bnk'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.158, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49804}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49804/devtoo..., se:cdpVersion: 138.0.7204.158, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4d68e9cf8771f3c5a2e906c02caf9221
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy19.getTagName(Unknown Source)
-at org.openqa.selenium.support.ui.Select.<init>(Select.java:43)
-at com.paysecure_Report.pages.transactionPage_first.getAllBankName(transactionPage_first.java:52)
-at com.report.test.transaction.get_All_Bank_Name(transaction.java:356)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElements(org.openqa.selenium.By)" because "driver" is null
+at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:221)
+at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:218)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+at com.paysecure_Report.pages.transactionPage_first.viewMID(transactionPage_first.java:111)
+at com.paysecure_Report.pages.transactionPage_first.compareMidLists(transactionPage_first.java:182)
+at com.report.test.transaction.getBankMid(transaction.java:358)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -108,22 +115,52 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
+            <line>
+              <![CDATA[User Enter bank name in transaction sub module  :- a55]]>
+            </line>
+            <line>
+              <![CDATA[User click on first match Bank]]>
+            </line>
+            <line>
+              <![CDATA[User click on Select MID]]>
+            </line>
+            <line>
+              <![CDATA[User Click on Bank Module]]>
+            </line>
+            <line>
+              <![CDATA[User Click on All Bank Sub Module]]>
+            </line>
+            <line>
+              <![CDATA[User is on the Banks Page]]>
+            </line>
+            <line>
+              <![CDATA[User Enter Bank name on the Search Bank name field :- a55]]>
+            </line>
+            <line>
+              <![CDATA[User click on search button]]>
+            </line>
+            <line>
+              <![CDATA[User clicked on View MID button]]>
+            </line>
+            <line>
+              <![CDATA[User clicked on View MID button]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- get_All_Bank_Name -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.report.test.transaction@172ca72b]" started-at="2025-07-25T19:28:47 IST" name="failurMethod" finished-at="2025-07-25T19:28:47 IST" duration-ms="3" status="PASS">
+        </test-method> <!-- getBankMid -->
+        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T22:01:07 IST" name="failurMethod" finished-at="2025-07-28T22:01:07 IST" duration-ms="149" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=get_All_Bank_Name status=FAILURE method=transaction.get_All_Bank_Name()[pri:0, instance:com.report.test.transaction@172ca72b] output={null}]]]>
+                <![CDATA[[TestResult name=getBankMid status=FAILURE method=transaction.getBankMid(java.lang.String)[pri:0, instance:com.report.test.transaction@2ce86164] output=User Enter bank name in transaction sub module  :- a55]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@172ca72b]" started-at="2025-07-25T19:28:48 IST" name="tearDown" finished-at="2025-07-25T19:28:48 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@2ce86164]" started-at="2025-07-28T22:01:07 IST" name="tearDown" finished-at="2025-07-28T22:01:07 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

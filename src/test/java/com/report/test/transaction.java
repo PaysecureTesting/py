@@ -12,6 +12,7 @@ import com.paysecure_Report.pages.transactionPage;
 import com.paysecure_Report.pages.transactionPage_first;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
@@ -23,7 +24,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class transaction extends baseClass {
 
-	 private WebDriver driver;
+	private WebDriver driver;
 
 	private transactionPage ts;
 	private loginPage lp;
@@ -40,8 +41,8 @@ public class transaction extends baseClass {
 		ts.navigateUptoTransaction(getDriver());
 		email = new email_transactionPage(getDriver());
 		card = new cardSummary_transactionPage(getDriver());
-		tpf=new transactionPage_first(getDriver());
-		bank=new allBanks(getDriver());
+		tpf = new transactionPage_first(getDriver());
+		bank = new allBanks(getDriver());
 	}
 
 	@Test(priority = -1, enabled = true)
@@ -218,8 +219,6 @@ public class transaction extends baseClass {
 
 	}
 
-
-
 	@Test
 	public void verifyPurchaseID_EmailSummaryPage() {
 		email.clickOnEmail();
@@ -245,30 +244,25 @@ public class transaction extends baseClass {
 
 	}
 
-
-
-	@Test (dataProvider ="EmailID", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "EmailID", dataProviderClass = DataProviders.class)
 	public void testClickFirstEmailOccurrenceOf_Card(String email_id) throws InterruptedException {
 
-	
-			ts.selectDateRange(getDriver(), "Last 7 Days");
-			ts.clickOnSearchButton(getDriver());
-			email.clickOnSpecificEmail(getDriver(),email_id);
-			email.verifydayFrequesncy(getDriver());
-			email.verifyMonthFrequesncy(getDriver());
-			email.verifyWeekFrequesncy(getDriver());
-			email.verifyYearFrequesncy(getDriver());
-			email.verifyCustomerMerchantFrequency(getDriver());
-			email.verifyCustomerCardFrequency(getDriver());
-			email.verifyCustomerCountriesFrequency(getDriver());
-			email.verifyCustomerIPSFrequency(getDriver());
-			email.verifyAmountFrequency(getDriver());
-			email.verifyCustomerDeviceID(getDriver());
-			email.verifyTotal(getDriver());
-		
+		ts.selectDateRange(getDriver(), "Last 7 Days");
+		ts.clickOnSearchButton(getDriver());
+		email.clickOnSpecificEmail(getDriver(), email_id);
+		email.verifydayFrequesncy(getDriver());
+		email.verifyMonthFrequesncy(getDriver());
+		email.verifyWeekFrequesncy(getDriver());
+		email.verifyYearFrequesncy(getDriver());
+		email.verifyCustomerMerchantFrequency(getDriver());
+		email.verifyCustomerCardFrequency(getDriver());
+		email.verifyCustomerCountriesFrequency(getDriver());
+		email.verifyCustomerIPSFrequency(getDriver());
+		email.verifyAmountFrequency(getDriver());
+		email.verifyCustomerDeviceID(getDriver());
+		email.verifyTotal(getDriver());
 
 	}
-	
 
 	@Test
 	public void testClickFirstValid_TransactionOnCardOage() {
@@ -276,97 +270,116 @@ public class transaction extends baseClass {
 		card.clickOnCard(getDriver(), targetCard);
 		card.clickFirstValidTransaction(getDriver());
 		card.verifyTransactionIN_CardPage();
-		
+
 	}
-	
-	@Test (dataProvider ="cardNames", dataProviderClass = DataProviders.class)
+
+	@Test(dataProvider = "cardNames", dataProviderClass = DataProviders.class)
 	public void testTIDInActionCardSummarypage(String targetCard) throws InterruptedException {
-		ts.selectDateRange(getDriver(),"Last 7 Days");
+		ts.selectDateRange(getDriver(), "Last 7 Days");
 		ts.clickOnSearchButton(getDriver());
-		
+
 		card.clickOnCard(getDriver(), targetCard);
 		card.clickOnActionColumn(getDriver());
 		card.verifyPurchaseIDOnActionPage();
 		card.verifymercahntNameOnActionPage();
-		
-		
+
 	}
-	
-	@Test (dataProvider ="cardNames", dataProviderClass = DataProviders.class)
+
+	@Test(dataProvider = "cardNames", dataProviderClass = DataProviders.class)
 	public void testTIDInHistoryCardSummarypage(String targetCard) throws InterruptedException {
-		ts.selectDateRange(getDriver(),"Last 7 Days");
+		ts.selectDateRange(getDriver(), "Last 7 Days");
 		ts.clickOnSearchButton(getDriver());
-		
+
 		card.clickOnCard(getDriver(), targetCard);
 		card.clickOnHistoryColumn(getDriver());
 		card.verifyPurchaseIDOnHistoryPage();
-		
-		
+
 	}
-	
+
 	@Test
-	public void verifyTransactionIDAndStatus_Paid() throws InterruptedException{
+	public void verifyTransactionIDAndStatus_Paid() throws InterruptedException {
 		ts.filterTransactionThroughSelectStatus("Paid");
 		ts.clickOnSearchButton(getDriver());
 		ts.verifyPaidTransaction(getDriver());
 		ts.extractPurchaseIdFromSpanFormat(getDriver());
 		ts.verifyTRNIDIn_Paid();
-		
 
 	}
-	
+
 	@Test
-	public void verifyTransactionIDAndStatus_Paid123() throws InterruptedException{
+	public void verifyTransactionIDAndStatus_Paid123() throws InterruptedException {
 		ts.filterTransactionThroughSelectStatus("Paid");
 		ts.clickOnSearchButton(getDriver());
 		ts.verifyPaidTransaction(getDriver());
-	
+
 		ts.getJsonSpanValue(getDriver());
 		ts.verifyStatus_Paid(getDriver());
 
 	}
-	
-	
-	@Test (dataProvider ="status", dataProviderClass = DataProviders.class)
-	public void verifyIfLastStatusIsCreatedExpiredErrorThenCheckForpaidOn(String Select_Status) throws InterruptedException, TimeoutException {
-		
-	
+
+	@Test(dataProvider = "status", dataProviderClass = DataProviders.class)
+	public void verifyIfLastStatusIsCreatedExpiredErrorThenCheckForpaidOn(String Select_Status)
+			throws InterruptedException, TimeoutException {
+
 		ts.selectStatus(Select_Status);
 		ts.clickOnSearchButton(getDriver());
 		ts.verifyPaidOn_Created_Error_Expired(getDriver());
-	
-		
+
 	}
-	
-	@Test (dataProvider ="status_PRC", dataProviderClass = DataProviders.class)
-	public void verifyIfLastStatusIsPaidChargebackThenCheckForpaidOn(String Select_Status) throws InterruptedException, TimeoutException {
-		
-	
+
+	@Test(dataProvider = "status_PRC", dataProviderClass = DataProviders.class)
+	public void verifyIfLastStatusIsPaidChargebackThenCheckForpaidOn(String Select_Status)
+			throws InterruptedException, TimeoutException {
+
 		ts.selectStatus(Select_Status);
 		ts.clickOnSearchButton(getDriver());
-		
+
 		ts.verifyPaidFor_Paid_Refunded(getDriver());
-		
+
 	}
-	
-	
-	
+
 	@Test
 	public void get_All_Bank_Name() throws InterruptedException {
 		tpf.getAllBankName(getDriver());
 		bank.navigateUptoAllBanks();
 		bank.getQuantityOfAllBank();
 		tpf.verifyQuantityOfBanks();
+
+	}
+
+	@Test(dataProvider = "bankName", dataProviderClass = DataProviders.class)
+	public void getBankMid(String bank_Name) throws InterruptedException {
+
+		tpf.selectbank_Transaction(bank_Name);
+
+		bank.navigateUptoAllBanks();
+		tpf.searchBank(bank_Name);
+		tpf.viewMID(getDriver());
+		
+		
+		WebDriver driver = baseClass.getDriver();
+
+	    // Get the lists
+	    List<String> viewMIDs = tpf.viewMID(driver);
+	    List<String> transactionMIDs = tpf.selectbank_Transaction("a55");
+
+	    // Compare them
+	    tpf.compareMidLists(viewMIDs, transactionMIDs);
 		
 
 	}
 	
+	@Test
+	public void testCompareBankMIDs() throws InterruptedException {
+	    WebDriver driver = baseClass.getDriver();
 
-	
-	
-	
-	
-	
+	    // Get the lists
+	    List<String> viewMIDs = tpf.viewMID(driver);
+	    List<String> transactionMIDs = tpf.selectbank_Transaction("a55");
+
+	    // Compare them
+	    tpf.compareMidLists(viewMIDs, transactionMIDs);
+	}
 
 	// payment flow
 	// mid

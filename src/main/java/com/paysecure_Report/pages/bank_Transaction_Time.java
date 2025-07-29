@@ -85,14 +85,16 @@ public class bank_Transaction_Time {
 		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));
 		Thread.sleep(1800);
 		// scroll to element
-		actionDriver.scrollToElement(analytics);
+	//	actionDriver.scrollToElement(report);
 
-		Reporter.log("SCROOLL UPTO ANALYTICS", true);
-
+		Reporter.log("SCROLL UPTO report", true);
+		
+        //actionDriver.clickUsingJS(report);
 		actionDriver.click(report);
 
 		Reporter.log("Click on Report Module", true);
-		actionDriver.click(bank_Transaction_Time);
+		actionDriver.clickUsingJS(bank_Transaction_Time);
+		//actionDriver.click(bank_Transaction_Time);
 
 		Reporter.log("Click on Bank Transaction Time Sub Module", true);
 

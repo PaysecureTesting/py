@@ -152,5 +152,27 @@ public class DataProviders {
 	    	{"Chargeback"}
 	    };
 	} 
+	
+	@DataProvider(name = "bankName")  // ✅ matches Test
+	public Object[][] getbankName() {
+	    return new Object[][] {
+	        {"a55"},
+//	        {"a55pix"},
+//	        {"a55pixpayout"}
+	    };
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
