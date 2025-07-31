@@ -6,10 +6,12 @@ import com.paysecure.bankPage.allBanks;
 import com.paysecure.base.baseClass;
 import com.paysecure.loginPage.loginPage;
 import com.paysecure.utilities.DataProviders;
+import com.paysecure.utilities.RetryAnalyzer;
 import com.paysecure_Report.pages.allModulesNameVerify;
 import com.paysecure_Report.pages.cardSummary_transactionPage;
 import com.paysecure_Report.pages.email_transactionPage;
 import com.paysecure_Report.pages.transactionPage;
+import com.paysecure_Report.pages.transactionPage_first;
 
 import java.io.IOException;
 import java.util.List;
@@ -19,6 +21,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 import org.testng.IRetryAnalyzer;
 import org.testng.annotations.BeforeMethod;
 
@@ -30,6 +33,7 @@ public class transaction extends baseClass {
 	private loginPage lp;
 	email_transactionPage email;
 	cardSummary_transactionPage card;
+	transactionPage_first tpf;
 
 	allBanks bank;
 	allModulesNameVerify amny;
@@ -45,12 +49,16 @@ public class transaction extends baseClass {
 
 		bank = new allBanks(getDriver());
 		amny = new allModulesNameVerify(getDriver());
+		
+		tpf=new transactionPage_first(getDriver());
+		
+		
 	}
 
 	@Test(priority = -1, enabled = true)
 
 	public void transactionUsingSelectStatus() throws InterruptedException, TimeoutException {
-
+		
 		ts.filterTransactionThroughSelectStatus("Error");
 		ts.clickOnSearchButton(getDriver());
 		ts.checkTransactionStatus(getDriver());
@@ -120,6 +128,13 @@ public class transaction extends baseClass {
 		ts.clickOnSearchButton(getDriver());
 		ts.checkTransactionStatus(getDriver());
 
+	}
+	
+	@Test
+	public void test_SelectTimeZone() {
+		tpf.verifySizeOfSelectTimeZone();
+		tpf.verifySpecificOptionsInSelectTimeZone();
+		tpf.selectSpecificOptionSelectTimeZone();
 	}
 
 	@Test(priority = 6, enabled = true)
@@ -249,7 +264,7 @@ public class transaction extends baseClass {
 	@Test(dataProvider = "EmailID", dataProviderClass = DataProviders.class)
 	public void testClickFirstEmailOccurrenceOf_Card(String email_id) throws InterruptedException {
 
-		ts.selectDateRange(getDriver(), "Last 7 Days");
+		ts.selectDateRange(getDriver(), "Today");
 		ts.clickOnSearchButton(getDriver());
 		email.clickOnSpecificEmail(getDriver(), email_id);
 		email.verifydayFrequesncy(getDriver());
@@ -367,20 +382,37 @@ public class transaction extends baseClass {
 
 	}
 
-	@Test
-	public void checkNewMID() {
+	@Test(retryAnalyzer = RetryAnalyzer.class)
+	public void checkNewMID() throws InterruptedException {
 		bank.navigateUptoAllBanks();
 		bank.searchBank("TomJerry");
-		bank.viewMID(getDriver());
-		bank.addMidToBank("Nobita", "Nobi", "YWRtaW46cGFzc3dvcmQ");
-		bank.allowedCurrencyForcreateMID("USD");
+		bank.view_Bank_Details();
+	    bank.clickOnAddMid();
+		bank.addMidToBank("nobita14", "nobita14", "4197a83kt1qgqav51hflqpm1t4##s650foqq3fcmd9po47lp5q3n4b39431l2vtj85g18aqpcvkb3cl##fead5d6f-0945-44e0-a26c-1b7daab89bf1##5d9fde44-7b03-48fc-bdf8-751322db0600##2afc4c62-78ae-480c-ad72-c7edeb74c105");
 		bank.allowedCardsForCreateMID();
+		bank.allowedCurrencyForcreateMID("USD");
+		
 		bank.submitMID();
+
+	}
+	
+	@Test (dataProvider = "EmailID", dataProviderClass = DataProviders.class)
+	public void verifyEmail(String  email_id) throws InterruptedException {
+	     tpf.findAndClickEmail(email_id);
+
+	        String riskEmail = tpf.getRiskEmailAfterClick();
+
+	        // ✅ Assert starts with first 2 characters
+	        Assert.assertTrue(riskEmail.startsWith(tpf.foundEmail.substring(0, 2)),
+	            "Mismatch! Found: " + riskEmail + ", Expected starts with: " +tpf.foundEmail.substring(0, 2));
+		
 
 	}
 	
 	
 	
+	
+
 	
 	// payment flow
 	// mid

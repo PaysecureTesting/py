@@ -13,6 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -248,13 +249,30 @@ public class transactionPage {
 	public void navigateUptoTransaction(WebDriver driver) throws InterruptedException {
 		//WebDriver driver = baseClass.getDriver();
 		
-		actionDriver.scrollToElement(analytics);
-		actionDriver.click(report);
+		By locator = By.xpath("//span[text()='Analytics']");
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
+		// Now scroll
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+
+		// Then wait for visibility
+		wait.until(ExpectedConditions.visibilityOf(element));
+
+
+		Thread.sleep(1500);
 		
+		actionDriver.scrollToElement(analytics);
+		Reporter.log("User scroll to down upto Analytics", true);
+		
+		
+		actionDriver.clickUsingJS(report);
+		Reporter.log("User click on Report Main Module", true);
 	//	System.out.println( driver.getPageSource());
 
 		actionDriver.click(transactions);
-		
+		Reporter.log("User click on Transaction sub module", true);
 		 
 	//	  System.out.println( driver.getPageSource());
 	
@@ -377,7 +395,7 @@ public class transactionPage {
 
 		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));
 		Thread.sleep(2000);
-		actionDriver.click(date);
+		actionDriver.clickUsingJS(date);
 		// utility.scrollToElement(driver, applyButton);
 		Reporter.log("Click on the Date range", true);
 		List<WebElement> suggestions = w.until(

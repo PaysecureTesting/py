@@ -7,9 +7,9 @@
         <methods>
           <include name="failurMethod"/>
           <include name="loadConfig"/>
+          <include name="testClickFirstEmailOccurrenceOf_Card" invocation-numbers="0"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="checkNewMID"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.report.test.transaction -->

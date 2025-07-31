@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -15,6 +16,7 @@ import java.util.concurrent.locks.LockSupport;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -72,6 +74,7 @@ public class baseClass {
 		System.out.println("Setting up WebDriver for:" + this.getClass().getSimpleName());
 		launchBrowser();
 		configureBrowser();
+	
 		staticWait(2);
 		// Sample logger message
 		logger.info("WebDriver Initialized and Browser Maximized");
@@ -102,27 +105,36 @@ public class baseClass {
 		String browser = prop.getProperty("browser");
 
 		if (browser.equalsIgnoreCase("chrome")) {
-		    WebDriverManager.chromedriver().setup();
-		    ChromeOptions options = new ChromeOptions();
+			// Create ChromeOptions
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+			options.addArguments("--headless=new");
+		//	options.addArguments("--force-device-scale-factor=2.5");
+			options.addArguments("--disable-gpu"); // Disable GPU for headless mode
+			options.addArguments("--window-size=1920,1080");
+			//options.addArguments("--force-device-scale-factor=1");
+			options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
+			options.setExperimentalOption("useAutomationExtension", false);
+			options.addArguments("--disable-blink-features=AutomationControlled");
+			
+			Map<String, Object> prefs = new HashMap<>();
 
-		  
-	        //    options.addArguments("--headless");
-	            options.addArguments("--disable-gpu");
-	            options.addArguments("--window-size=1920,1080");
-	            options.addArguments("--disable-notifications");
-	            options.addArguments("--no-sandbox");
-	            options.addArguments("--disable-dev-shm-usage");
+			prefs.put("credentials_enable_service", false);  // disables Chrome password manager
+			prefs.put("profile.password_manager_enabled", false);
 
-		    // ✅ Disable credential prompts
-		    Map<String, Object> prefs = new HashMap<>();
-		    prefs.put("credentials_enable_service", false);
-		    prefs.put("profile.password_manager_enabled", false);
-		    options.setExperimentalOption("prefs", prefs);
+			options.setExperimentalOption("prefs", prefs);
+			options.addArguments("--disable-notifications"); // Disable browser notifications
+			options.addArguments("--no-sandbox"); // Required for some CI environments like Jenkins
+			options.addArguments("--disable-dev-shm-usage"); // Resolve issues in resource-limited environments
 
-		    // ✅ Set driver
-		    driver.set(new ChromeDriver(options));
-		    ExtentManager.registerDriver(getDriver());
-		    logger.info("ChromeDriver Instance is created in headless mode.");
+			// driver = new ChromeDriver();
+			driver.set(new ChromeDriver(options)); // New Changes as per Thread
+			
+			
+
+
+			ExtentManager.registerDriver(getDriver());
+			logger.info("ChromeDriver Instance is created.");
 		} else if (browser.equalsIgnoreCase("firefox")) {
 	        WebDriverManager.firefoxdriver().setup();
 	        FirefoxOptions options = new FirefoxOptions();

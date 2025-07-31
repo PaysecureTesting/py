@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -48,7 +49,7 @@ public class allBanks {
 	
 	
 	//view MID
-	private By viewMID=By.xpath("(//button[@ng-click='mids(bank.id)'])[1]");
+	private By viewMID=By.xpath("//button[@class='btn btn-primary btn-sm ng-scope']");
 	private By getAllMids=By.xpath("//div[@class='bnk-sts']");
 	@FindBy(xpath = "//div[@class='bnk-sts']")
 	private List<WebElement> GETALLMIDS;
@@ -64,21 +65,23 @@ public class allBanks {
 	private By authKey=By.xpath("//input[@id='mid_auth_key']");
 	
 	//allowed currency
-	private By selectCurrency=By.xpath("//span[text()='Select currency']");
+	private By selectCurrency=By.xpath("//button[@title='Select currency']");
 	private By searchCurrency=By.xpath("(//input[@class='form-control multiselect-search'][1])");	
-	private By selectAllCurrency=By.xpath("(//li[@class='multiselect-item multiselect-all active'])[1]");
+	private By selectAllCurrency=By.xpath("(//label[normalize-space()='Select all']/input[1])[1]");
 	
 	
 	//allowed cards
-	private By allowedCards=By.xpath("(//li[@class='multiselect-item multiselect-all active'])[2]");
-	private By selectAllCards=By.xpath("(//span[@class='multiselect-selected-text'])[2]");
+	private By allowedCards=By.xpath("(//button[@title='ALL'])[1]");
+	private By selectAllCards=By.xpath("(//a[@class='multiselect-all'])[2]");
 	private By submit=By.xpath("//span[text()='Submit']");
 	
+	private By authKeyText=By.xpath("//label[text()='Auth Key']");
 	
 	public static int num;
 	int quantity;
 	
 	private ActionDriver actionDriver;
+	private WebDriver driver;
 
 	// page factory constructor
 	public allBanks(WebDriver driver) {
@@ -88,6 +91,8 @@ public class allBanks {
 	
 	
 	public void navigateUptoAllBanks() {
+		
+	
 		
 		actionDriver.click(bank);
 		//Reporter.log("", true);
@@ -258,34 +263,68 @@ public class allBanks {
 		
 	}
 	
-	public void allowedCurrencyForcreateMID(String currency) {
+	public void allowedCurrencyForcreateMID(String currency) throws InterruptedException {
 		
+//		actionDriver.scrollToElement(authKeyText);
+		Thread.sleep(4000);
+		
+		//actionDriver.scrollToElement(selectCurrency);
 		actionDriver.click(selectCurrency);
 		Reporter.log("User click on select currency ", true);
 		
 		actionDriver.enterText(searchCurrency, currency);
 		Reporter.log("User enter currency in search currency textfield"+currency, true);
 		
-		actionDriver.click(selectAllCurrency);
+		//actionDriver.click(selectAllCurrency);
+		actionDriver.clickUsingJS(selectAllCurrency);
 		Reporter.log("User click on select all currency checkbox", true);
 	}
 	
 	
 	public void allowedCardsForCreateMID() {
 		
-		actionDriver.click(allowedCards);
+		actionDriver.clickUsingJS(allowedCards);
+		
+		//actionDriver.click(allowedCards);
 		Reporter.log("User click on allowed card  ", true);
 		
-		actionDriver.click(selectAllCards);
+		actionDriver.clickUsingJS(selectAllCards);
+		
+		//actionDriver.click(selectAllCards);
 		Reporter.log("User click on select all card checkbox", true);
 		
 	}
 	
-	 public void submitMID() {
+	 public void submitMID() throws InterruptedException {
+		 
+		 actionDriver.scrollToElement(submit);
+			Thread.sleep(1200);
+		 
+		 
 		 actionDriver.click(submit);
 			Reporter.log("User click on submit button", true); 
 	 }
 	
 	
-	
+
+		public void clickOnAddMid() {
+			actionDriver.click(createMID);
+			Reporter.log("User click on Add MID Button", true); 
+		}
+		
+		private By viewBankDetails=By.xpath("//button[@class='btn btn-primary btn-sm ng-scope']");   
+		
+		
+		
+		public void view_Bank_Details() throws InterruptedException {
+			actionDriver.scrollToElement(viewBankDetails);
+			Thread.sleep(1200);
+			actionDriver.click(viewBankDetails);
+			Reporter.log("User click on Add MID Button", true); 
+		}
+		
+		
+		
+		
+		
 }

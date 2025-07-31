@@ -160,7 +160,7 @@ public class cardSummary_transactionPage {
 			WebElement nextButtonContainer = driver.findElement(By.xpath("//li[@class='page-item next']"));
 			String classAttr = nextButtonContainer.getAttribute("class");
 
-			if (classAttr.contains("disabled")) {
+			if (classAttr.contains("page-item next disabled")) {
 				System.out.println("❌ No valid transaction found.");
 				break;
 			}

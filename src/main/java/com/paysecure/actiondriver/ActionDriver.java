@@ -40,14 +40,13 @@ public class ActionDriver {
 		logger.info("WebDriver instance is created.");
 	}
 
-	// Method to click an element
 	public void click(By by) {
 	    String elementDescription = getElementDescription(by);
 	    try {
 	        applyBorder(by, "green");
 
 	        // Explicit wait for the element to be clickable
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
 
 	        element.click();
@@ -61,6 +60,7 @@ public class ActionDriver {
 	        logger.error("Unable to click element --> " + elementDescription, e);
 	    }
 	}
+
 
 
 	// Method to enter text into an input field --Avoid Code Duplication - fix the
