@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.report.test.transaction">
+      <class name="com.paysecure.admin.manageRoles">
         <methods>
+          <include name="verifyShowAllButton"/>
           <include name="failurMethod"/>
           <include name="loadConfig"/>
-          <include name="testClickFirstEmailOccurrenceOf_Card" invocation-numbers="0"/>
-          <include name="setUp"/>
           <include name="tearDown"/>
           <include name="setup"/>
+          <include name="setupPages"/>
         </methods>
-      </class> <!-- com.report.test.transaction -->
+      </class> <!-- com.paysecure.admin.manageRoles -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

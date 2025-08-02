@@ -23,40 +23,40 @@ public class manageRoles extends baseClass {
 		mr.navigateToManageRoles();
 	}
 
-	@Test
+	@Test(priority = 0)
 	public void verifySearchFunctionality() {
 		mr.searchByUsername_Merchant("gouri_sharma");
 		mr.verifySearchRoleSameorNot(getDriver(), "gouri_sharma");
 
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void verifySearchFunctionalityIfUserEnterWrongMerchant_Username() {
 		mr.searchByUsername_Merchant("(*&^%$#$%^&*hgvhf)(*&^%^&*");
 		mr.verifyIfUserEnterWrongUsername();
 
 	}
 
-	@Test
+	@Test(priority = 2)
 	public void verifyRefreshPage_SearchFunctionalityIfUserEnterWrongMerchant_Username() {
 		mr.searchByUsername_Merchant("gouri_sharma");
 		mr.refreshSearchPage(getDriver());
 
 	}
 
-	@Test(dataProvider = "usernameTestData", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "usernameTestData", dataProviderClass = DataProviders.class,priority = 3)
 	public void validateUsernameErrorMessages(String inputText, String expectedError, String errorXpath) {
 		mr.verifyAllErrorsInAddRole();
 		mr.validateUsernameError(getDriver(), inputText, expectedError, errorXpath);
 	}
 
-	@Test(dataProvider = "passwordTestData", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "passwordTestData", dataProviderClass = DataProviders.class,priority = 4)
 	public void validatePassswordErrorMessages(String inputText, String expectedError, String errorXpath) {
 		mr.verifyAllErrorsInAddRole(); // Optional: ensure form is reset
 		mr.validatePasswordError(getDriver(), inputText, expectedError, errorXpath); // ✅ Correct now
 	}
 
-	@Test
+	@Test(priority = 5)
 	public void validateGenpassFunctionality() {
 
 		mr.clickOnAddRole();
@@ -64,7 +64,7 @@ public class manageRoles extends baseClass {
 
 	}
 
-	@Test(dataProvider = "emailIDTestData", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "emailIDTestData", dataProviderClass = DataProviders.class,priority = 6)
 	public void validateEmailFieldErrors(String emailInput, String expectedError, String errorXpath) {
 
 		mr.verifyAllErrorsInAddRole();
@@ -72,7 +72,7 @@ public class manageRoles extends baseClass {
 		mr.validateEmailError(getDriver(), emailInput, expectedError, errorXpath);
 	}
 	
-	@Test
+	@Test(priority = 7)
 	public void select_Role() {
 		
 		mr.clickOnAddRole();
@@ -90,18 +90,30 @@ public class manageRoles extends baseClass {
 	}
 	
 	
-	@Test(invocationCount =2)
+	@Test(priority = 8)
 	public void create_Role() throws InterruptedException {
 		mr.clickOnAddRole();
 		mr.createRole();
-		Thread.sleep(20000);
-        mr.searchRoleAfterCreating(getDriver());;
+		
+        mr.searchRoleAfterCreating(getDriver());
 		
 	}
 	
+	@Test(priority = 9)
+	public void verifyShowAllButton() {
+		mr.verifyShowAllFunctionality();
+		mr.searchByUsername_Merchant("(*&^%$#$%^&*hgvhf)(*&^%^&*");
+		mr.verifyIfUserEnterWrongUsername();
+		mr.ClickOnshowAllButton();
+	}
 	
 	
-	//tomjerry_1a5
+	@Test
+	public void verifyDeletePopUp() {
+		mr.searchRoleViaUsernameOrMercahntName("tomjerry");
+		
+
+	}
 	
 	
 	

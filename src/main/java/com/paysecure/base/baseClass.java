@@ -109,10 +109,10 @@ public class baseClass {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--remote-allow-origins=*");
 			options.addArguments("--headless=new");
-		//	options.addArguments("--force-device-scale-factor=2.5");
-			options.addArguments("--disable-gpu"); // Disable GPU for headless mode
+		
+			//options.addArguments("--disable-gpu"); // Disable GPU for headless mode
 			options.addArguments("--window-size=1920,1080");
-			//options.addArguments("--force-device-scale-factor=1");
+			
 			options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
 			options.setExperimentalOption("useAutomationExtension", false);
 			options.addArguments("--disable-blink-features=AutomationControlled");

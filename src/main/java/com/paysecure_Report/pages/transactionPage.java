@@ -34,6 +34,8 @@ public class transactionPage {
 
 	// scrolling point of view
 	private By analytics = By.xpath("//span[text()='Analytics']");
+	
+	@FindBy(xpath="//span[text()='Analytics']") private WebElement ANALYTICS;
 	private By lastStatus = By.xpath("//th[text()='Last Status']");
 	
 	// report
@@ -248,20 +250,21 @@ public class transactionPage {
 
 	public void navigateUptoTransaction(WebDriver driver) throws InterruptedException {
 		//WebDriver driver = baseClass.getDriver();
+		Thread.sleep(8000);		By locator = By.xpath("//span[text()='Analytics']");
+
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+//
+//		// Now scroll
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+//
+//		// Then wait for visibility
+//		wait.until(ExpectedConditions.visibilityOf(element));
+//
+//
+//		Thread.sleep(1500);
 		
-		By locator = By.xpath("//span[text()='Analytics']");
-
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-
-		// Now scroll
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-
-		// Then wait for visibility
-		wait.until(ExpectedConditions.visibilityOf(element));
-
-
-		Thread.sleep(1500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ANALYTICS);
 		
 		actionDriver.scrollToElement(analytics);
 		Reporter.log("User scroll to down upto Analytics", true);
@@ -527,14 +530,17 @@ public class transactionPage {
 		// check headers in history tab
 
 		// expected headers in History tab
-		// List<String> expectedValues = Arrays.asList("DATE", "STATUS", "UPDATED BY");
+		 List<String> expectedValues = Arrays.asList("DATE", "STATUS", "UPDATED BY");
 
-		// List<WebElement> actualValues = w.until(
-		// ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//th[@class='text-center
-		// tdwith11']")));
+		 List<WebElement> actualValues = w.until(
+		 ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//table[@class='table table-bordered'])[4]/descendant::th")));
 
-		// Assert.assertEquals(actualValues, expectedValues, "Mismatch in element list
-		// values");
+	List<String> actualtext=new ArrayList<String>();
+	for(WebElement actual:actualValues) {
+		actualtext.add(actual.getText().trim());
+	}
+		 
+		 Assert.assertEquals(actualtext, expectedValues, "Mismatch in element list values");
 
 		// w.until(ExpectedConditions.elementToBeClickable(cancelButtonOnHistory)).click();
 
@@ -1257,38 +1263,6 @@ public class transactionPage {
 		}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 
 	}

@@ -46,7 +46,7 @@ public class ActionDriver {
 	        applyBorder(by, "green");
 
 	        // Explicit wait for the element to be clickable
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
 
 	        element.click();
@@ -222,7 +222,7 @@ public class ActionDriver {
 	public void scrollToElement(By by) {
 	    String elementDescription = getElementDescription(by);
 	    try {
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(by)); // 1
 
 	        // Ensure element is in view — especially important in headless
@@ -230,7 +230,7 @@ public class ActionDriver {
 	            "arguments[0].scrollIntoView({behavior: 'instant', block: 'center', inline: 'center'});", element); // 2
 
 	        // Wait again for visibility after scroll
-	        wait.until(ExpectedConditions.visibilityOf(element)); // 3
+	        wait.until(ExpectedConditions.visibilityOf(element)); // 
 
 	        applyBorder(by, "green");
 	        logger.info("Scrolled to element: " + elementDescription);

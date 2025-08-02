@@ -288,6 +288,28 @@ public void verifyPurchaseIDOnHistoryPage() {
 	Assert.assertEquals(clickedTxn___Id,p_ID, "If Both purchase ID is not matching then our TC is Failed");
 
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 }

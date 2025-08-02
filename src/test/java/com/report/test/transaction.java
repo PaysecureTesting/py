@@ -49,16 +49,15 @@ public class transaction extends baseClass {
 
 		bank = new allBanks(getDriver());
 		amny = new allModulesNameVerify(getDriver());
-		
-		tpf=new transactionPage_first(getDriver());
-		
-		
+
+		tpf = new transactionPage_first(getDriver());
+
 	}
 
 	@Test(priority = -1, enabled = true)
 
 	public void transactionUsingSelectStatus() throws InterruptedException, TimeoutException {
-		
+
 		ts.filterTransactionThroughSelectStatus("Error");
 		ts.clickOnSearchButton(getDriver());
 		ts.checkTransactionStatus(getDriver());
@@ -129,7 +128,7 @@ public class transaction extends baseClass {
 		ts.checkTransactionStatus(getDriver());
 
 	}
-	
+
 	@Test
 	public void test_SelectTimeZone() {
 		tpf.verifySizeOfSelectTimeZone();
@@ -387,32 +386,62 @@ public class transaction extends baseClass {
 		bank.navigateUptoAllBanks();
 		bank.searchBank("TomJerry");
 		bank.view_Bank_Details();
-	    bank.clickOnAddMid();
-		bank.addMidToBank("nobita14", "nobita14", "4197a83kt1qgqav51hflqpm1t4##s650foqq3fcmd9po47lp5q3n4b39431l2vtj85g18aqpcvkb3cl##fead5d6f-0945-44e0-a26c-1b7daab89bf1##5d9fde44-7b03-48fc-bdf8-751322db0600##2afc4c62-78ae-480c-ad72-c7edeb74c105");
+		bank.clickOnAddMid();
+		bank.addMidToBank("nobita16", "nobita16",
+				"WIWOrRPDqzpA0DJyt1jR2BgjSHT6A1uTOiN4Ja7ZPv4J4IvHJJ##MT aA32JcBy1PgVyRBPAGAQif8e2yPcmtFOdgqXDSkRsnb6zLVxgK6QDIsPNqQvcVpLrGw##s1M6INTq8mH01HhD2IhaoiEb8EWf6GsrJ14r0tOvMV8rIhIHdPSHM8CaruRAqGfn");
 		bank.allowedCardsForCreateMID();
 		bank.allowedCurrencyForcreateMID("USD");
-		
+
 		bank.submitMID();
 
 	}
-	
-	@Test (dataProvider = "EmailID", dataProviderClass = DataProviders.class)
-	public void verifyEmail(String  email_id) throws InterruptedException {
-	     tpf.findAndClickEmail(email_id);
 
-	        String riskEmail = tpf.getRiskEmailAfterClick();
+	@Test(dataProvider = "EmailID", dataProviderClass = DataProviders.class)
+	public void verifyEmail(String email_id) throws InterruptedException {
+		tpf.findAndClickEmail(email_id);
 
-	        // ✅ Assert starts with first 2 characters
-	        Assert.assertTrue(riskEmail.startsWith(tpf.foundEmail.substring(0, 2)),
-	            "Mismatch! Found: " + riskEmail + ", Expected starts with: " +tpf.foundEmail.substring(0, 2));
-		
+		String riskEmail = tpf.getRiskEmailAfterClick();
+
+		// ✅ Assert starts with first 2 characters
+		Assert.assertTrue(riskEmail.startsWith(tpf.foundEmail.substring(0, 2)),
+				"Mismatch! Found: " + riskEmail + ", Expected starts with: " + tpf.foundEmail.substring(0, 2));
+
+	}
+
+	// verify card number in card summary page as well as in transaction where
+	// purchase info
+	@Test(dataProvider = "cardName", dataProviderClass = DataProviders.class)
+	public void validatedCardNumber_InPaidAndRefundCondition(String targetCard) throws InterruptedException {
+		ts.selectDateRange(getDriver(), "Yesterday");
+		ts.selectStatus("Paid");
+		ts.clickOnSearchButton(getDriver());
+		tpf.clickOnCard(getDriver(), targetCard);
+		tpf.clickOnTransactionColumn(getDriver());
+		tpf.verifyPaymentInfo_CardNumber();
+
+	}
+
+	@Test(dataProvider = "cardNameText", dataProviderClass = DataProviders.class)
+	public void validatedCardNumber_InPaidAndRefundConditionText(String targetCard) throws InterruptedException {
+		ts.selectDateRange(getDriver(), "Yesterday");
+		ts.selectStatus("Paid");
+		ts.clickOnSearchButton(getDriver());
+		tpf.clickOnCard(getDriver(), targetCard);
+		tpf.clickOnTransactionColumn(getDriver());
+		tpf.verifyPaymentInfo_paymentInfo();
 
 	}
 	
-	
-	
-	
+	@Test(dataProvider ="statusAction", dataProviderClass = DataProviders.class)
+	public void verifyLastStatusInLastAction(String SelectStatus) throws InterruptedException {
+		ts.selectStatus(SelectStatus);
+		ts.clickOnSearchButton(getDriver());
+		tpf.getValueOfLastStatus();
+		tpf.checkverifyLastStatusInHistory();
 
+	}
+
+	
 	
 	// payment flow
 	// mid

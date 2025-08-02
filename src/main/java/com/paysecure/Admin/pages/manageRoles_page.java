@@ -31,7 +31,8 @@ public class manageRoles_page {
 
 	// search Functionality
 	private By search = By.xpath("//input[@placeholder='Username or Merchant Name']");
-	@FindBy(xpath="//input[@placeholder='Username or Merchant Name']") private WebElement SEARCH;
+	@FindBy(xpath = "//input[@placeholder='Username or Merchant Name']")
+	private WebElement SEARCH;
 	private By searchButton = By.xpath("//input[@placeholder='Username or Merchant Name']/following-sibling::button");
 
 	@FindBy(xpath = "//span[@name='fordeleterole']")
@@ -40,11 +41,12 @@ public class manageRoles_page {
 
 	// add role
 	private By adddRole = By.xpath("//button[@title='Add Role']");
-	private By userName = By.xpath("//input[@id='username1']");
+	private By addRole_userName = By.xpath("//input[@id='username1']");
 	private By password = By.xpath("//input[@id='password1']");
 	private By emailAddress = By.xpath("//input[@id='emailaddress1']");
 	private By role = By.xpath("//select[@id='role_id1']");
-	@FindBy(xpath="//select[@id='role_id1']") private WebElement ROLE;
+	@FindBy(xpath = "//select[@id='role_id1']")
+	private WebElement ROLE;
 	private By addRoleButton = By.xpath("(//button[text()='Add Role'])[2]");
 	private By genPass = By.xpath("//button[text()='GenPass']");
 	@FindBy(xpath = "//input[@id='password1']")
@@ -55,8 +57,23 @@ public class manageRoles_page {
 	private By email_Character = By
 			.xpath("//input[@id='emailaddress1']/following-sibling::span[contains(normalize-space(),'Email address')]");
 
-	private ActionDriver actionDriver;
+	// Display by role -- dropdown
 
+	private By displayByRole = By.xpath("//select[contains(@class,'form-select form-select-lg')]");
+	private By showAll = By.xpath("//button[text()='Show All']");
+	private By displayRole = By.xpath("(//div[@class='custom-select'])[1]");
+
+	@FindBy(xpath = "//select[contains(@class,'form-select form-select-lg')]")
+	private WebElement DISPLAYbYROLE;
+	
+	//delete username or merchant name
+	private By deleteButton = By.xpath("(//button[contains(@ng-click,'deleteRole')])[1]");
+	private By deleteRoleName=By.xpath("(//span[@name='fordeleterole'])[1]");
+	private By popUptext=By.xpath("//div[text()='Do you want to delete user tomjerry_6d']");
+
+	@FindBy(xpath="//div[text()='Do you want to delete user tomjerry_6d']")private WebElement POPUPTEXT;
+	private ActionDriver actionDriver;
+private WebDriver driver;
 // page factory constructor
 	public manageRoles_page(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -127,8 +144,8 @@ public class manageRoles_page {
 
 	// username -enter some text
 	public void enterUsername(String username) {
-		actionDriver.clearText(userName);
-		actionDriver.enterText(userName, username);
+		actionDriver.clearText(addRole_userName);
+		actionDriver.enterText(addRole_userName, username);
 
 	}
 
@@ -223,60 +240,114 @@ public class manageRoles_page {
 //      for(WebElement r:rol) {
 //    	  System.err.println(r.getText());
 //      }
-          
+
 		actionDriver.selectByVisibleText(role, roles);
 
 	}
-	
-	
-	 public Map<String, String> createRole() throws InterruptedException {
-	        String username = testData_CreateRoll.generateRandomUsername();
-	        String pass     = testData_CreateRoll.generateRandomPassword();
-	        String email    = testData_CreateRoll.generateRandomEmail();
-	        String roles    = "MERCHANT";
 
-	        actionDriver.enterText(userName, username);
-	        actionDriver.click(genPass);
-	        actionDriver.enterText(emailAddress, email);
-	      
-	       actionDriver.selectByVisibleText(role, roles);
-	       
-	       actionDriver.click(addRoleButton);
+	public String username;
 
+	public Map<String, String> createRole() throws InterruptedException {
+		username = testData_CreateRoll.generateRandomUsername();
+		String pass = testData_CreateRoll.generateRandomPassword();
+		String email = testData_CreateRoll.generateRandomEmail();
+		String roles = "MERCHANT";
 
-	        Thread.sleep(1500);
-	      
+		System.err.println("New Username :- " + username);
+		actionDriver.enterText(addRole_userName, username);
+		actionDriver.click(genPass);
+		actionDriver.enterText(emailAddress, email);
 
-	        Map<String, String> data = new HashMap<>();
-	        data.put("username", username);
-	        data.put("password", pass);
-	        data.put("role", roles);
-	        return data;
-	    }
+		actionDriver.selectByVisibleText(role, roles);
 
+		actionDriver.click(addRoleButton);
 
-	 public void searchRoleAfterCreating(WebDriver driver) throws InterruptedException {
-		
-		 manageRoles_page mr=new manageRoles_page(driver);
+		Thread.sleep(1500);
 
-		// Call the method and store the returned data
+		Map<String, String> data = new HashMap<>();
+		data.put("username", username);
+		data.put("password", pass);
+		data.put("role", roles);
+		return data;
+	}
+
+	public void searchRoleAfterCreating(WebDriver driver) throws InterruptedException {
+
+		manageRoles_page mr = new manageRoles_page(driver);
 		Map<String, String> userDetails1 = mr.createRole();
 
-		// Access individual values
-		String username1 = userDetails1.get("username");
-		String password = userDetails1.get("password");
-		String role = userDetails1.get("role");
+		String username1 = userDetails1.get("username").trim();
+		System.err.println("Searching for created user: " + username1);
 
-		// Example use
-		System.err.println("Created user: " + username1);
-		System.err.println("Password: " + password);
-		System.err.println("Role: " + role);
-	       
-	        
-	        actionDriver.click(search);
-	        actionDriver.enterText(search, username1);
-	        actionDriver.click(searchButton);
-	    }
+		Thread.sleep(3000); // Give backend time to register user or replace with WebDriverWait
 
+		actionDriver.clickUsingJS(search);
+		// actionDriver.clear(search); // Important if old text remains
+		actionDriver.sendKeysWithActions(search, username);
+		// actionDriver.enterText(search, username);
+		actionDriver.click(searchButton);
+
+	}
+
+	public void verifyShowAllFunctionality() {
+
+		actionDriver.click(displayRole);
+
+		actionDriver.selectByVisibleText(displayByRole, "MERCHANT");
+
+//		Select s=new Select(DISPLAYbYROLE);
+//		s.selectByVisibleText("MERCHANT");
+		// actionDriver.isDisplayed(showAll);
+		Assert.assertTrue(actionDriver.isDisplayed(showAll));
+		
+
+	}
+
+	public void ClickOnshowAllButton() {
+		actionDriver.clickUsingJS(showAll);
+		Reporter.log("User Click on the Show All Button", true);
+	}
+
+	
+	public void searchRoleViaUsernameOrMercahntName(String userName) {
+		actionDriver.clickUsingJS(search);
+		Reporter.log("User Click on Username Or Merchant name text Field", true);
+		actionDriver.sendKeysWithActions(search, userName);
+
+		Reporter.log("User enter Username or merchant Name :- "+userName, true);
+
+		actionDriver.click(searchButton);
+		Reporter.log("User Click on the search Button", true);
+	}
+	
+	
+	public String validateUsernameWhileDeletePopUp() {
+		
+		String merchantName = actionDriver.getText(deleteRoleName);
+		Reporter.log("User get delete role name before delete this role", true);
+		
+		actionDriver.clickUsingJS(deleteButton);
+		Reporter.log("User Click on the Delete Button", true);
+		
+		return merchantName;
+	}
+	
+	public void validateDeleteRoleOnDeletePopUp() {
+		
+		// Get full text from the <div>
+		String fullText = driver.findElement(By.xpath("//div[contains(text(),'Do you want to delete user')]")).getText();
+
+		// Extract only the username part
+		String username = fullText.split("user ")[1];
+
+		System.out.println("Extracted Username: " + username);  // Output: tomjerry_6d
+
+		
+		
+		
+	}
+	
+	
+	
 
 }

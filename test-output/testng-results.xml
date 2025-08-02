@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="31" total="32" passed="0" failed="1" skipped="0">
+<testng-results ignored="34" total="35" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[User enter ID in Username field]]>
@@ -20,29 +20,32 @@
       <![CDATA[User click on Transaction sub module]]>
     </line>
     <line>
-      <![CDATA[Click on the Date range]]>
-    </line>
-    <line>
-      <![CDATA[select date range :- Today]]>
-    </line>
-    <line>
       <![CDATA[User click on Search Buttton]]>
     </line>
+    <line>
+      <![CDATA[User get text of Last Status based on Filter :-]]>
+    </line>
+    <line>
+      <![CDATA[User click on Last Action Button]]>
+    </line>
+    <line>
+      <![CDATA[User get text of Last Status based on Filter :-]]>
+    </line>
   </reporter-output>
-  <suite started-at="2025-07-30T18:35:39 IST" name="Default suite" finished-at="2025-07-30T18:38:39 IST" duration-ms="180495">
+  <suite started-at="2025-08-02T22:55:30 IST" name="Default suite" finished-at="2025-08-02T23:08:20 IST" duration-ms="769707">
     <groups>
     </groups>
-    <test started-at="2025-07-30T18:35:39 IST" name="Default test" finished-at="2025-07-30T18:38:39 IST" duration-ms="180495">
+    <test started-at="2025-08-02T22:55:30 IST" name="Default test" finished-at="2025-08-02T23:08:20 IST" duration-ms="769707">
       <class name="com.report.test.transaction">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@60d8c0dc]" started-at="2025-07-30T18:35:39 IST" name="loadConfig" finished-at="2025-07-30T18:35:39 IST" duration-ms="149" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T22:55:30 IST" name="loadConfig" finished-at="2025-08-02T22:55:30 IST" duration-ms="109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@60d8c0dc]" started-at="2025-07-30T18:35:39 IST" name="setup" finished-at="2025-07-30T18:35:47 IST" duration-ms="7645" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T22:55:30 IST" name="setup" finished-at="2025-08-02T22:55:39 IST" duration-ms="9003" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@60d8c0dc]" started-at="2025-07-30T18:35:47 IST" name="setUp" finished-at="2025-07-30T18:35:59 IST" duration-ms="12111" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T22:55:40 IST" name="setUp" finished-at="2025-08-02T22:59:08 IST" duration-ms="208779" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[User enter ID in Username field]]>
@@ -64,105 +67,41 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testClickFirstEmailOccurrenceOf_Card(java.lang.String)[pri:0, instance:com.report.test.transaction@60d8c0dc]" started-at="2025-07-30T18:35:59 IST" name="testClickFirstEmailOccurrenceOf_Card" data-provider="EmailID" finished-at="2025-07-30T18:38:39 IST" duration-ms="159909" status="FAIL">
+        <test-method signature="verifyLastStatusInLastAction(java.lang.String)[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T22:59:08 IST" name="verifyLastStatusInLastAction" data-provider="statusAction" finished-at="2025-08-02T23:08:20 IST" duration-ms="551468" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[go************0 ...]]>
+                <![CDATA[Created]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//li[@class='page-item next']"}
-  (Session info: chrome=138.0.7204.169)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.20.0', revision: '866c76ca80'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [847bf5222a4155c6ee1249798a44ccc9, findElement {value=//li[@class='page-item next'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.183 (e90faf484dd..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64317}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64317/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 847bf5222a4155c6ee1249798a44ccc9]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li[@class='page-item next']"}
-  (Session info: chrome=138.0.7204.169)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.20.0', revision: '866c76ca80'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [847bf5222a4155c6ee1249798a44ccc9, findElement {value=//li[@class='page-item next'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.183 (e90faf484dd..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64317}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64317/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 847bf5222a4155c6ee1249798a44ccc9
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at com.paysecure_Report.pages.email_transactionPage.clickOnSpecificEmail(email_transactionPage.java:564)
-at com.report.test.transaction.testClickFirstEmailOccurrenceOf_Card(transaction.java:269)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
-            <line>
-              <![CDATA[Click on the Date range]]>
-            </line>
-            <line>
-              <![CDATA[select date range :- Today]]>
-            </line>
             <line>
               <![CDATA[User click on Search Buttton]]>
             </line>
+            <line>
+              <![CDATA[User get text of Last Status based on Filter :-]]>
+            </line>
+            <line>
+              <![CDATA[User click on Last Action Button]]>
+            </line>
+            <line>
+              <![CDATA[User get text of Last Status based on Filter :-]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- testClickFirstEmailOccurrenceOf_Card -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.report.test.transaction@60d8c0dc]" started-at="2025-07-30T18:38:39 IST" name="failurMethod" finished-at="2025-07-30T18:38:39 IST" duration-ms="305" status="PASS">
+        </test-method> <!-- verifyLastStatusInLastAction -->
+        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T23:08:20 IST" name="failurMethod" finished-at="2025-08-02T23:08:20 IST" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testClickFirstEmailOccurrenceOf_Card status=FAILURE method=transaction.testClickFirstEmailOccurrenceOf_Card(java.lang.String)[pri:0, instance:com.report.test.transaction@60d8c0dc] output=Click on the Date range]]]>
+                <![CDATA[[TestResult name=verifyLastStatusInLastAction status=SUCCESS method=transaction.verifyLastStatusInLastAction(java.lang.String)[pri:0, instance:com.report.test.transaction@4602c2a9] output=User click on Search Buttton]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@60d8c0dc]" started-at="2025-07-30T18:38:39 IST" name="tearDown" finished-at="2025-07-30T18:38:39 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T23:08:20 IST" name="tearDown" finished-at="2025-08-02T23:08:20 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

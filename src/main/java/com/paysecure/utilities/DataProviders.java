@@ -164,16 +164,56 @@ public class DataProviders {
 	}
 
 	
+	@DataProvider(name = "cardName")
+	public Object[][] getCreditCard() {
+		return new Object[][] {
+			
+		//	{"22210081****7736"},
+
+			{"42424242****4242"},
+				
+//			{"44444444****4448"},
+//			
+//			{"55555555****5557"},
+//			
+//			{"52000000****0015"},
+//			
+//			{"42424242****4242"}
+		
+		};
+	}
+	
+	@DataProvider(name = "cardNameText")
+	public Object[][] getCreditCardText() {
+		return new Object[][] {
+			
+			{"SPEI"},
+
+	//		{"PAYID"},
+
+		
+		};
 	
 	
+	}
 	
 	
+	@DataProvider(name = "statusAction")
+	public Object[][] Laststatus() {
+		return new Object[][] {
+			
+			{"Created"},
+//
+//			{"Pendingexecute"},
+//			{"Payment_in_process"},
+//			{"Paid"},
+//			{"Viewed"},
+//			{"Refunded"},
+		
+		};
 	
 	
-	
-	
-	
-	
+	}
 	
 
 }
