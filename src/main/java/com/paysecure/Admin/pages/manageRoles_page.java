@@ -3,9 +3,11 @@ package com.paysecure.Admin.pages;
 import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,6 +24,7 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import com.paysecure.actiondriver.ActionDriver;
+import com.paysecure.base.baseClass;
 import com.paysecure.utilities.testData_CreateRoll;
 
 public class manageRoles_page {
@@ -59,7 +62,7 @@ public class manageRoles_page {
 
 	// Display by role -- dropdown
 
-	private By displayByRole = By.xpath("//select[contains(@class,'form-select form-select-lg')]");
+	private By display_By_Role = By.xpath("//select[contains(@class,'form-select form-select-lg')]");
 	private By showAll = By.xpath("//button[text()='Show All']");
 	private By displayRole = By.xpath("(//div[@class='custom-select'])[1]");
 
@@ -72,6 +75,28 @@ public class manageRoles_page {
 	private By popUptext=By.xpath("//div[text()='Do you want to delete user tomjerry_6d']");
 
 	@FindBy(xpath="//div[text()='Do you want to delete user tomjerry_6d']")private WebElement POPUPTEXT;
+	private By cancel=By.xpath("//button[text()='cancel']");
+	private By confirm=By.xpath("//button[text()='confirm']");
+	
+	//get username after searching the role
+	
+	private By userName=By.xpath("//span[@name='fordeleterole']");
+	private By Role=By.xpath("//tbody[@id='newCon']//td[4]/span");
+	
+	//displayByRole
+	private By displayByRole=By.xpath("//select[@id='typeOfRole']");
+	
+	//reset password
+	private By resetPassword=By.xpath("(//button[@title='Reset Password'])[1]");
+	private By resetPasswordMessage=By.xpath("//span[@data-modify='message']");
+	private By updateButton=By.xpath("//button[text()='Update']");
+	private By enterPassword=By.xpath("//input[@name='newPassword']");
+	private By passwordError_8Character=By.xpath("//span[@class='text-danger'][2]");
+//	(//span[contains(text(),'not allowed')])[2]
+		//	(//span[contains(text(),'not allowed')])[2]	private By displayByRole=By.xpath("//select[@id='typeOfRole']");
+	private By enterPassword_SpaceNotAllowed=By.xpath("(//span[contains(text(),'not allowed')])[2]");
+	
+	String merchantName;
 	private ActionDriver actionDriver;
 private WebDriver driver;
 // page factory constructor
@@ -293,7 +318,7 @@ private WebDriver driver;
 
 		actionDriver.click(displayRole);
 
-		actionDriver.selectByVisibleText(displayByRole, "MERCHANT");
+		actionDriver.selectByVisibleText(display_By_Role, "MERCHANT");
 
 //		Select s=new Select(DISPLAYbYROLE);
 //		s.selectByVisibleText("MERCHANT");
@@ -318,12 +343,14 @@ private WebDriver driver;
 
 		actionDriver.click(searchButton);
 		Reporter.log("User Click on the search Button", true);
+		
+		
 	}
 	
-	
+
 	public String validateUsernameWhileDeletePopUp() {
 		
-		String merchantName = actionDriver.getText(deleteRoleName);
+		 merchantName = actionDriver.getText(deleteRoleName);
 		Reporter.log("User get delete role name before delete this role", true);
 		
 		actionDriver.clickUsingJS(deleteButton);
@@ -333,6 +360,7 @@ private WebDriver driver;
 	}
 	
 	public void validateDeleteRoleOnDeletePopUp() {
+		WebDriver driver = baseClass.getDriver();
 		
 		// Get full text from the <div>
 		String fullText = driver.findElement(By.xpath("//div[contains(text(),'Do you want to delete user')]")).getText();
@@ -340,14 +368,120 @@ private WebDriver driver;
 		// Extract only the username part
 		String username = fullText.split("user ")[1];
 
-		System.out.println("Extracted Username: " + username);  // Output: tomjerry_6d
+		System.out.println("Extracted Username: " + username);  // Output: tomjerry_6d                                                                                                                                                                                                                                   
 
-		
-		
+		Assert.assertEquals(merchantName, username,"If Username and Merchant name is not same then our TC is should be in a failed condition.");
+		Reporter.log("Verify Username/Merchant name on the delete pop up", true);
 		
 	}
 	
+	public void cancelButton() {
+		actionDriver.click(cancel);
+		Reporter.log("User Click on the Cancel Button", true);
+	}
 	
+	public void deletePopUpButton() {
+		actionDriver.click(confirm);
+		Reporter.log("User Click on the Confirm Button", true);
+	}
+	
+	
+	 private String getUserName;
+	    private String getRolename;
+
+	public List<String> getUsernameAndRolenameAfterSearchingRole() {
+	     getUserName = actionDriver.getText(userName);
+	    Reporter.log("After searching the role, user gets username: " + getUserName, true);
+
+	     getRolename = actionDriver.getText(Role);
+	    Reporter.log("After searching the role, user gets Assigned Role: " + getRolename, true);
+
+	    List<String> result = new ArrayList<>();
+	    result.add(getUserName);
+	    result.add(getRolename);
+	    System.err.println(getUserName);
+	    System.err.println(getRolename);
+	    return result;
+	}
+	
+	
+	public void searchRoleViaGetUsernameOrmerchantName() {
+		actionDriver.clearText(search);
+		actionDriver.sendKeysWithActions(search, getUserName);
+		actionDriver.click(searchButton);
+		Reporter.log("User Click on the search Button", true);
+	}
+
+	
+	public void displayByRoleDropdown(String role) {
+		actionDriver.selectByVisibleText(displayByRole,role);
+	}
+	
+	public void checkTransactionStatus(WebDriver driver) {
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+	        try {
+	            // Try to get table rows
+	            List<WebElement> tableRows = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
+	                By.xpath("//tbody[@id='newCon']/tr[1]")
+	            ));
+
+	            if (!tableRows.isEmpty()) {
+	                System.out.println("✅ Transaction details is displayed on the Transaction table");
+	                
+	            } 
+
+	        } catch (Exception e) {
+	            // If table rows not found, check for 'No records found' message
+	            try {
+	                WebElement noRecordElement = driver.findElement(By.xpath("//td[text()='No Records Found']"));
+	                if (noRecordElement.isDisplayed()) {
+	                    System.out.println("✅ 'No records found' message is displayed.");
+	                } else {
+	                    System.out.println("⚠️ Neither rows nor 'No records found' message is displayed.");
+	                }
+	            } catch (NoSuchElementException ex) {
+	                System.out.println("❌ Neither table rows nor 'No records found' message were found.");
+	            }}
+	}
+
+	String userId;
+	public String verifyUserIDInResetPassword() {
+		WebDriver driver = baseClass.getDriver();
+		
+		actionDriver.click(resetPassword);
+		Reporter.log("User click on the Reset Password Functionality", true);
+		
+		 userId = driver.findElement(By.id("nn")).getAttribute("value");
+		System.out.println("User ID: " + userId);
+		return userId;
+	}
+	
+	public void verifyUserIDSameOnAfterSearchingAndResetPopUp(){
+		Assert.assertEquals(getUserName, userId);
+		Reporter.log("Verify USEDID is matching on the Reset password", true);
+		
+	}
+	
+	public void verifyResetPasswordMessage() {
+	//actionDriver.enterText(enterPassword, " a");
+		actionDriver.enterText(enterPassword, " A     I");
+	Reporter.log("User enter passowrd in password field", true);
+	
+	actionDriver.isDisplayed(passwordError_8Character);
+	Reporter.log("User Verify :-Atleast one small and one capital letter, one digit, one special character", true);
+	
+//	actionDriver.clearText(enterPassword);
+//	
+//	actionDriver.enterText(enterPassword, " A     I");
+	
+	
+	}
+	
+	public void clickOnUpdateButton() {
+		actionDriver.click(updateButton);
+		Reporter.log("User click on the update Button", true);
+	}
 	
 
 }

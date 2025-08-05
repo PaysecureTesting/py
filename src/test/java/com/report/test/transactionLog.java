@@ -24,7 +24,7 @@ public class transactionLog extends baseClass {
 	public void beforeMethod() throws IOException, Exception {
 
 		lp = new loginPage(getDriver());
-		lp.login("Suhas", "Nick@123");
+		lp.login();
 		tl = new transaction_Log_page(getDriver());
 		ts = new transactionPage(getDriver());
 		tl.verifyUserIsOnTransactionLogPage(getDriver());

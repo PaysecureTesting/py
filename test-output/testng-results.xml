@@ -11,41 +11,26 @@
       <![CDATA[Click on submit button in login page]]>
     </line>
     <line>
-      <![CDATA[User scroll to down upto Analytics]]>
-    </line>
-    <line>
       <![CDATA[User click on Report Main Module]]>
     </line>
     <line>
       <![CDATA[User click on Transaction sub module]]>
     </line>
-    <line>
-      <![CDATA[User click on Search Buttton]]>
-    </line>
-    <line>
-      <![CDATA[User get text of Last Status based on Filter :-]]>
-    </line>
-    <line>
-      <![CDATA[User click on Last Action Button]]>
-    </line>
-    <line>
-      <![CDATA[User get text of Last Status based on Filter :-]]>
-    </line>
   </reporter-output>
-  <suite started-at="2025-08-02T22:55:30 IST" name="Default suite" finished-at="2025-08-02T23:08:20 IST" duration-ms="769707">
+  <suite started-at="2025-08-05T08:41:25 IST" name="Default suite" finished-at="2025-08-05T08:41:50 IST" duration-ms="25164">
     <groups>
     </groups>
-    <test started-at="2025-08-02T22:55:30 IST" name="Default test" finished-at="2025-08-02T23:08:20 IST" duration-ms="769707">
+    <test started-at="2025-08-05T08:41:25 IST" name="Default test" finished-at="2025-08-05T08:41:50 IST" duration-ms="25164">
       <class name="com.report.test.transaction">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T22:55:30 IST" name="loadConfig" finished-at="2025-08-02T22:55:30 IST" duration-ms="109" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-05T08:41:25 IST" name="loadConfig" finished-at="2025-08-05T08:41:25 IST" duration-ms="78" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T22:55:30 IST" name="setup" finished-at="2025-08-02T22:55:39 IST" duration-ms="9003" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-05T08:41:25 IST" name="setup" finished-at="2025-08-05T08:41:36 IST" duration-ms="10939" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T22:55:40 IST" name="setUp" finished-at="2025-08-02T22:59:08 IST" duration-ms="208779" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-05T08:41:37 IST" name="setUp" finished-at="2025-08-05T08:41:50 IST" duration-ms="13271" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[User enter ID in Username field]]>
@@ -57,9 +42,6 @@
               <![CDATA[Click on submit button in login page]]>
             </line>
             <line>
-              <![CDATA[User scroll to down upto Analytics]]>
-            </line>
-            <line>
               <![CDATA[User click on Report Main Module]]>
             </line>
             <line>
@@ -67,41 +49,22 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyLastStatusInLastAction(java.lang.String)[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T22:59:08 IST" name="verifyLastStatusInLastAction" data-provider="statusAction" finished-at="2025-08-02T23:08:20 IST" duration-ms="551468" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Created]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="status()[pri:7, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-05T08:41:50 IST" name="status" finished-at="2025-08-05T08:41:50 IST" duration-ms="118" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[User click on Search Buttton]]>
-            </line>
-            <line>
-              <![CDATA[User get text of Last Status based on Filter :-]]>
-            </line>
-            <line>
-              <![CDATA[User click on Last Action Button]]>
-            </line>
-            <line>
-              <![CDATA[User get text of Last Status based on Filter :-]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- verifyLastStatusInLastAction -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T23:08:20 IST" name="failurMethod" finished-at="2025-08-02T23:08:20 IST" duration-ms="4" status="PASS">
+        </test-method> <!-- status -->
+        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-05T08:41:50 IST" name="failurMethod" finished-at="2025-08-05T08:41:50 IST" duration-ms="17" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyLastStatusInLastAction status=SUCCESS method=transaction.verifyLastStatusInLastAction(java.lang.String)[pri:0, instance:com.report.test.transaction@4602c2a9] output=User click on Search Buttton]]]>
+                <![CDATA[[TestResult name=status status=SUCCESS method=transaction.status()[pri:7, instance:com.report.test.transaction@4602c2a9] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-02T23:08:20 IST" name="tearDown" finished-at="2025-08-02T23:08:20 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@4602c2a9]" started-at="2025-08-05T08:41:50 IST" name="tearDown" finished-at="2025-08-05T08:41:50 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

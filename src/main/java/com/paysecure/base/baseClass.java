@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Arrays;
-import java.util.Collections;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,7 @@ import java.util.concurrent.locks.LockSupport;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +41,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class baseClass {
 
-	protected static Properties prop;
+	public static Properties prop;
 	// protected static WebDriver driver;
 	// private static ActionDriver actionDriver;
 
@@ -108,9 +108,9 @@ public class baseClass {
 			// Create ChromeOptions
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--remote-allow-origins=*");
-			options.addArguments("--headless=new");
+		//	options.addArguments("--headless=new");
 		
-			//options.addArguments("--disable-gpu"); // Disable GPU for headless mode
+			options.addArguments("--disable-gpu"); // Disable GPU for headless mode
 			options.addArguments("--window-size=1920,1080");
 			
 			options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
@@ -138,7 +138,7 @@ public class baseClass {
 		} else if (browser.equalsIgnoreCase("firefox")) {
 	        WebDriverManager.firefoxdriver().setup();
 	        FirefoxOptions options = new FirefoxOptions();
-	        options.addArguments("--headless");
+	      //  options.addArguments("--headless=new");
 	        options.addArguments("--disable-gpu");
 	        options.addArguments("--width=1920");
 	        options.addArguments("--height=1080");
@@ -151,14 +151,12 @@ public class baseClass {
 	        logger.info("FirefoxDriver Instance is created.");
 
 	    } else if (browser.equalsIgnoreCase("edge")) {
-	        WebDriverManager.edgedriver().setup();
+	    	WebDriverManager.edgedriver().setup();
+
 	        EdgeOptions options = new EdgeOptions();
-	        options.addArguments("--headless");
-	        options.addArguments("--disable-gpu");
-	        options.addArguments("--window-size=1920,1080");
+	    //    options.addArguments("--headless=new");
 	        options.addArguments("--disable-notifications");
-	        options.addArguments("--no-sandbox");
-	        options.addArguments("--disable-dev-shm-usage");
+	        options.addArguments("--start-maximized");
 
 	        driver.set(new EdgeDriver(options));
 	        ExtentManager.registerDriver(getDriver());

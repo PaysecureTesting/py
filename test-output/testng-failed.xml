@@ -5,9 +5,9 @@
     <classes>
       <class name="com.paysecure.admin.manageRoles">
         <methods>
-          <include name="verifyShowAllButton"/>
           <include name="failurMethod"/>
           <include name="loadConfig"/>
+          <include name="verifyUserIDInResetPasswordFunctionality"/>
           <include name="tearDown"/>
           <include name="setup"/>
           <include name="setupPages"/>

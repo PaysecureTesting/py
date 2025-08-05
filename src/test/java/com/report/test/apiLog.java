@@ -28,7 +28,7 @@ public class apiLog extends baseClass{
 	public void beforeMethod() throws IOException, Exception {
 
 		lp = new loginPage(getDriver());
-		lp.login("Suhas", "Nick@123");
+		lp.login();
 
 		ts = new transactionPage(getDriver());
 

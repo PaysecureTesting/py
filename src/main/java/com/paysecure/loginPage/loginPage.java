@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 
+
 import com.paysecure.actiondriver.ActionDriver;
 import com.paysecure.base.baseClass;
 
@@ -22,11 +23,13 @@ public class loginPage {
 	}
 
 	// Method to perform login
-	public void login(String userName, String password) {
+	public void login() {
+		  String userName1 = baseClass.getProp().getProperty("username");
+	        String password1 = baseClass.getProp().getProperty("password");
 	//	actionDriver.sendKeysWithActions(id,userName);
-		actionDriver.enterText(id,userName);
+		actionDriver.enterText(id,userName1);
 		Reporter.log("User enter ID in Username field", true);
-		actionDriver.enterText(pass,password);
+		actionDriver.enterText(pass,password1);
 		Reporter.log("User Enter Password in password field", true);
 		actionDriver.click(loginButton);
 		Reporter.log("Click on submit button in login page", true);

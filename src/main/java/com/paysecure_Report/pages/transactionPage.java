@@ -33,13 +33,14 @@ import com.paysecure.base.baseClass;
 public class transactionPage {
 
 	// scrolling point of view
-	private By analytics = By.xpath("//span[text()='Analytics']");
+	private By analytics = By.xpath("//li[@data-name='analytics']");//span[text()='Analytics']
 	
-	@FindBy(xpath="//span[text()='Analytics']") private WebElement ANALYTICS;
+//	@FindBy(xpath="//span[text()='Analytics']") private WebElement ANALYTICS;
 	private By lastStatus = By.xpath("//th[text()='Last Status']");
 	
 	// report
 	private By report = By.xpath("(//span[text()='Report'])[2]");
+	@FindBy(xpath="(//span[text()='Report'])[2]") private WebElement REPORT;
 
 	private By transactions = By.xpath("//span[text()='Transactions']");
 
@@ -248,36 +249,27 @@ public class transactionPage {
 
 	// code
 
-	public void navigateUptoTransaction(WebDriver driver) throws InterruptedException {
-		//WebDriver driver = baseClass.getDriver();
-		Thread.sleep(8000);		By locator = By.xpath("//span[text()='Analytics']");
+	public void navigateUptoTransaction() throws InterruptedException {
+		WebDriver driver = baseClass.getDriver();
+		WebElement element = driver.findElement(By.xpath("//span[text()='Analytics']"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-//
-//		// Now scroll
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-//
-//		// Then wait for visibility
-//		wait.until(ExpectedConditions.visibilityOf(element));
-//
-//
-//		Thread.sleep(1500);
 		
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ANALYTICS);
+	//	actionDriver.scrollToElement(report);
+	//	Reporter.log("User scroll to down upto Report", true);
 		
-		actionDriver.scrollToElement(analytics);
-		Reporter.log("User scroll to down upto Analytics", true);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.elementToBeClickable(REPORT)).click();
+
 		
-		
-		actionDriver.clickUsingJS(report);
+	//	actionDriver.clickUsingJS(report);
 		Reporter.log("User click on Report Main Module", true);
 	//	System.out.println( driver.getPageSource());
 
 		actionDriver.click(transactions);
 		Reporter.log("User click on Transaction sub module", true);
 		 
-	//	  System.out.println( driver.getPageSource());
+	
 	
 
 	}
@@ -307,11 +299,9 @@ public class transactionPage {
 	            ));
 
 	            if (!tableRows.isEmpty()) {
-	                System.out.println("✅ Table has rows: " + tableRows.size());
-	                // Optional: Log row data
-	            } else {
-	                System.out.println("⚠️ Table is present but no rows found.");
-	            }
+	                System.out.println("✅ Transaction details is displayed on the Transaction table");
+	                
+	            } 
 
 	        } catch (Exception e) {
 	            // If table rows not found, check for 'No records found' message

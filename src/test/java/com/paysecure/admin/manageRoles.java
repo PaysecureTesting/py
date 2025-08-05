@@ -9,18 +9,21 @@ import com.paysecure.Admin.pages.manageRoles_page;
 import com.paysecure.base.baseClass;
 import com.paysecure.loginPage.loginPage;
 import com.paysecure.utilities.DataProviders;
+import com.paysecure_Report.pages.transactionPage;
 
 public class manageRoles extends baseClass {
 
 	private loginPage lp;
 	manageRoles_page mr;
+	transactionPage ts;
 
 	@BeforeMethod
 	public void setupPages() {
 		lp = new loginPage(getDriver());
-		lp.login("Suhas", "Nick@123");
+		lp.login();
 		mr = new manageRoles_page(getDriver());
 		mr.navigateToManageRoles();
+		ts=new transactionPage(getDriver());
 	}
 
 	@Test(priority = 0)
@@ -76,7 +79,7 @@ public class manageRoles extends baseClass {
 	public void select_Role() {
 		
 		mr.clickOnAddRole();
-		mr.selectRole("WHITELABEL");
+		mr.selectRole("ADMIN");
 		/*** select or pick up any one from it 
 		 MERCHANT	P2PMERCHANT  AGENT  WHITELABEL
 		P2PAGENT
@@ -108,15 +111,64 @@ public class manageRoles extends baseClass {
 	}
 	
 	
-	@Test
-	public void verifyDeletePopUp() {
+	@Test(priority = 10)
+	public void verifyUsernameOnDeletePopUp() {
 		mr.searchRoleViaUsernameOrMercahntName("tomjerry");
-		
+		mr.validateUsernameWhileDeletePopUp();
+		mr.validateDeleteRoleOnDeletePopUp();
 
 	}
 	
+	@Test(priority = 11)
+	public void deleteMercahnt() {
+		
+		mr.searchRoleViaUsernameOrMercahntName("tomjerry");
+		mr.validateUsernameWhileDeletePopUp();
+		mr.validateDeleteRoleOnDeletePopUp();
+		mr.cancelButton();
+		mr.validateUsernameWhileDeletePopUp();
+		mr.deletePopUpButton();
+		
+	}
 	
 	
+	@Test(dataProvider = "Roles", dataProviderClass = DataProviders.class,priority =12)
+	public void ifRollIsMerchantThenCantDisplaysThatRollInAnotherRoll(String role) throws InterruptedException {
+		mr.searchRoleViaUsernameOrMercahntName("wlnitendra");
+		mr.getUsernameAndRolenameAfterSearchingRole();
+		mr.refreshSearchPage(getDriver());
+		mr.searchRoleViaGetUsernameOrmerchantName();
+		Thread.sleep(2500);
+		mr.displayByRoleDropdown(role);
+		mr.checkTransactionStatus(getDriver());
+		/*** select or pick up any one from it 
+		 MERCHANT	P2PMERCHANT  AGENT  WHITELABEL
+		P2PAGENT
+		REPORTADMIN
+		ADMIN
+		MIDADMIN
+		ACCOUNTADMIN
+		FULLADMIN
+		WHITELABELMERCHANT*/
+		
+		
+		
+	}
+	
+	@Test
+	public void verifyUserIDInResetPasswordFunctionality() throws InterruptedException {
+		
+		mr.searchRoleViaUsernameOrMercahntName("tomjerry");
+		mr.getUsernameAndRolenameAfterSearchingRole();
+		mr.verifyUserIDInResetPassword();
+		mr.verifyUserIDSameOnAfterSearchingAndResetPopUp();
+
+	
+		mr.verifyResetPasswordMessage();
+	//	mr.clickOnUpdateButton();
+		
+		
+	}
 	
 	
 	

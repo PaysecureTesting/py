@@ -21,7 +21,7 @@ public class Login extends baseClass {
 	@BeforeMethod
 	public void setupPages() {
 		lp= new loginPage(getDriver());
-		lp.login("Suhas","Nick@123");
+		lp.login();
 		
 	}
 	
@@ -32,7 +32,7 @@ public class Login extends baseClass {
 		//ExtentManager.startTest("Valid Login Test"); --This has been implemented in TestListener
 		System.out.println("Running testMethod1 on thread: " + Thread.currentThread().getId());
 		ExtentManager.logStep("Navigating to Login Page entering username and password");
-		lp.login("Suhas","Nick@123");
+		lp.login();
 		ExtentManager.logStep("Verifying homepage is visible or not");
 	
 		ExtentManager.logStep("Validation Successful");

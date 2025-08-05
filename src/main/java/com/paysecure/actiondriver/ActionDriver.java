@@ -226,8 +226,7 @@ public class ActionDriver {
 	        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(by)); // 1
 
 	        // Ensure element is in view — especially important in headless
-	        ((JavascriptExecutor) driver).executeScript(
-	            "arguments[0].scrollIntoView({behavior: 'instant', block: 'center', inline: 'center'});", element); // 2
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);// 2
 
 	        // Wait again for visibility after scroll
 	        wait.until(ExpectedConditions.visibilityOf(element)); // 

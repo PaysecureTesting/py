@@ -22,7 +22,7 @@ public class errorLog extends baseClass {
 	public void beforeMethod() throws IOException, Exception {
 
 		lp = new loginPage(getDriver());
-		lp.login("Suhas", "Nick@123");
+		lp.login();
 		error = new errorLog_Page(getDriver());
 
 		ts = new transactionPage(getDriver());

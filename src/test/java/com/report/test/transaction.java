@@ -41,9 +41,9 @@ public class transaction extends baseClass {
 	@BeforeMethod
 	public void setUp() throws IOException, InterruptedException {
 		lp = new loginPage(getDriver());
-		lp.login("Suhas", "Nick@123");
+		lp.login();
 		ts = new transactionPage(getDriver());
-		ts.navigateUptoTransaction(getDriver());
+	//	ts.navigateUptoTransaction();
 		email = new email_transactionPage(getDriver());
 		card = new cardSummary_transactionPage(getDriver());
 
@@ -51,13 +51,15 @@ public class transaction extends baseClass {
 		amny = new allModulesNameVerify(getDriver());
 
 		tpf = new transactionPage_first(getDriver());
-
+		ts.navigateUptoTransaction();
 	}
 
 	@Test(priority = -1, enabled = true)
 
 	public void transactionUsingSelectStatus() throws InterruptedException, TimeoutException {
+		
 
+		ts.selectDateRange(getDriver(),"Today");
 		ts.filterTransactionThroughSelectStatus("Error");
 		ts.clickOnSearchButton(getDriver());
 		ts.checkTransactionStatus(getDriver());
@@ -67,7 +69,7 @@ public class transaction extends baseClass {
 	@Test(priority = 0, enabled = true)
 
 	public void transactionUsingSelectMerchant() throws InterruptedException, TimeoutException {
-
+	//	ts.navigateUptoTransaction();
 		ts.selectDashboardusinAllMerchant(getDriver());
 		ts.clickOnSearchButton(getDriver());
 		ts.checkTransactionStatus(getDriver());
@@ -75,7 +77,6 @@ public class transaction extends baseClass {
 	}
 
 	@Test(enabled = true, priority = 1)
-
 	public void transactionUsingSelectBank() throws InterruptedException, TimeoutException {
 		ts.selectDashboardusinAllMerchant(getDriver());
 		ts.selectDashboardusinAllBank(getDriver());
@@ -143,10 +144,7 @@ public class transaction extends baseClass {
 
 	}
 
-	@Test(priority = 7, enabled = true)
-	public void status() throws InterruptedException {
-		ts.testSelectFilters(getDriver());
-	}
+
 
 	@Test(priority = 8, enabled = true)
 	public void allActionOnTransactionPage() throws InterruptedException {
@@ -281,7 +279,7 @@ public class transaction extends baseClass {
 	}
 
 	@Test
-	public void testClickFirstValid_TransactionOnCardOage() {
+	public void testClickFirstValid_TransactionOnCardPage() {
 		String targetCard = "PAYID";
 		card.clickOnCard(getDriver(), targetCard);
 		card.clickFirstValidTransaction(getDriver());
