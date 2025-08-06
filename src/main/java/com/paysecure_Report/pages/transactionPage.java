@@ -212,8 +212,8 @@ public class transactionPage {
 	// variable directory
 	String partialMerchantname = "M";
 	String merchant = "mukesh1";
-	String bankName = "Delhi";
-	String finalBankName="Delhi Lo";
+	String bankName = "Doremon";
+	String finalBankName="Doremon";
 
 	// variable for change status
 	final static String status1 = "Error";

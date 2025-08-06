@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="33" total="35" passed="2" failed="0" skipped="0">
+<testng-results ignored="33" total="34" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[User enter ID in Username field]]>
@@ -17,184 +17,55 @@
       <![CDATA[User click on Transaction sub module]]>
     </line>
     <line>
-      <![CDATA[Click on the Date range]]>
+      <![CDATA[User Click on Bank Module]]>
     </line>
     <line>
-      <![CDATA[select date range :- Today]]>
+      <![CDATA[User Click on All Bank Sub Module]]>
     </line>
     <line>
-      <![CDATA[User click on Search Buttton]]>
+      <![CDATA[User is on the Banks Page]]>
     </line>
     <line>
-      <![CDATA[ day frequency :- 5]]>
+      <![CDATA[User Enter Bank name on the Search Bank name field :- doremon]]>
     </line>
     <line>
-      <![CDATA[User click on Day frequency]]>
+      <![CDATA[User click on search button]]>
     </line>
     <line>
-      <![CDATA[Total day frequency :- 5]]>
+      <![CDATA[User click on Add MID Button]]>
     </line>
     <line>
-      <![CDATA[Verify total days are perfectly matching]]>
+      <![CDATA[User click on Add MID Button]]>
     </line>
     <line>
-      <![CDATA[user click on cancel button on day frequency page]]>
+      <![CDATA[User click on Add Mid Button]]>
     </line>
     <line>
-      <![CDATA[Month frequency :- 2]]>
+      <![CDATA[User enter mid name in mid name textfieldnobita24]]>
     </line>
     <line>
-      <![CDATA[User click on Month frequency]]>
+      <![CDATA[User enter Alloted mid name in Alloted mid name textfieldnobita24]]>
     </line>
     <line>
-      <![CDATA[Total month frequency :- 2]]>
+      <![CDATA[User enter auth key in auth key text field4197a83kt1qgqav51hflqpm1t4##s650foqq3fcmd9po47lp5q3n4b39431l2vtj85g18aqpcvkb3cl##fead5d6f-0945-44e0-a26c-1b7daab89bf1##5d9fde44-7b03-48fc-bdf8-751322db0600##2afc4c62-78ae-480c-ad72-c7edeb74c105]]>
     </line>
     <line>
-      <![CDATA[Verify total month are perfectly matching]]>
+      <![CDATA[User click on allowed card  ]]>
     </line>
     <line>
-      <![CDATA[user click on cancel button on month frequency page]]>
+      <![CDATA[User click on select all card checkbox]]>
     </line>
     <line>
-      <![CDATA[week frequency :- 2]]>
+      <![CDATA[User click on select currency ]]>
     </line>
     <line>
-      <![CDATA[User click on week frequency]]>
+      <![CDATA[User enter currency in search currency textfieldUSD]]>
     </line>
     <line>
-      <![CDATA[Total week frequency :- 2]]>
+      <![CDATA[User click on select all currency checkbox]]>
     </line>
     <line>
-      <![CDATA[Verify total week are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on week frequency page]]>
-    </line>
-    <line>
-      <![CDATA[year frequency :- 1]]>
-    </line>
-    <line>
-      <![CDATA[User click on year frequency]]>
-    </line>
-    <line>
-      <![CDATA[Total year frequency :- 1]]>
-    </line>
-    <line>
-      <![CDATA[Verify total year are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on year frequency page]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Merchant :- 1]]>
-    </line>
-    <line>
-      <![CDATA[User click on Customers_Merchant frequency]]>
-    </line>
-    <line>
-      <![CDATA[Customers_merchant_Frequency frequency :- 1]]>
-    </line>
-    <line>
-      <![CDATA[Verify Customers_merchant_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Customers_Merchant frequency page]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Cards frequency :- 1]]>
-    </line>
-    <line>
-      <![CDATA[User click on Customers_Cards frequency]]>
-    </line>
-    <line>
-      <![CDATA[ Customers_Cards_Frequency frequency :- 1]]>
-    </line>
-    <line>
-      <![CDATA[Verify Customers_Cards_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Customers Cards page]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Countries frequency :- 1]]>
-    </line>
-    <line>
-      <![CDATA[User click on Customers_Countries frequency]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Countries_Frequency frequency :- 1]]>
-    </line>
-    <line>
-      <![CDATA[Verify Customers_Countries_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Customers countries page]]>
-    </line>
-    <line>
-      <![CDATA[Customers_IPS frequency :- 2]]>
-    </line>
-    <line>
-      <![CDATA[User click on Customers_IPS frequency]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Countries_Frequency frequency :- 2]]>
-    </line>
-    <line>
-      <![CDATA[Verify Customers_IPS_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Customers IPS page]]>
-    </line>
-    <line>
-      <![CDATA[amount_Frequency :- 1]]>
-    </line>
-    <line>
-      <![CDATA[User click on amount_Frequency]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Countries_Frequency frequency :- 1]]>
-    </line>
-    <line>
-      <![CDATA[Verify Amount_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Amount_Frequency page]]>
-    </line>
-    <line>
-      <![CDATA[CustomerDeviceID 3]]>
-    </line>
-    <line>
-      <![CDATA[User click on CustomerDeviceID]]>
-    </line>
-    <line>
-      <![CDATA[Customer_Device_ID_Frequency :- 3]]>
-    </line>
-    <line>
-      <![CDATA[Verify user_Device_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on user_Device_Frequency page]]>
-    </line>
-    <line>
-      <![CDATA[total :- 51]]>
-    </line>
-    <line>
-      <![CDATA[User click on Total]]>
-    </line>
-    <line>
-      <![CDATA[Verify TotalFrequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Total page]]>
-    </line>
-    <line>
-      <![CDATA[User enter ID in Username field]]>
-    </line>
-    <line>
-      <![CDATA[User Enter Password in password field]]>
-    </line>
-    <line>
-      <![CDATA[Click on submit button in login page]]>
+      <![CDATA[User click on submit button]]>
     </line>
     <line>
       <![CDATA[User click on Report Main Module]]>
@@ -203,191 +74,29 @@
       <![CDATA[User click on Transaction sub module]]>
     </line>
     <line>
-      <![CDATA[Click on the Date range]]>
+      <![CDATA[User Enter bank name in transaction sub module  :- doremon]]>
     </line>
     <line>
-      <![CDATA[select date range :- Today]]>
+      <![CDATA[User click on first match Bank]]>
     </line>
     <line>
-      <![CDATA[User click on Search Buttton]]>
-    </line>
-    <line>
-      <![CDATA[ day frequency :- 48]]>
-    </line>
-    <line>
-      <![CDATA[User click on Day frequency]]>
-    </line>
-    <line>
-      <![CDATA[Total day frequency :- 48]]>
-    </line>
-    <line>
-      <![CDATA[Verify total days are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on day frequency page]]>
-    </line>
-    <line>
-      <![CDATA[Month frequency :- 4]]>
-    </line>
-    <line>
-      <![CDATA[User click on Month frequency]]>
-    </line>
-    <line>
-      <![CDATA[Total month frequency :- 4]]>
-    </line>
-    <line>
-      <![CDATA[Verify total month are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on month frequency page]]>
-    </line>
-    <line>
-      <![CDATA[week frequency :- 11]]>
-    </line>
-    <line>
-      <![CDATA[User click on week frequency]]>
-    </line>
-    <line>
-      <![CDATA[Total week frequency :- 11]]>
-    </line>
-    <line>
-      <![CDATA[Verify total week are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on week frequency page]]>
-    </line>
-    <line>
-      <![CDATA[year frequency :- 1]]>
-    </line>
-    <line>
-      <![CDATA[User click on year frequency]]>
-    </line>
-    <line>
-      <![CDATA[Total year frequency :- 1]]>
-    </line>
-    <line>
-      <![CDATA[Verify total year are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on year frequency page]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Merchant :- 4]]>
-    </line>
-    <line>
-      <![CDATA[User click on Customers_Merchant frequency]]>
-    </line>
-    <line>
-      <![CDATA[Customers_merchant_Frequency frequency :- 4]]>
-    </line>
-    <line>
-      <![CDATA[Verify Customers_merchant_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Customers_Merchant frequency page]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Cards frequency :- 46]]>
-    </line>
-    <line>
-      <![CDATA[User click on Customers_Cards frequency]]>
-    </line>
-    <line>
-      <![CDATA[ Customers_Cards_Frequency frequency :- 46]]>
-    </line>
-    <line>
-      <![CDATA[Verify Customers_Cards_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Customers Cards page]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Countries frequency :- 46]]>
-    </line>
-    <line>
-      <![CDATA[User click on Customers_Countries frequency]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Countries_Frequency frequency :- 46]]>
-    </line>
-    <line>
-      <![CDATA[Verify Customers_Countries_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Customers countries page]]>
-    </line>
-    <line>
-      <![CDATA[Customers_IPS frequency :- 2]]>
-    </line>
-    <line>
-      <![CDATA[User click on Customers_IPS frequency]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Countries_Frequency frequency :- 2]]>
-    </line>
-    <line>
-      <![CDATA[Verify Customers_IPS_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Customers IPS page]]>
-    </line>
-    <line>
-      <![CDATA[amount_Frequency :- 45]]>
-    </line>
-    <line>
-      <![CDATA[User click on amount_Frequency]]>
-    </line>
-    <line>
-      <![CDATA[Customers_Countries_Frequency frequency :- 45]]>
-    </line>
-    <line>
-      <![CDATA[Verify Amount_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Amount_Frequency page]]>
-    </line>
-    <line>
-      <![CDATA[CustomerDeviceID 26]]>
-    </line>
-    <line>
-      <![CDATA[User click on CustomerDeviceID]]>
-    </line>
-    <line>
-      <![CDATA[Customer_Device_ID_Frequency :- 26]]>
-    </line>
-    <line>
-      <![CDATA[Verify user_Device_Frequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on user_Device_Frequency page]]>
-    </line>
-    <line>
-      <![CDATA[total :- 1042]]>
-    </line>
-    <line>
-      <![CDATA[User click on Total]]>
-    </line>
-    <line>
-      <![CDATA[Verify TotalFrequency are perfectly matching]]>
-    </line>
-    <line>
-      <![CDATA[user click on cancel button on Total page]]>
+      <![CDATA[User click on Select MID]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-08-06T15:03:55 IST" name="Default suite" finished-at="2025-08-06T15:07:01 IST" duration-ms="185866">
+  <suite started-at="2025-08-06T17:33:20 IST" name="Default suite" finished-at="2025-08-06T17:35:45 IST" duration-ms="145162">
     <groups>
     </groups>
-    <test started-at="2025-08-06T15:03:55 IST" name="Default test" finished-at="2025-08-06T15:07:01 IST" duration-ms="185866">
+    <test started-at="2025-08-06T17:33:20 IST" name="Default test" finished-at="2025-08-06T17:35:45 IST" duration-ms="145162">
       <class name="com.report.test.transaction">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T15:03:55 IST" name="loadConfig" finished-at="2025-08-06T15:03:55 IST" duration-ms="241" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T17:33:20 IST" name="loadConfig" finished-at="2025-08-06T17:33:20 IST" duration-ms="138" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T15:03:55 IST" name="setup" finished-at="2025-08-06T15:04:03 IST" duration-ms="8061" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T17:33:20 IST" name="setup" finished-at="2025-08-06T17:33:29 IST" duration-ms="8420" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T15:04:04 IST" name="setUp" finished-at="2025-08-06T15:04:18 IST" duration-ms="14231" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T17:33:29 IST" name="setUp" finished-at="2025-08-06T17:33:43 IST" duration-ms="14025" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[User enter ID in Username field]]>
@@ -406,213 +115,58 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testClickFirstEmailOccurrenceOf_Card(java.lang.String)[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T15:04:18 IST" name="testClickFirstEmailOccurrenceOf_Card" data-provider="EmailID" finished-at="2025-08-06T15:04:54 IST" duration-ms="36366" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[pr************* ...]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="checkNewMID()[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T17:33:43 IST" name="checkNewMID" finished-at="2025-08-06T17:35:45 IST" duration-ms="121983" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Click on the Date range]]>
+              <![CDATA[User Click on Bank Module]]>
             </line>
             <line>
-              <![CDATA[select date range :- Today]]>
+              <![CDATA[User Click on All Bank Sub Module]]>
             </line>
             <line>
-              <![CDATA[User click on Search Buttton]]>
+              <![CDATA[User is on the Banks Page]]>
             </line>
             <line>
-              <![CDATA[ day frequency :- 5]]>
+              <![CDATA[User Enter Bank name on the Search Bank name field :- doremon]]>
             </line>
             <line>
-              <![CDATA[User click on Day frequency]]>
+              <![CDATA[User click on search button]]>
             </line>
             <line>
-              <![CDATA[Total day frequency :- 5]]>
+              <![CDATA[User click on Add MID Button]]>
             </line>
             <line>
-              <![CDATA[Verify total days are perfectly matching]]>
+              <![CDATA[User click on Add MID Button]]>
             </line>
             <line>
-              <![CDATA[user click on cancel button on day frequency page]]>
+              <![CDATA[User click on Add Mid Button]]>
             </line>
             <line>
-              <![CDATA[Month frequency :- 2]]>
+              <![CDATA[User enter mid name in mid name textfieldnobita24]]>
             </line>
             <line>
-              <![CDATA[User click on Month frequency]]>
+              <![CDATA[User enter Alloted mid name in Alloted mid name textfieldnobita24]]>
             </line>
             <line>
-              <![CDATA[Total month frequency :- 2]]>
+              <![CDATA[User enter auth key in auth key text field4197a83kt1qgqav51hflqpm1t4##s650foqq3fcmd9po47lp5q3n4b39431l2vtj85g18aqpcvkb3cl##fead5d6f-0945-44e0-a26c-1b7daab89bf1##5d9fde44-7b03-48fc-bdf8-751322db0600##2afc4c62-78ae-480c-ad72-c7edeb74c105]]>
             </line>
             <line>
-              <![CDATA[Verify total month are perfectly matching]]>
+              <![CDATA[User click on allowed card  ]]>
             </line>
             <line>
-              <![CDATA[user click on cancel button on month frequency page]]>
+              <![CDATA[User click on select all card checkbox]]>
             </line>
             <line>
-              <![CDATA[week frequency :- 2]]>
+              <![CDATA[User click on select currency ]]>
             </line>
             <line>
-              <![CDATA[User click on week frequency]]>
+              <![CDATA[User enter currency in search currency textfieldUSD]]>
             </line>
             <line>
-              <![CDATA[Total week frequency :- 2]]>
+              <![CDATA[User click on select all currency checkbox]]>
             </line>
             <line>
-              <![CDATA[Verify total week are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on week frequency page]]>
-            </line>
-            <line>
-              <![CDATA[year frequency :- 1]]>
-            </line>
-            <line>
-              <![CDATA[User click on year frequency]]>
-            </line>
-            <line>
-              <![CDATA[Total year frequency :- 1]]>
-            </line>
-            <line>
-              <![CDATA[Verify total year are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on year frequency page]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Merchant :- 1]]>
-            </line>
-            <line>
-              <![CDATA[User click on Customers_Merchant frequency]]>
-            </line>
-            <line>
-              <![CDATA[Customers_merchant_Frequency frequency :- 1]]>
-            </line>
-            <line>
-              <![CDATA[Verify Customers_merchant_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Customers_Merchant frequency page]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Cards frequency :- 1]]>
-            </line>
-            <line>
-              <![CDATA[User click on Customers_Cards frequency]]>
-            </line>
-            <line>
-              <![CDATA[ Customers_Cards_Frequency frequency :- 1]]>
-            </line>
-            <line>
-              <![CDATA[Verify Customers_Cards_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Customers Cards page]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Countries frequency :- 1]]>
-            </line>
-            <line>
-              <![CDATA[User click on Customers_Countries frequency]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Countries_Frequency frequency :- 1]]>
-            </line>
-            <line>
-              <![CDATA[Verify Customers_Countries_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Customers countries page]]>
-            </line>
-            <line>
-              <![CDATA[Customers_IPS frequency :- 2]]>
-            </line>
-            <line>
-              <![CDATA[User click on Customers_IPS frequency]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Countries_Frequency frequency :- 2]]>
-            </line>
-            <line>
-              <![CDATA[Verify Customers_IPS_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Customers IPS page]]>
-            </line>
-            <line>
-              <![CDATA[amount_Frequency :- 1]]>
-            </line>
-            <line>
-              <![CDATA[User click on amount_Frequency]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Countries_Frequency frequency :- 1]]>
-            </line>
-            <line>
-              <![CDATA[Verify Amount_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Amount_Frequency page]]>
-            </line>
-            <line>
-              <![CDATA[CustomerDeviceID 3]]>
-            </line>
-            <line>
-              <![CDATA[User click on CustomerDeviceID]]>
-            </line>
-            <line>
-              <![CDATA[Customer_Device_ID_Frequency :- 3]]>
-            </line>
-            <line>
-              <![CDATA[Verify user_Device_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on user_Device_Frequency page]]>
-            </line>
-            <line>
-              <![CDATA[total :- 51]]>
-            </line>
-            <line>
-              <![CDATA[User click on Total]]>
-            </line>
-            <line>
-              <![CDATA[Verify TotalFrequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Total page]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- testClickFirstEmailOccurrenceOf_Card -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T15:04:54 IST" name="failurMethod" finished-at="2025-08-06T15:04:54 IST" duration-ms="7" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testClickFirstEmailOccurrenceOf_Card status=SUCCESS method=transaction.testClickFirstEmailOccurrenceOf_Card(java.lang.String)[pri:0, instance:com.report.test.transaction@6a62689d] output=Click on the Date range]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T15:04:54 IST" name="setup" finished-at="2025-08-06T15:06:09 IST" duration-ms="74481" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T15:06:09 IST" name="setUp" finished-at="2025-08-06T15:06:23 IST" duration-ms="13884" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[User enter ID in Username field]]>
-            </line>
-            <line>
-              <![CDATA[User Enter Password in password field]]>
-            </line>
-            <line>
-              <![CDATA[Click on submit button in login page]]>
+              <![CDATA[User click on submit button]]>
             </line>
             <line>
               <![CDATA[User click on Report Main Module]]>
@@ -620,202 +174,29 @@
             <line>
               <![CDATA[User click on Transaction sub module]]>
             </line>
+            <line>
+              <![CDATA[User Enter bank name in transaction sub module  :- doremon]]>
+            </line>
+            <line>
+              <![CDATA[User click on first match Bank]]>
+            </line>
+            <line>
+              <![CDATA[User click on Select MID]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testClickFirstEmailOccurrenceOf_Card(java.lang.String)[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T15:06:23 IST" name="testClickFirstEmailOccurrenceOf_Card" data-provider="EmailID" finished-at="2025-08-06T15:07:01 IST" duration-ms="38162" status="PASS">
+        </test-method> <!-- checkNewMID -->
+        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T17:35:45 IST" name="failurMethod" finished-at="2025-08-06T17:35:45 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[cu*****r@e****. ...]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[Click on the Date range]]>
-            </line>
-            <line>
-              <![CDATA[select date range :- Today]]>
-            </line>
-            <line>
-              <![CDATA[User click on Search Buttton]]>
-            </line>
-            <line>
-              <![CDATA[ day frequency :- 48]]>
-            </line>
-            <line>
-              <![CDATA[User click on Day frequency]]>
-            </line>
-            <line>
-              <![CDATA[Total day frequency :- 48]]>
-            </line>
-            <line>
-              <![CDATA[Verify total days are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on day frequency page]]>
-            </line>
-            <line>
-              <![CDATA[Month frequency :- 4]]>
-            </line>
-            <line>
-              <![CDATA[User click on Month frequency]]>
-            </line>
-            <line>
-              <![CDATA[Total month frequency :- 4]]>
-            </line>
-            <line>
-              <![CDATA[Verify total month are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on month frequency page]]>
-            </line>
-            <line>
-              <![CDATA[week frequency :- 11]]>
-            </line>
-            <line>
-              <![CDATA[User click on week frequency]]>
-            </line>
-            <line>
-              <![CDATA[Total week frequency :- 11]]>
-            </line>
-            <line>
-              <![CDATA[Verify total week are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on week frequency page]]>
-            </line>
-            <line>
-              <![CDATA[year frequency :- 1]]>
-            </line>
-            <line>
-              <![CDATA[User click on year frequency]]>
-            </line>
-            <line>
-              <![CDATA[Total year frequency :- 1]]>
-            </line>
-            <line>
-              <![CDATA[Verify total year are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on year frequency page]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Merchant :- 4]]>
-            </line>
-            <line>
-              <![CDATA[User click on Customers_Merchant frequency]]>
-            </line>
-            <line>
-              <![CDATA[Customers_merchant_Frequency frequency :- 4]]>
-            </line>
-            <line>
-              <![CDATA[Verify Customers_merchant_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Customers_Merchant frequency page]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Cards frequency :- 46]]>
-            </line>
-            <line>
-              <![CDATA[User click on Customers_Cards frequency]]>
-            </line>
-            <line>
-              <![CDATA[ Customers_Cards_Frequency frequency :- 46]]>
-            </line>
-            <line>
-              <![CDATA[Verify Customers_Cards_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Customers Cards page]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Countries frequency :- 46]]>
-            </line>
-            <line>
-              <![CDATA[User click on Customers_Countries frequency]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Countries_Frequency frequency :- 46]]>
-            </line>
-            <line>
-              <![CDATA[Verify Customers_Countries_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Customers countries page]]>
-            </line>
-            <line>
-              <![CDATA[Customers_IPS frequency :- 2]]>
-            </line>
-            <line>
-              <![CDATA[User click on Customers_IPS frequency]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Countries_Frequency frequency :- 2]]>
-            </line>
-            <line>
-              <![CDATA[Verify Customers_IPS_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Customers IPS page]]>
-            </line>
-            <line>
-              <![CDATA[amount_Frequency :- 45]]>
-            </line>
-            <line>
-              <![CDATA[User click on amount_Frequency]]>
-            </line>
-            <line>
-              <![CDATA[Customers_Countries_Frequency frequency :- 45]]>
-            </line>
-            <line>
-              <![CDATA[Verify Amount_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Amount_Frequency page]]>
-            </line>
-            <line>
-              <![CDATA[CustomerDeviceID 26]]>
-            </line>
-            <line>
-              <![CDATA[User click on CustomerDeviceID]]>
-            </line>
-            <line>
-              <![CDATA[Customer_Device_ID_Frequency :- 26]]>
-            </line>
-            <line>
-              <![CDATA[Verify user_Device_Frequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on user_Device_Frequency page]]>
-            </line>
-            <line>
-              <![CDATA[total :- 1042]]>
-            </line>
-            <line>
-              <![CDATA[User click on Total]]>
-            </line>
-            <line>
-              <![CDATA[Verify TotalFrequency are perfectly matching]]>
-            </line>
-            <line>
-              <![CDATA[user click on cancel button on Total page]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- testClickFirstEmailOccurrenceOf_Card -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T15:07:01 IST" name="failurMethod" finished-at="2025-08-06T15:07:01 IST" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testClickFirstEmailOccurrenceOf_Card status=SUCCESS method=transaction.testClickFirstEmailOccurrenceOf_Card(java.lang.String)[pri:0, instance:com.report.test.transaction@6a62689d] output=Click on the Date range]]]>
+                <![CDATA[[TestResult name=checkNewMID status=SUCCESS method=transaction.checkNewMID()[pri:0, instance:com.report.test.transaction@6a62689d] output=User Click on Bank Module]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T15:07:01 IST" name="tearDown" finished-at="2025-08-06T15:07:01 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@6a62689d]" started-at="2025-08-06T17:35:45 IST" name="tearDown" finished-at="2025-08-06T17:35:45 IST" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

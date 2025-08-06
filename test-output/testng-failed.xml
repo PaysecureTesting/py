@@ -6,6 +6,7 @@
       <class name="com.paysecure.admin.manageRoles">
         <methods>
           <include name="failurMethod"/>
+          <include name="validateEmailFieldErrors" invocation-numbers="1 2"/>
           <include name="loadConfig"/>
           <include name="resetPasswordForSuperadminIfIAmASuperAdmin"/>
           <include name="tearDown"/>

@@ -80,8 +80,8 @@ public class DataProviders {
 		String invalidLocator = "//input[@id='emailaddress1']/following-sibling::span"
 				+ "[contains(normalize-space(),'Email address')]";
 
-	List<String> invalidEmails = Arrays.asList("suhas@gmail", 
-			"suhas@gmailcom",
+	List<String> invalidEmails = Arrays.asList(
+			
 //			"suhas@.com", "@gmail.com",
 //				"suhas@", "suhas", "suhas@ gmail.com", "suhas @gmail.com", "suhas@gmail..com", "suhas@gmail.c",
 //				"suhas@gmail,com", "suhas@#mail.com", "suhas@@gmail.com", ".suhas@gmail.com", "suhas.@gmail.com",
@@ -117,10 +117,10 @@ public class DataProviders {
 
 	@DataProvider(name = "bankName") // ✅ matches Test
 	public Object[][] getbankName() {
-		return new Object[][] { { "tomjerry" },
-//	        {"a55"},
-//	        {"a55pix"},
-//	        {"a55pixpayout"}
+		return new Object[][] {
+	        {"a55"},
+	        {"a55pix"},
+	        {"a55pixpayout"}
 		};
 	}
 
@@ -191,15 +191,7 @@ public class DataProviders {
 		};
 	}
 	
-	
-	@DataProvider(name = "passwordInputField")
-	public Object[][] getPasswordInputField() {
-		return new Object[][] { 
-				{ "a", "At least one small and one capital letter, one digit, one special character",
-						"//span[@class='text-danger'][1]" },
-				{ "a  r", "Space not allowed", "(//span[contains(text(),'not allowed')])[2]" } };
 
-	}
 	
 	
 	

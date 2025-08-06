@@ -382,16 +382,22 @@ public class transaction extends baseClass {
 	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void checkNewMID() throws InterruptedException {
 		bank.navigateUptoAllBanks();
-		bank.searchBank("TomJerry");
+		bank.searchBank("doremon");
 		bank.view_Bank_Details();
 		bank.clickOnAddMid();
-		bank.addMidToBank("nobita16", "nobita16",
-				"WIWOrRPDqzpA0DJyt1jR2BgjSHT6A1uTOiN4Ja7ZPv4J4IvHJJ##MT aA32JcBy1PgVyRBPAGAQif8e2yPcmtFOdgqXDSkRsnb6zLVxgK6QDIsPNqQvcVpLrGw##s1M6INTq8mH01HhD2IhaoiEb8EWf6GsrJ14r0tOvMV8rIhIHdPSHM8CaruRAqGfn");
+		bank.addMidToBank("nobita25", "nobita25",
+				"4197a83kt1qgqav51hflqpm1t4##s650foqq3fcmd9po47lp5q3n4b39431l2vtj85g18aqpcvkb3cl##fead5d6f-0945-44e0-a26c-1b7daab89bf1##5d9fde44-7b03-48fc-bdf8-751322db0600##2afc4c62-78ae-480c-ad72-c7edeb74c105");
 		bank.allowedCardsForCreateMID();
 		bank.allowedCurrencyForcreateMID("USD");
 
-		bank.submitMID();
+		bank.submitMID();  
+		bank.getAllMidFromBank();
+		ts.navigateUptoTransaction();
+		bank.selectbank_Transaction("doremon");
+		bank.compare_BankAndTransactionMIDs();
+		
 
+		
 	}
 
 	@Test(dataProvider = "EmailID", dataProviderClass = DataProviders.class)
