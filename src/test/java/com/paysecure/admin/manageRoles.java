@@ -2,6 +2,7 @@ package com.paysecure.admin;
 
 import java.util.Map;
 
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -13,6 +14,7 @@ import com.paysecure_Report.pages.transactionPage;
 
 public class manageRoles extends baseClass {
 
+	private static final String SUPERADMIN ="SUPERADMIN";
 	private loginPage lp;
 	manageRoles_page mr;
 	transactionPage ts;
@@ -23,7 +25,7 @@ public class manageRoles extends baseClass {
 		lp.login();
 		mr = new manageRoles_page(getDriver());
 		mr.navigateToManageRoles();
-		ts=new transactionPage(getDriver());
+		ts = new transactionPage(getDriver());
 	}
 
 	@Test(priority = 0)
@@ -47,13 +49,13 @@ public class manageRoles extends baseClass {
 
 	}
 
-	@Test(dataProvider = "usernameTestData", dataProviderClass = DataProviders.class,priority = 3)
+	@Test(dataProvider = "usernameTestData", dataProviderClass = DataProviders.class, priority = 3)
 	public void validateUsernameErrorMessages(String inputText, String expectedError, String errorXpath) {
 		mr.verifyAllErrorsInAddRole();
 		mr.validateUsernameError(getDriver(), inputText, expectedError, errorXpath);
 	}
 
-	@Test(dataProvider = "passwordTestData", dataProviderClass = DataProviders.class,priority = 4)
+	@Test(dataProvider = "passwordTestData", dataProviderClass = DataProviders.class, priority = 4)
 	public void validatePassswordErrorMessages(String inputText, String expectedError, String errorXpath) {
 		mr.verifyAllErrorsInAddRole(); // Optional: ensure form is reset
 		mr.validatePasswordError(getDriver(), inputText, expectedError, errorXpath); // ✅ Correct now
@@ -67,41 +69,35 @@ public class manageRoles extends baseClass {
 
 	}
 
-	@Test(dataProvider = "emailIDTestData", dataProviderClass = DataProviders.class,priority = 6)
+	@Test(dataProvider = "emailIDTestData", dataProviderClass = DataProviders.class, priority = 6)
 	public void validateEmailFieldErrors(String emailInput, String expectedError, String errorXpath) {
 
 		mr.verifyAllErrorsInAddRole();
 
 		mr.validateEmailError(getDriver(), emailInput, expectedError, errorXpath);
 	}
-	
+
 	@Test(priority = 7)
 	public void select_Role() {
-		
+
 		mr.clickOnAddRole();
 		mr.selectRole("ADMIN");
-		/*** select or pick up any one from it 
-		 MERCHANT	P2PMERCHANT  AGENT  WHITELABEL
-		P2PAGENT
-		REPORTADMIN
-		ADMIN
-		MIDADMIN
-		ACCOUNTADMIN
-		FULLADMIN
-		WHITELABELMERCHANT*/
+		/***
+		 * select or pick up any one from it MERCHANT P2PMERCHANT AGENT WHITELABEL
+		 * P2PAGENT REPORTADMIN ADMIN MIDADMIN ACCOUNTADMIN FULLADMIN WHITELABELMERCHANT
+		 */
 
 	}
-	
-	
+
 	@Test(priority = 8)
 	public void create_Role() throws InterruptedException {
 		mr.clickOnAddRole();
 		mr.createRole();
-		
-        mr.searchRoleAfterCreating(getDriver());
-		
+
+		mr.searchRoleAfterCreating(getDriver());
+
 	}
-	
+
 	@Test(priority = 9)
 	public void verifyShowAllButton() {
 		mr.verifyShowAllFunctionality();
@@ -109,8 +105,7 @@ public class manageRoles extends baseClass {
 		mr.verifyIfUserEnterWrongUsername();
 		mr.ClickOnshowAllButton();
 	}
-	
-	
+
 	@Test(priority = 10)
 	public void verifyUsernameOnDeletePopUp() {
 		mr.searchRoleViaUsernameOrMercahntName("tomjerry");
@@ -118,21 +113,20 @@ public class manageRoles extends baseClass {
 		mr.validateDeleteRoleOnDeletePopUp();
 
 	}
-	
+
 	@Test(priority = 11)
 	public void deleteMercahnt() {
-		
+
 		mr.searchRoleViaUsernameOrMercahntName("tomjerry");
 		mr.validateUsernameWhileDeletePopUp();
 		mr.validateDeleteRoleOnDeletePopUp();
 		mr.cancelButton();
 		mr.validateUsernameWhileDeletePopUp();
 		mr.deletePopUpButton();
-		
+
 	}
-	
-	
-	@Test(dataProvider = "Roles", dataProviderClass = DataProviders.class,priority =12)
+
+	@Test(dataProvider = "Roles", dataProviderClass = DataProviders.class, priority = 12)
 	public void ifRollIsMerchantThenCantDisplaysThatRollInAnotherRoll(String role) throws InterruptedException {
 		mr.searchRoleViaUsernameOrMercahntName("wlnitendra");
 		mr.getUsernameAndRolenameAfterSearchingRole();
@@ -141,34 +135,113 @@ public class manageRoles extends baseClass {
 		Thread.sleep(2500);
 		mr.displayByRoleDropdown(role);
 		mr.checkTransactionStatus(getDriver());
-		/*** select or pick up any one from it 
-		 MERCHANT	P2PMERCHANT  AGENT  WHITELABEL
-		P2PAGENT
-		REPORTADMIN
-		ADMIN
-		MIDADMIN
-		ACCOUNTADMIN
-		FULLADMIN
-		WHITELABELMERCHANT*/
-		
-		
-		
+		/***
+		 * select or pick up any one from it MERCHANT P2PMERCHANT AGENT WHITELABEL
+		 * P2PAGENT REPORTADMIN ADMIN MIDADMIN ACCOUNTADMIN FULLADMIN WHITELABELMERCHANT
+		 */
+
 	}
-	
-	@Test
+
+	@Test(priority = 13)
 	public void verifyUserIDInResetPasswordFunctionality() throws InterruptedException {
-		
+
 		mr.searchRoleViaUsernameOrMercahntName("tomjerry");
 		mr.getUsernameAndRolenameAfterSearchingRole();
 		mr.verifyUserIDInResetPassword();
 		mr.verifyUserIDSameOnAfterSearchingAndResetPopUp();
 
+		mr.verifyResetPasswordMessage_min8Character();
+
+	}
+
+	@Test(priority = 14)
+	public void userEnterNewPassword_UpdatePassword() {
+		mr.searchRoleViaUsernameOrMercahntName("tomjerry");
+		mr.userEnterValiadPasswordInUpdatePasswordField();
+		mr.clickOnUpdateButton();
+
+	}
+
 	
-		mr.verifyResetPasswordMessage();
-	//	mr.clickOnUpdateButton();
-		
+	@Test(dataProvider = "Roles", dataProviderClass = DataProviders.class, priority = 15)
+	public void afterSearchingRole_iteratepages(String role) {
+		String searchrole = "searchRole";
+		String displayRole = "ADMIN";
+
+		if (searchrole == "searchRole") {
+
+			mr.searchRoleViaUsernameOrMercahntName("tomjerry");
+			mr.iterateAllTablePages(getDriver());
+
+		} else if (displayRole == "ADMIN") {
+			mr.displayByRoleDropdown(role);
+			mr.iterateAllTablePages(getDriver());
+		} else {
+			mr.iterateAllTablePages(getDriver());
+		}
+
+	}
+	
+	
+	@Test(priority = 16)
+	public void verifyTableHeaderInManageRole() {
+
+		mr.verifyTableHeaderInManageRole();
+	}
+	
+	
+	@Test(priority = 17)
+	public void displayByRoleDropdown() {
+		mr.validateDisplayByRollElement(); //validate al options in Display by roll dropdown
+		mr.displayByRoleDropdown("ADMIN");
+		mr.refreshSearchPage(getDriver());
+		mr.validateBYdefaultAllisSelectedInDisplayByRole(); // validate :- ALL is always there 
 		
 	}
+	
+	@Test (priority = 18)
+	public void verifyAllTheErrorInLoginChangepassword() {
+		mr.searchByUsername_Merchant("operationmerchant");
+		mr.userEnterValiadPasswordInUpdatePasswordField();
+		mr.clickOnUpdateButton();
+		mr.ifUserisAlredayCreatedThenDirectlyGoToLoginPage();
+		mr.verifyAllErrorsInCHangePassword_ManageRole();
+
+	}
+	
+	
+	@Test (priority = 19)
+	public void verifyChangePasswordIfWeAlreadyDoResetPassword() throws InterruptedException {
+		mr.searchByUsername_Merchant("operationmerchant");
+		mr.userEnterValiadPasswordInUpdatePasswordField();
+		mr.clickOnUpdateButton();
+		mr.ifUserisAlredayCreatedThenDirectlyGoToLoginPage();
+		mr.changePasswordIFUserLoginFromManageRole();
+		mr.login_ManageRoles();
+		
+	}
+	
+    //verify -- verify If I am Super admin then i can't reset 2 factor authentication for any super admin
+	//Verify If i Select any role Other than Superadmin then i have access to reset 2FA
+	@Test(dataProvider = "Roles", dataProviderClass = DataProviders.class,priority = 20)
+	public void reset2FA_ManageRole(String role) throws InterruptedException {
+	    if (role.equalsIgnoreCase("SUPERADMIN")) {
+	    	mr.displayByRoleDropdown("SUPERADMIN");
+	        mr.reset2FA();
+	    } else {
+	        mr.displayByRoleDropdown(role);
+	        mr.reset2FA_otherThanSUPERADMIN();
+	    }
+	}
+
+	
+	// reset Password For Superadmin If I Am A SuperAdmin
+	@Test(priority = 21)
+	public void resetPasswordForSuperadminIfIAmASuperAdmin() throws InterruptedException {
+		mr.resetpassword_otherThanSUPERADMIN();
+
+	}
+	
 	
 	
 	

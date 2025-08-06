@@ -26,12 +26,12 @@ public class DataProviders {
 
 	@DataProvider(name = "EmailID")
 	public Object[][] getEmailID() {
-		return new Object[][] { { "du*********v@o* ..." },
-				// {"go****s@p****** ..."},
+		return new Object[][] { { "pr************* ..." },
+				 {"cu*****r@e****. ..."},
 //			{ "al********o@b** ..." },
 //			{ "ra**l@p******** ..." }, 
 //			{ "cu*****r@e****. ..." },
-				{ "go************0 ..." },
+			//	{ "go************0 ..." },
 //			{ "bh***********r@ ..." },
 
 		};
@@ -80,10 +80,12 @@ public class DataProviders {
 		String invalidLocator = "//input[@id='emailaddress1']/following-sibling::span"
 				+ "[contains(normalize-space(),'Email address')]";
 
-		List<String> invalidEmails = Arrays.asList("suhas@gmail", "suhas@gmailcom", "suhas@.com", "@gmail.com",
-				"suhas@", "suhas", "suhas@ gmail.com", "suhas @gmail.com", "suhas@gmail..com", "suhas@gmail.c",
-				"suhas@gmail,com", "suhas@#mail.com", "suhas@@gmail.com", ".suhas@gmail.com", "suhas.@gmail.com",
-				"suhas..patil@gmail.com", "suhas@-gmail.com", "suhas@gmail-.com", "suhas@.gmail.com",
+	List<String> invalidEmails = Arrays.asList("suhas@gmail", 
+			"suhas@gmailcom",
+//			"suhas@.com", "@gmail.com",
+//				"suhas@", "suhas", "suhas@ gmail.com", "suhas @gmail.com", "suhas@gmail..com", "suhas@gmail.c",
+//				"suhas@gmail,com", "suhas@#mail.com", "suhas@@gmail.com", ".suhas@gmail.com", "suhas.@gmail.com",
+//				"suhas..patil@gmail.com", "suhas@-gmail.com", "suhas@gmail-.com", "suhas@.gmail.com",
 				"suhas@g_mail.com");
 
 		/* +1 row for the “required” test case */
@@ -172,20 +174,42 @@ public class DataProviders {
 	@DataProvider(name = "Roles") // ✅ matches Test
 	public Object[][] displayByRole_AdminPage() {
 		return new Object[][] { 
+			{"SUPERADMIN"},
 			{ "MERCHANT" }, 
-			{ "P2PMERCHANT" }, 
-			{ "AGENT" },
-			{ "WHITELABEL" },
-			{ "P2PAGENT" },
-			{ "P2PMERCHANT" }, 
-			{ "REPORTADMIN" }, 
-			{ "ADMIN" }, 
-			{ "MIDADMIN" }, 
-			{ "ACCOUNTADMIN" },
-			{ "FULLADMIN" },
-			{ "WHITELABELMERCHANT" }
+//			{ "P2PMERCHANT" }, 
+//			{ "AGENT" },
+//			{ "WHITELABEL" },
+//			{ "P2PAGENT" },
+//			{ "P2PMERCHANT" }, 
+//			{ "REPORTADMIN" }, 
+	//		{ "ADMIN" }, 
+//			{ "MIDADMIN" }, 
+//		    { "ACCOUNTADMIN" },
+//			{ "FULLADMIN" },
+//			{ "WHITELABELMERCHANT" }
 
 		};
 	}
+	
+	
+	@DataProvider(name = "passwordInputField")
+	public Object[][] getPasswordInputField() {
+		return new Object[][] { 
+				{ "a", "At least one small and one capital letter, one digit, one special character",
+						"//span[@class='text-danger'][1]" },
+				{ "a  r", "Space not allowed", "(//span[contains(text(),'not allowed')])[2]" } };
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

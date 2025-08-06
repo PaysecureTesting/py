@@ -7,7 +7,7 @@
         <methods>
           <include name="failurMethod"/>
           <include name="loadConfig"/>
-          <include name="verifyUserIDInResetPasswordFunctionality"/>
+          <include name="resetPasswordForSuperadminIfIAmASuperAdmin"/>
           <include name="tearDown"/>
           <include name="setup"/>
           <include name="setupPages"/>

@@ -407,6 +407,24 @@ public class ActionDriver {
 	    return optionsList;
 	}
 
+	public String getFirstSelectedOption(By by) {
+	    String selectedOptionText = "";
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	        WebElement dropdownElement = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+
+	        Select select = new Select(dropdownElement);
+	        WebElement selectedOption = select.getFirstSelectedOption();
+	        selectedOptionText = selectedOption.getText().trim();
+
+	        applyBorder(by, "green");
+	        logger.info("Selected option for " + getElementDescription(by) + ": " + selectedOptionText);
+	    } catch (Exception e) {
+	        applyBorder(by, "red");
+	        logger.error("Unable to get selected dropdown option: " + e.getMessage());
+	    }
+	    return selectedOptionText;
+	}
 
     
     // ===================== JavaScript Utility Methods =====================
