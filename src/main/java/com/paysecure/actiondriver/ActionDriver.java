@@ -202,6 +202,34 @@ public class ActionDriver {
 	    }
 	}
 
+//is selected method 
+	public boolean isSelected(By by) {
+	    String elementDescription = getElementDescription(by);
+	    try {
+	        // Wait explicitly for element to be present in DOM (not necessarily visible)
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+	        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(by));
+
+	        applyBorder(by, "blue"); // Different color to indicate selection check
+	        boolean selected = element.isSelected();
+
+	        if (selected) {
+	            logger.info("Element is selected: " + elementDescription);
+	            ExtentManager.logStep("Element is selected: " + elementDescription);
+	            ExtentManager.logStepWithScreenshot(baseClass.getDriver(), "Element is selected", "Element is selected: " + elementDescription);
+	        } else {
+	            logger.warn("Element is NOT selected: " + elementDescription);
+	        
+	        }
+
+	        return selected;
+	    } catch (Exception e) {
+	        applyBorder(by, "red");
+	        logger.error("Unable to determine selection state: " + e.getMessage(), e);
+	        ExtentManager.logFailure(baseClass.getDriver(), "Selection check failed", "Error checking isSelected for: " + elementDescription);
+	        return false;
+	    }
+	}
 
 
 	// Wait for the page to load

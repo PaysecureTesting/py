@@ -3,17 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.paysecure.admin.manageRoles">
+      <class name="com.paysecure.banks.allbanks">
         <methods>
           <include name="failurMethod"/>
-          <include name="validateEmailFieldErrors" invocation-numbers="1 2"/>
           <include name="loadConfig"/>
-          <include name="resetPasswordForSuperadminIfIAmASuperAdmin"/>
+          <include name="get_All_Bank_Name"/>
           <include name="tearDown"/>
           <include name="setup"/>
           <include name="setupPages"/>
         </methods>
-      </class> <!-- com.paysecure.admin.manageRoles -->
+      </class> <!-- com.paysecure.banks.allbanks -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

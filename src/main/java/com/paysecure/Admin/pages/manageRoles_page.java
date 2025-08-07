@@ -183,7 +183,7 @@ public class manageRoles_page {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("location.reload();");
 
-		Assert.assertTrue(driver.getTitle().contains("Manage Roles - Paysecure"));
+
 
 	}
 

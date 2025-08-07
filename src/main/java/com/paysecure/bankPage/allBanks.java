@@ -2,11 +2,15 @@ package com.paysecure.bankPage;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
+import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -75,18 +79,25 @@ public class allBanks {
 
 	private By authKeyText = By.xpath("//label[text()='Auth Key']");
 	
+
+	
+	
+	//Add bank 
+	private By addbank=By.xpath("//a[@class='btn btn-success mb-4']/i");
+	private By bankDetails=By.xpath("//h1[text()='Bank Details']");
+	
+	//search 
+	private By noRecordsAreFound=By.xpath("//td[text()='No Records Found']");
+	private By showingEntries=By.xpath("//span[@id='llb3']");
+	
 	//show all button
 	private By showAll=By.xpath("//span[text()='Show all ']");
+	@FindBy(xpath="//span[text()='Show all ']") private WebElement SHOWALL;
 	private By activebank=By.xpath("//span[text()='Active ']");
+	private By inactivebank=By.xpath("//span[text()='Inactive ']");
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	//table header in all abnks
+	private By tableHeader=By.xpath("(//table[@class='table table-bordered'])[2]/descendant::th");
 	
 	
 	
@@ -166,9 +177,13 @@ public class allBanks {
 	}
 
 	public void searchBank(String bank_Name) {
+		
+		boolean banknameIsEnabled = actionDriver.isEnabled(searchBankName);
+		Assert.assertTrue(banknameIsEnabled, "❌ Search field is not enabled — cannot enter any values.");
 
+		Reporter.log("Verify search text fiels is enable and ready to recive input from user ", true);
 		actionDriver.enterText(searchBankName, bank_Name);
-		Reporter.log("User Enter Bank name on the Search Bank name field :- " + bank_Name, true);
+		Reporter.log("User Enter Bank name on the Search Bank name field :- " + bank_Name, true);                                                           
 		actionDriver.click(searchButton);
 		Reporter.log("User click on search button", true);
 
@@ -363,6 +378,493 @@ public class allBanks {
 	
 	
 	//=============================================================================================================================================================================================================================
+	
+	
+	public void VerifyAddBank() {
+		boolean bankEnable = actionDriver.isEnabled(addbank);
+		Assert.assertTrue(bankEnable,"If Add bank is not enable then we can't click on the Add Bank button");
+		Reporter.log("Verify that Add ban is enable", true);
+		
+		actionDriver.click(addbank);
+		Reporter.log("User Click on the Add Bank button", true);
+		
+		boolean bankDetail = actionDriver.isDisplayed(bankDetails);
+		Assert.assertTrue(bankDetail,"If bank details are not displays then We are not on Add details page  bank");
+		Reporter.log("Verify user is on the Bank details Page", true);
+	}
+	
+	
+	
+  
+
+	public void checkBankStatusAfterSearchingBank() {
+		WebDriver driver=baseClass.getDriver();
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+		 try {
+	            // Try to get table rows
+	            List<WebElement> tableRows = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
+	                By.xpath("//tr[@class='ng-scope']")
+	            ));
+
+	            if (!tableRows.isEmpty()) {
+	                System.out.println("✅ Transaction details is displayed on the Transaction table");
+	                
+	            } 
+
+	        } catch (Exception e) {
+	            // If table rows not found, check for 'No records found' message
+	            try {
+	            
+	               // WebElement noRecordElement = driver.findElement(By.xpath("//td[text()='No Records Found']"));
+	                if (actionDriver.isDisplayed(noRecordsAreFound)) {
+	                    System.out.println("✅ 'No records found' message is displayed.");
+	                } else {
+	                    System.out.println("⚠️ Neither rows nor 'No records found' message is displayed.");
+	                }
+	            } catch (NoSuchElementException ex) {
+	                System.out.println("❌ Neither table rows nor 'No records found' message were found.");
+	            }}
+	}
+
+
+	
+    
+	public void clearTheSearchFieldAndCheck() throws InterruptedException {
+
+		Thread.sleep(3500);		
+		//user clear the search field
+		actionDriver.clearText(searchBankName);
+		checkBankStatusAfterSearchingBank();
+		
+		
+	}
+	String ShowAllEntries;
+	public String showAllBanks() {
+		WebDriver driver=baseClass.getDriver();
+		
+		actionDriver.click(showAll);
+		Reporter.log("User click on the Show All button", true);
+		
+		if(actionDriver.isDisplayed(showAll) && actionDriver.isEnabled(showAll)) {
+			System.out.println(" Button is Display and clickable.");
+		}else {
+			System.out.println("Button is Not  Display.");
+		}
+		
+		
+		String colour = SHOWALL.getCssValue("background-color");
+		String expectedColor = "rgba(82, 35, 188, 1)";
+		Assert.assertEquals(colour, expectedColor, "❌ Button color is not as expected");
+          
+		return ShowAllEntries = actionDriver.getText(showingEntries);
+	}
+	
+	
+	String activeBank;
+	public String checkForActiveButton() {
+	    
+
+	    if (actionDriver.isDisplayed(activebank) && actionDriver.isEnabled(activebank)) {
+	   
+	        actionDriver.click(activebank);
+	     
+	        activeBank = actionDriver.getText(showingEntries);
+	        Reporter.log("User clicked on the Active button", true);
+	      
+	    } else {
+	        System.out.println("Active button is not clickable.");
+	    }
+		return activeBank;
+	}
+	
+	String InactiveBank;
+	    public String checkForInactiveButton() {
+
+	    if (actionDriver.isDisplayed(inactivebank) && actionDriver.isEnabled(inactivebank)) {
+	   
+	        actionDriver.click(inactivebank);
+	     
+	        InactiveBank = actionDriver.getText(showingEntries);
+	        Reporter.log("User clicked on the Inactive button", true);
+	      
+	    } else {
+	        System.out.println("Inactive button is not clickable.");
+	    }
+
+	    return InactiveBank ;
+	}
+
+public void totalbanksInAllBanks() {
+	
+	System.err.println(ShowAllEntries);
+	System.err.println(activeBank);
+	System.err.println(InactiveBank);
+	
+	int a=Integer.parseInt(ShowAllEntries);
+	int b=Integer.parseInt(activeBank);
+	int c=Integer.parseInt(InactiveBank);
+	
+	int totalbanks = b+c;
+	
+	Assert.assertEquals(totalbanks, a, "Sum of Active Bank  and Inactive bank should equal with Show All Bank Entries");
+}
+	
+
+public void verifyActiveStatusForActivePage() throws InterruptedException {
+WebDriver driver=baseClass.getDriver();
+	actionDriver.click(activebank);
+    Thread.sleep(2000); // Wait for data to load
+
+    boolean hasNextPage = true;
+
+    while (hasNextPage) {
+        // Get all table rows in the current page
+        List<WebElement> rows = driver.findElements(By.xpath("//tr[@class='ng-scope']"));
+
+        for (WebElement row : rows) {
+            WebElement statusBtn = row.findElement(By.xpath("//button[text()='Active']"));
+            String statusText = statusBtn.getText().trim();
+
+            Assert.assertEquals(statusText, "Active", "❌ Bank status is not 'Active'");
+        }
+
+        // Handle pagination using <li> with ng-click
+        actionDriver.scrollToElement(showingEntries);
+        WebElement nextLi = driver.findElement(By.xpath("//li[a[@ng-click='setCurrent(pagination.current + 1)']]"));
+
+        // Check if the 'Next' <li> is disabled
+        String liClass = nextLi.getAttribute("class");
+
+        if (liClass.contains("disabled")) {
+            hasNextPage = false; // Stop loop if disabled
+        } else {
+            // Click the <a> inside <li>
+            WebElement nextLink = nextLi.findElement(By.tagName("a"));
+            nextLink.click();
+            Thread.sleep(2000); // Wait for page to reload
+        }
+    }
+
+    Reporter.log("✅ All banks on all pages have 'Active' status", true);
+}
+
+    
+public void verifyInActiveStatusForAllInActivePage() throws InterruptedException {
+    WebDriver driver = baseClass.getDriver();
+
+    // Step 1: Click on "Inactive" button
+    actionDriver.click(inactivebank);
+    Thread.sleep(2000); // Wait for table to load
+
+    // Step 2: Get all rows on the current page
+    List<WebElement> rows = driver.findElements(By.xpath("//tr[@class='ng-scope']"));
+
+    // Step 3: Loop through each row and verify status is "Inactive"
+    for (WebElement row : rows) {
+        WebElement statusBtn = row.findElement(By.xpath(".//button[text()='Inactive']"));
+        String statusText = statusBtn.getText().trim();
+
+        Assert.assertEquals(statusText, "Inactive", "❌ Bank status is not 'Inactive'");
+    }
+
+    Reporter.log("✅ All banks on the current page have 'Inactive' status", true);
+}
+
+	
+	
+	
+public void verifyTableHeaderInAllBanks() {
+	WebDriver driver = baseClass.getDriver();
+
+	// Step 1: Define expected header names
+	List<String> expectedHeaders = Arrays.asList("BANK NAME", "ACTION");
+	Reporter.log("Expected headers: " + expectedHeaders, true);
+
+	// Step 2: Locate the actual table headers
+	List<WebElement> actualHeaderElements = driver.findElements(tableHeader);
+	List<String> actualHeaders = new ArrayList<>();
+
+	for (WebElement header : actualHeaderElements) {
+		actualHeaders.add(header.getText().trim());
+	}
+
+	Reporter.log("Actual headers found: " + actualHeaders, true);
+	Reporter.log("Expected header count: " + expectedHeaders.size(), true);
+	Reporter.log("Actual header count: " + actualHeaders.size(), true);
+
+	// Step 3: Assert the content
+	Assert.assertEquals(actualHeaders, expectedHeaders, "Table headers do not match by name!");
+	Reporter.log("Table header verification PASSED. Headers match exactly by name.", true);
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
