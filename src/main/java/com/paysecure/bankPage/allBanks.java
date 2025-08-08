@@ -26,6 +26,7 @@ import com.paysecure.actiondriver.ActionDriver;
 import com.paysecure.base.baseClass;
 
 public class allBanks {
+	
 
 	// navigate upto bank
 	private By bank = By.xpath("//span[text()='Banks']");
@@ -99,7 +100,9 @@ public class allBanks {
 	//table header in all abnks
 	private By tableHeader=By.xpath("(//table[@class='table table-bordered'])[2]/descendant::th");
 	
-	
+	//block unblock bank
+	private By block=By.xpath("(//button[@class='btn btn-success btn-sm blockunblock ng-scope'])[1]");
+	private By unblock=By.xpath("(//button[@class='btn btn-dark btn-sm blockunblock ng-scope'])[1]");
 	
 	
 	
