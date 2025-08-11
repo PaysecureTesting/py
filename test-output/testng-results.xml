@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="9" passed="8" failed="0" skipped="0">
+<testng-results ignored="10" total="11" passed="0" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[User enter ID in Username field]]>
@@ -10,261 +10,21 @@
     <line>
       <![CDATA[Click on submit button in login page]]>
     </line>
-    <line>
-      <![CDATA[User Click on Bank Module]]>
-    </line>
-    <line>
-      <![CDATA[User Click on All Bank Sub Module]]>
-    </line>
-    <line>
-      <![CDATA[User is on the Banks Page]]>
-    </line>
-    <line>
-      <![CDATA[Verify that Add ban is enable]]>
-    </line>
-    <line>
-      <![CDATA[User Click on the Add Bank button]]>
-    </line>
-    <line>
-      <![CDATA[Verify user is on the Bank details Page]]>
-    </line>
-    <line>
-      <![CDATA[User enter ID in Username field]]>
-    </line>
-    <line>
-      <![CDATA[User Enter Password in password field]]>
-    </line>
-    <line>
-      <![CDATA[Click on submit button in login page]]>
-    </line>
-    <line>
-      <![CDATA[User Click on Bank Module]]>
-    </line>
-    <line>
-      <![CDATA[User Click on All Bank Sub Module]]>
-    </line>
-    <line>
-      <![CDATA[User is on the Banks Page]]>
-    </line>
-    <line>
-      <![CDATA[Verify search text fiels is enable and ready to recive input from user ]]>
-    </line>
-    <line>
-      <![CDATA[User Enter Bank name on the Search Bank name field :- SA3434434]]>
-    </line>
-    <line>
-      <![CDATA[User click on search button]]>
-    </line>
-    <line>
-      <![CDATA[User enter ID in Username field]]>
-    </line>
-    <line>
-      <![CDATA[User Enter Password in password field]]>
-    </line>
-    <line>
-      <![CDATA[Click on submit button in login page]]>
-    </line>
-    <line>
-      <![CDATA[User Click on Bank Module]]>
-    </line>
-    <line>
-      <![CDATA[User Click on All Bank Sub Module]]>
-    </line>
-    <line>
-      <![CDATA[User is on the Banks Page]]>
-    </line>
-    <line>
-      <![CDATA[Verify search text fiels is enable and ready to recive input from user ]]>
-    </line>
-    <line>
-      <![CDATA[User Enter Bank name on the Search Bank name field :- CA]]>
-    </line>
-    <line>
-      <![CDATA[User click on search button]]>
-    </line>
-    <line>
-      <![CDATA[User enter ID in Username field]]>
-    </line>
-    <line>
-      <![CDATA[User Enter Password in password field]]>
-    </line>
-    <line>
-      <![CDATA[Click on submit button in login page]]>
-    </line>
-    <line>
-      <![CDATA[User Click on Bank Module]]>
-    </line>
-    <line>
-      <![CDATA[User Click on All Bank Sub Module]]>
-    </line>
-    <line>
-      <![CDATA[User is on the Banks Page]]>
-    </line>
-    <line>
-      <![CDATA[Expected headers: [BANK NAME, ACTION]]]>
-    </line>
-    <line>
-      <![CDATA[Actual headers found: [BANK NAME, ACTION]]]>
-    </line>
-    <line>
-      <![CDATA[Expected header count: 2]]>
-    </line>
-    <line>
-      <![CDATA[Actual header count: 2]]>
-    </line>
-    <line>
-      <![CDATA[Table header verification PASSED. Headers match exactly by name.]]>
-    </line>
-    <line>
-      <![CDATA[User click on the Show All button]]>
-    </line>
-    <line>
-      <![CDATA[User enter ID in Username field]]>
-    </line>
-    <line>
-      <![CDATA[User Enter Password in password field]]>
-    </line>
-    <line>
-      <![CDATA[Click on submit button in login page]]>
-    </line>
-    <line>
-      <![CDATA[User Click on Bank Module]]>
-    </line>
-    <line>
-      <![CDATA[User Click on All Bank Sub Module]]>
-    </line>
-    <line>
-      <![CDATA[User is on the Banks Page]]>
-    </line>
-    <line>
-      <![CDATA[Expected headers: [BANK NAME, ACTION]]]>
-    </line>
-    <line>
-      <![CDATA[Actual headers found: [BANK NAME, ACTION]]]>
-    </line>
-    <line>
-      <![CDATA[Expected header count: 2]]>
-    </line>
-    <line>
-      <![CDATA[Actual header count: 2]]>
-    </line>
-    <line>
-      <![CDATA[Table header verification PASSED. Headers match exactly by name.]]>
-    </line>
-    <line>
-      <![CDATA[✅ All banks on all pages have 'Active' status]]>
-    </line>
-    <line>
-      <![CDATA[User enter ID in Username field]]>
-    </line>
-    <line>
-      <![CDATA[User Enter Password in password field]]>
-    </line>
-    <line>
-      <![CDATA[Click on submit button in login page]]>
-    </line>
-    <line>
-      <![CDATA[User Click on Bank Module]]>
-    </line>
-    <line>
-      <![CDATA[User Click on All Bank Sub Module]]>
-    </line>
-    <line>
-      <![CDATA[User is on the Banks Page]]>
-    </line>
-    <line>
-      <![CDATA[Expected headers: [BANK NAME, ACTION]]]>
-    </line>
-    <line>
-      <![CDATA[Actual headers found: [BANK NAME, ACTION]]]>
-    </line>
-    <line>
-      <![CDATA[Expected header count: 2]]>
-    </line>
-    <line>
-      <![CDATA[Actual header count: 2]]>
-    </line>
-    <line>
-      <![CDATA[Table header verification PASSED. Headers match exactly by name.]]>
-    </line>
-    <line>
-      <![CDATA[✅ All banks on the current page have 'Inactive' status]]>
-    </line>
-    <line>
-      <![CDATA[User enter ID in Username field]]>
-    </line>
-    <line>
-      <![CDATA[User Enter Password in password field]]>
-    </line>
-    <line>
-      <![CDATA[Click on submit button in login page]]>
-    </line>
-    <line>
-      <![CDATA[User Click on Bank Module]]>
-    </line>
-    <line>
-      <![CDATA[User Click on All Bank Sub Module]]>
-    </line>
-    <line>
-      <![CDATA[User is on the Banks Page]]>
-    </line>
-    <line>
-      <![CDATA[Expected headers: [BANK NAME, ACTION]]]>
-    </line>
-    <line>
-      <![CDATA[Actual headers found: [BANK NAME, ACTION]]]>
-    </line>
-    <line>
-      <![CDATA[Expected header count: 2]]>
-    </line>
-    <line>
-      <![CDATA[Actual header count: 2]]>
-    </line>
-    <line>
-      <![CDATA[Table header verification PASSED. Headers match exactly by name.]]>
-    </line>
-    <line>
-      <![CDATA[User enter ID in Username field]]>
-    </line>
-    <line>
-      <![CDATA[User Enter Password in password field]]>
-    </line>
-    <line>
-      <![CDATA[Click on submit button in login page]]>
-    </line>
-    <line>
-      <![CDATA[User Click on Bank Module]]>
-    </line>
-    <line>
-      <![CDATA[User Click on All Bank Sub Module]]>
-    </line>
-    <line>
-      <![CDATA[User is on the Banks Page]]>
-    </line>
-    <line>
-      <![CDATA[User click on the Show All button]]>
-    </line>
-    <line>
-      <![CDATA[User clicked on the Active button]]>
-    </line>
-    <line>
-      <![CDATA[User clicked on the Inactive button]]>
-    </line>
   </reporter-output>
-  <suite started-at="2025-08-07T17:52:05 IST" name="Default suite" finished-at="2025-08-07T17:55:54 IST" duration-ms="229476">
+  <suite started-at="2025-08-11T11:15:39 IST" name="Default suite" finished-at="2025-08-11T11:15:55 IST" duration-ms="15847">
     <groups>
     </groups>
-    <test started-at="2025-08-07T17:52:05 IST" name="Default test" finished-at="2025-08-07T17:55:54 IST" duration-ms="229476">
+    <test started-at="2025-08-11T11:15:39 IST" name="Default test" finished-at="2025-08-11T11:15:55 IST" duration-ms="15847">
       <class name="com.paysecure.banks.allbanks">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:52:05 IST" name="loadConfig" finished-at="2025-08-07T17:52:05 IST" duration-ms="57" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.paysecure.banks.allbanks@3e2943ab]" started-at="2025-08-11T11:15:39 IST" name="loadConfig" finished-at="2025-08-11T11:15:39 IST" duration-ms="111" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:52:05 IST" name="setup" finished-at="2025-08-07T17:52:12 IST" duration-ms="6346" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.paysecure.banks.allbanks@3e2943ab]" started-at="2025-08-11T11:15:39 IST" name="setup" finished-at="2025-08-11T11:15:47 IST" duration-ms="7767" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:52:12 IST" name="setupPages" finished-at="2025-08-07T17:52:31 IST" duration-ms="19228" status="PASS">
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.paysecure.banks.allbanks@3e2943ab]" started-at="2025-08-11T11:15:47 IST" name="setupPages" finished-at="2025-08-11T11:15:54 IST" duration-ms="6858" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[User enter ID in Username field]]>
@@ -275,425 +35,100 @@
             <line>
               <![CDATA[Click on submit button in login page]]>
             </line>
-            <line>
-              <![CDATA[User Click on Bank Module]]>
-            </line>
-            <line>
-              <![CDATA[User Click on All Bank Sub Module]]>
-            </line>
-            <line>
-              <![CDATA[User is on the Banks Page]]>
-            </line>
           </reporter-output>
         </test-method> <!-- setupPages -->
-        <test-method signature="verifyAddbank()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:52:31 IST" name="verifyAddbank" finished-at="2025-08-07T17:52:40 IST" duration-ms="9056" status="PASS">
+        <test-method signature="userUpdateMid()[pri:0, instance:com.paysecure.banks.allbanks@3e2943ab]" started-at="2025-08-11T11:15:54 IST" name="userUpdateMid" finished-at="2025-08-11T11:15:54 IST" duration-ms="184" status="FAIL">
+          <exception class="org.openqa.selenium.InvalidSelectorException">
+            <message>
+              <![CDATA[invalid selector: Unable to locate an element with the xpath expression //*[@id=\"sidebar\"]/div[2]/ul[2]/li[4] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id=\"sidebar\"]/div[2]/ul[2]/li[4]' is not a valid XPath expression.
+  (Session info: chrome=138.0.7204.184)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [be618f931dae72eb67290fef717ab3c3, findElement {using=xpath, value=//*[@id=\"sidebar\"]/div[2]/ul[2]/li[4]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.184, chrome: {chromedriverVersion: 138.0.7204.183 (e90faf484dd..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65008/devtoo..., se:cdpVersion: 138.0.7204.184, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: be618f931dae72eb67290fef717ab3c3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //*[@id=\"sidebar\"]/div[2]/ul[2]/li[4] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id=\"sidebar\"]/div[2]/ul[2]/li[4]' is not a valid XPath expression.
+  (Session info: chrome=138.0.7204.184)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [be618f931dae72eb67290fef717ab3c3, findElement {using=xpath, value=//*[@id=\"sidebar\"]/div[2]/ul[2]/li[4]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.184, chrome: {chromedriverVersion: 138.0.7204.183 (e90faf484dd..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65008/devtoo..., se:cdpVersion: 138.0.7204.184, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: be618f931dae72eb67290fef717ab3c3
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy19.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+at com.paysecure.bankPage.allBanks.navigateUptoAllBanks(allBanks.java:156)
+at com.paysecure.banks.allbanks.userUpdateMid(allbanks.java:117)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
           <reporter-output>
-            <line>
-              <![CDATA[Verify that Add ban is enable]]>
-            </line>
-            <line>
-              <![CDATA[User Click on the Add Bank button]]>
-            </line>
-            <line>
-              <![CDATA[Verify user is on the Bank details Page]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- verifyAddbank -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:52:40 IST" name="failurMethod" finished-at="2025-08-07T17:52:40 IST" duration-ms="3" status="PASS">
+        </test-method> <!-- userUpdateMid -->
+        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.paysecure.banks.allbanks@3e2943ab]" started-at="2025-08-11T11:15:54 IST" name="failurMethod" finished-at="2025-08-11T11:15:55 IST" duration-ms="466" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyAddbank status=SUCCESS method=allbanks.verifyAddbank()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5] output=Verify that Add ban is enable]]]>
+                <![CDATA[[TestResult name=userUpdateMid status=FAILURE method=allbanks.userUpdateMid()[pri:0, instance:com.paysecure.banks.allbanks@3e2943ab] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:52:40 IST" name="setup" finished-at="2025-08-07T17:52:44 IST" duration-ms="4612" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:52:44 IST" name="setupPages" finished-at="2025-08-07T17:52:54 IST" duration-ms="9589" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[User enter ID in Username field]]>
-            </line>
-            <line>
-              <![CDATA[User Enter Password in password field]]>
-            </line>
-            <line>
-              <![CDATA[Click on submit button in login page]]>
-            </line>
-            <line>
-              <![CDATA[User Click on Bank Module]]>
-            </line>
-            <line>
-              <![CDATA[User Click on All Bank Sub Module]]>
-            </line>
-            <line>
-              <![CDATA[User is on the Banks Page]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- setupPages -->
-        <test-method signature="clearTheSearchFieldAndCheckIt()[pri:1, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:52:54 IST" name="clearTheSearchFieldAndCheckIt" finished-at="2025-08-07T17:53:29 IST" duration-ms="35308" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Verify search text fiels is enable and ready to recive input from user ]]>
-            </line>
-            <line>
-              <![CDATA[User Enter Bank name on the Search Bank name field :- SA3434434]]>
-            </line>
-            <line>
-              <![CDATA[User click on search button]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- clearTheSearchFieldAndCheckIt -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:53:29 IST" name="failurMethod" finished-at="2025-08-07T17:53:29 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=clearTheSearchFieldAndCheckIt status=SUCCESS method=allbanks.clearTheSearchFieldAndCheckIt()[pri:1, instance:com.paysecure.banks.allbanks@2289aca5] output=Verify search text fiels is enable and ready to recive input from user ]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:53:29 IST" name="setup" finished-at="2025-08-07T17:53:34 IST" duration-ms="4583" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:53:34 IST" name="setupPages" finished-at="2025-08-07T17:53:43 IST" duration-ms="9554" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[User enter ID in Username field]]>
-            </line>
-            <line>
-              <![CDATA[User Enter Password in password field]]>
-            </line>
-            <line>
-              <![CDATA[Click on submit button in login page]]>
-            </line>
-            <line>
-              <![CDATA[User Click on Bank Module]]>
-            </line>
-            <line>
-              <![CDATA[User Click on All Bank Sub Module]]>
-            </line>
-            <line>
-              <![CDATA[User is on the Banks Page]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- setupPages -->
-        <test-method signature="afterSearchingRefreshThePage()[pri:2, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:53:43 IST" name="afterSearchingRefreshThePage" finished-at="2025-08-07T17:53:48 IST" duration-ms="4945" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Verify search text fiels is enable and ready to recive input from user ]]>
-            </line>
-            <line>
-              <![CDATA[User Enter Bank name on the Search Bank name field :- CA]]>
-            </line>
-            <line>
-              <![CDATA[User click on search button]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterSearchingRefreshThePage -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:53:48 IST" name="failurMethod" finished-at="2025-08-07T17:53:48 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=afterSearchingRefreshThePage status=SUCCESS method=allbanks.afterSearchingRefreshThePage()[pri:2, instance:com.paysecure.banks.allbanks@2289aca5] output=Verify search text fiels is enable and ready to recive input from user ]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:53:48 IST" name="setup" finished-at="2025-08-07T17:53:53 IST" duration-ms="4922" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:53:53 IST" name="setupPages" finished-at="2025-08-07T17:54:05 IST" duration-ms="11302" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[User enter ID in Username field]]>
-            </line>
-            <line>
-              <![CDATA[User Enter Password in password field]]>
-            </line>
-            <line>
-              <![CDATA[Click on submit button in login page]]>
-            </line>
-            <line>
-              <![CDATA[User Click on Bank Module]]>
-            </line>
-            <line>
-              <![CDATA[User Click on All Bank Sub Module]]>
-            </line>
-            <line>
-              <![CDATA[User is on the Banks Page]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- setupPages -->
-        <test-method signature="validateShowAllButtonIsAlreadySelected()[pri:3, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:54:05 IST" name="validateShowAllButtonIsAlreadySelected" finished-at="2025-08-07T17:54:06 IST" duration-ms="1417" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Expected headers: [BANK NAME, ACTION]]]>
-            </line>
-            <line>
-              <![CDATA[Actual headers found: [BANK NAME, ACTION]]]>
-            </line>
-            <line>
-              <![CDATA[Expected header count: 2]]>
-            </line>
-            <line>
-              <![CDATA[Actual header count: 2]]>
-            </line>
-            <line>
-              <![CDATA[Table header verification PASSED. Headers match exactly by name.]]>
-            </line>
-            <line>
-              <![CDATA[User click on the Show All button]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- validateShowAllButtonIsAlreadySelected -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:54:06 IST" name="failurMethod" finished-at="2025-08-07T17:54:06 IST" duration-ms="16" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validateShowAllButtonIsAlreadySelected status=SUCCESS method=allbanks.validateShowAllButtonIsAlreadySelected()[pri:3, instance:com.paysecure.banks.allbanks@2289aca5] output=Expected headers: [BANK NAME, ACTION]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:54:06 IST" name="setup" finished-at="2025-08-07T17:54:11 IST" duration-ms="5135" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:54:11 IST" name="setupPages" finished-at="2025-08-07T17:54:22 IST" duration-ms="10300" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[User enter ID in Username field]]>
-            </line>
-            <line>
-              <![CDATA[User Enter Password in password field]]>
-            </line>
-            <line>
-              <![CDATA[Click on submit button in login page]]>
-            </line>
-            <line>
-              <![CDATA[User Click on Bank Module]]>
-            </line>
-            <line>
-              <![CDATA[User Click on All Bank Sub Module]]>
-            </line>
-            <line>
-              <![CDATA[User is on the Banks Page]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- setupPages -->
-        <test-method signature="checkActiveStatusActiveAllBanks()[pri:4, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:54:22 IST" name="checkActiveStatusActiveAllBanks" finished-at="2025-08-07T17:54:58 IST" duration-ms="36922" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Expected headers: [BANK NAME, ACTION]]]>
-            </line>
-            <line>
-              <![CDATA[Actual headers found: [BANK NAME, ACTION]]]>
-            </line>
-            <line>
-              <![CDATA[Expected header count: 2]]>
-            </line>
-            <line>
-              <![CDATA[Actual header count: 2]]>
-            </line>
-            <line>
-              <![CDATA[Table header verification PASSED. Headers match exactly by name.]]>
-            </line>
-            <line>
-              <![CDATA[✅ All banks on all pages have 'Active' status]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- checkActiveStatusActiveAllBanks -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:54:58 IST" name="failurMethod" finished-at="2025-08-07T17:54:58 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=checkActiveStatusActiveAllBanks status=SUCCESS method=allbanks.checkActiveStatusActiveAllBanks()[pri:4, instance:com.paysecure.banks.allbanks@2289aca5] output=Expected headers: [BANK NAME, ACTION]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:54:58 IST" name="setup" finished-at="2025-08-07T17:55:03 IST" duration-ms="4600" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:03 IST" name="setupPages" finished-at="2025-08-07T17:55:16 IST" duration-ms="13197" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[User enter ID in Username field]]>
-            </line>
-            <line>
-              <![CDATA[User Enter Password in password field]]>
-            </line>
-            <line>
-              <![CDATA[Click on submit button in login page]]>
-            </line>
-            <line>
-              <![CDATA[User Click on Bank Module]]>
-            </line>
-            <line>
-              <![CDATA[User Click on All Bank Sub Module]]>
-            </line>
-            <line>
-              <![CDATA[User is on the Banks Page]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- setupPages -->
-        <test-method signature="checkInactiveStatusInactiveInAllBanks()[pri:5, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:16 IST" name="checkInactiveStatusInactiveInAllBanks" finished-at="2025-08-07T17:55:19 IST" duration-ms="2804" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Expected headers: [BANK NAME, ACTION]]]>
-            </line>
-            <line>
-              <![CDATA[Actual headers found: [BANK NAME, ACTION]]]>
-            </line>
-            <line>
-              <![CDATA[Expected header count: 2]]>
-            </line>
-            <line>
-              <![CDATA[Actual header count: 2]]>
-            </line>
-            <line>
-              <![CDATA[Table header verification PASSED. Headers match exactly by name.]]>
-            </line>
-            <line>
-              <![CDATA[✅ All banks on the current page have 'Inactive' status]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- checkInactiveStatusInactiveInAllBanks -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:19 IST" name="setup" finished-at="2025-08-07T17:55:24 IST" duration-ms="5255" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:19 IST" name="failurMethod" finished-at="2025-08-07T17:55:19 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=checkInactiveStatusInactiveInAllBanks status=SUCCESS method=allbanks.checkInactiveStatusInactiveInAllBanks()[pri:5, instance:com.paysecure.banks.allbanks@2289aca5] output=Expected headers: [BANK NAME, ACTION]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:24 IST" name="setupPages" finished-at="2025-08-07T17:55:35 IST" duration-ms="10177" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[User enter ID in Username field]]>
-            </line>
-            <line>
-              <![CDATA[User Enter Password in password field]]>
-            </line>
-            <line>
-              <![CDATA[Click on submit button in login page]]>
-            </line>
-            <line>
-              <![CDATA[User Click on Bank Module]]>
-            </line>
-            <line>
-              <![CDATA[User Click on All Bank Sub Module]]>
-            </line>
-            <line>
-              <![CDATA[User is on the Banks Page]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- setupPages -->
-        <test-method signature="verifyTableHeaderInAllbanks()[pri:6, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:35 IST" name="verifyTableHeaderInAllbanks" finished-at="2025-08-07T17:55:35 IST" duration-ms="56" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Expected headers: [BANK NAME, ACTION]]]>
-            </line>
-            <line>
-              <![CDATA[Actual headers found: [BANK NAME, ACTION]]]>
-            </line>
-            <line>
-              <![CDATA[Expected header count: 2]]>
-            </line>
-            <line>
-              <![CDATA[Actual header count: 2]]>
-            </line>
-            <line>
-              <![CDATA[Table header verification PASSED. Headers match exactly by name.]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- verifyTableHeaderInAllbanks -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:35 IST" name="failurMethod" finished-at="2025-08-07T17:55:35 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyTableHeaderInAllbanks status=SUCCESS method=allbanks.verifyTableHeaderInAllbanks()[pri:6, instance:com.paysecure.banks.allbanks@2289aca5] output=Expected headers: [BANK NAME, ACTION]]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:35 IST" name="setup" finished-at="2025-08-07T17:55:40 IST" duration-ms="5169" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:40 IST" name="setupPages" finished-at="2025-08-07T17:55:51 IST" duration-ms="11357" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[User enter ID in Username field]]>
-            </line>
-            <line>
-              <![CDATA[User Enter Password in password field]]>
-            </line>
-            <line>
-              <![CDATA[Click on submit button in login page]]>
-            </line>
-            <line>
-              <![CDATA[User Click on Bank Module]]>
-            </line>
-            <line>
-              <![CDATA[User Click on All Bank Sub Module]]>
-            </line>
-            <line>
-              <![CDATA[User is on the Banks Page]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- setupPages -->
-        <test-method signature="validateForActiveAndInactiveBank()[pri:7, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:51 IST" name="validateForActiveAndInactiveBank" finished-at="2025-08-07T17:55:54 IST" duration-ms="3267" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[User click on the Show All button]]>
-            </line>
-            <line>
-              <![CDATA[User clicked on the Active button]]>
-            </line>
-            <line>
-              <![CDATA[User clicked on the Inactive button]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- validateForActiveAndInactiveBank -->
-        <test-method is-config="true" signature="failurMethod(org.testng.ITestResult)[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:54 IST" name="failurMethod" finished-at="2025-08-07T17:55:54 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validateForActiveAndInactiveBank status=SUCCESS method=allbanks.validateForActiveAndInactiveBank()[pri:7, instance:com.paysecure.banks.allbanks@2289aca5] output=User click on the Show All button]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failurMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.paysecure.banks.allbanks@2289aca5]" started-at="2025-08-07T17:55:54 IST" name="tearDown" finished-at="2025-08-07T17:55:54 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.paysecure.banks.allbanks@3e2943ab]" started-at="2025-08-11T11:15:55 IST" name="tearDown" finished-at="2025-08-11T11:15:55 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

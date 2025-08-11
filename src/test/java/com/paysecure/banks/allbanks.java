@@ -1,5 +1,6 @@
 package com.paysecure.banks;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -7,6 +8,7 @@ import com.paysecure.Admin.pages.manageRoles_page;
 import com.paysecure.bankPage.allBanks;
 import com.paysecure.base.baseClass;
 import com.paysecure.loginPage.loginPage;
+import com.paysecure.utilities.testData_CreateRoll;
 import com.paysecure_Report.pages.transactionPage;
 
 public class allbanks extends baseClass {
@@ -23,7 +25,7 @@ public class allbanks extends baseClass {
 		lp.login();
 
 		banks = new allBanks(getDriver());
-		banks.navigateUptoAllBanks();
+	
 		ts = new transactionPage(getDriver());
 		mr=new manageRoles_page(getDriver());
 		
@@ -85,13 +87,50 @@ public class allbanks extends baseClass {
 		
 	}
 	
-	@Test(enabled =false)
-	public void get_All_Bank_Name() throws InterruptedException {
-		banks.getAllBankName(getDriver());
-		banks.navigateUptoAllBanks();
-		banks.getQuantityOfAllBank();
-		banks.verifyQuantityOfBanks();
+	@Test(enabled =true)
+	public void createNewMID() throws InterruptedException {
 
+		//banks.navigateUptoAllBanks();
+		banks.searchBank("doremon");
+		banks.view_Bank_Details();
+		banks.clickOnAddMid();
+		banks.addMidToBank();
+		banks.allowedCardsForCreateMID();
+		banks.allowedCurrencyForcreateMID("USD");
+
+		banks.submitMID();                                                                                                                                                                                                                         
+		banks.verifyMidNameInSecondTable();
+		
+		
 	}
+	
+	@Test
+	public void viewBankNameOnAddMidsPage() throws InterruptedException {
+		banks.checkbankNameOnAddMidPage();
+		banks.BackButtonViewMidPage();
+		banks.checkbanksNameEvenAfterClickOnBackButtonOnViewMidsPage();
+		
+	}
+	
+	@Test
+	public void userUpdateMid() throws InterruptedException {
+		banks.navigateUptoAllBanks();
+		banks.searchBank("doremon");
+		banks.view_Bank_Details();
+		banks.blockMid();
+		banks.updatePageOfViewMidPage();
+		banks.verifyMidNameIsSameOnUpdatePage();
+		banks.selectCountry();
+		banks.updateMid();
+		//banks.deleteMid();
+		//banks.confirmDeleteMid();
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 }

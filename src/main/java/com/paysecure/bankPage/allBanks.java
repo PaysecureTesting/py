@@ -24,12 +24,15 @@ import org.testng.Reporter;
 
 import com.paysecure.actiondriver.ActionDriver;
 import com.paysecure.base.baseClass;
+import com.paysecure.utilities.testData_CreateRoll;
 
 public class allBanks {
 	
 
 	// navigate upto bank
-	private By bank = By.xpath("//span[text()='Banks']");
+	private By bank = By.xpath("");
+	@FindBy(xpath="//span[text()='Banks']")private WebElement BANK;
+	
 	private By allBank = By.xpath("//span[text()='All Banks']");
 	private By banks = By.xpath("//h1[text()='Banks']");
 	private By bankQuantity = By.xpath("//span[@id='llb3']");
@@ -57,6 +60,11 @@ public class allBanks {
 	private By getAllMids = By.xpath("//div[@class='bnk-sts']");
 	@FindBy(xpath = "//div[@class='bnk-sts']")
 	private List<WebElement> GETALLMIDS;
+	private By paymentProcessor=By.xpath("(//h3[@class='text-primary d-inline'])[2]");
+	private By backButton=By.xpath("//span[text()='Back']");
+	
+	
+	
 
 	private By bankNames = By.xpath("//select[@id='bnk']");
 	@FindBy(xpath = "//select[@id='bnk']")
@@ -65,6 +73,7 @@ public class allBanks {
 	// create MID
 	private By createMID = By.xpath("//span[text()='Add MID']");
 	private By midName = By.xpath("//input[@id='mid']");
+	@FindBy(xpath="//input[@id='mid']") private WebElement MIDNAME;
 	private By allotedMID = By.xpath("//input[@id='mid_desc']");
 	private By authKey = By.xpath("//input[@id='mid_auth_key']");
 
@@ -104,9 +113,24 @@ public class allBanks {
 	private By block=By.xpath("(//button[@class='btn btn-success btn-sm blockunblock ng-scope'])[1]");
 	private By unblock=By.xpath("(//button[@class='btn btn-dark btn-sm blockunblock ng-scope'])[1]");
 	
+	//mid details 
+	private By viewDetailsUpdateButton=By.xpath("(//a[@title='View Details'])[1]");
+	private By getMidName=By.xpath("(//div[@class='bnk-sts'])[1]");
 	
 	
+	//select country
+	private By selectCountry=By.xpath("//select[@id='country']");
+	private By updateButton=By.xpath("//span[text()='Update']");
 	
+	//delete mid
+	private By deleteMID=By.xpath("(//a[@title='Delete'])[1]");
+	private By deleteMidMessage=By.xpath("//div[text()='Do you want to delete BankMID']");
+	private By cancelMidMessage=By.xpath("//button[text()='cancel']");
+	private By confirmButton=By.xpath("//button[text()='confirm']");
+	
+	//block mid
+	private By blockMid=By.xpath("(//a[@title='Block'])[1]");
+	private By unblockMid=By.xpath("(//a[@class='btn btn-dark btn-sm blockunblock'])[1]");
 	
 	
 
@@ -122,18 +146,28 @@ public class allBanks {
 		this.actionDriver = new ActionDriver(driver);
 	}
 
-	public void navigateUptoAllBanks() {
+	String BanksPageName;
+	public String navigateUptoAllBanks() {
+		WebDriver driver = baseClass.getDriver();
 
-		actionDriver.click(bank);
+		WebDriverWait w=new WebDriverWait(driver, Duration.ofSeconds(30));
+
+
+ WebElement ba = w.until(ExpectedConditions.visibilityOf(BANK));
+ba.click();
+	//	actionDriver.click(bank);
 		// Reporter.log("", true);
-		Reporter.log("User Click on Bank Module", true);
+		Reporter.log("User Click on Banks Main  Module", true);
 
 		actionDriver.click(allBank);
 		Reporter.log("User Click on All Bank Sub Module", true);
+		
+		BanksPageName = actionDriver.getText(bank);
 
 		Assert.assertTrue(actionDriver.isDisplayed(banks),
 				"If Banks is not displays then Our TC is in Failed condition");
 		Reporter.log("User is on the Banks Page", true);
+		return BanksPageName;
 	}
 
 	public int getQuantityOfAllBank() {
@@ -279,19 +313,28 @@ public class allBanks {
 
 	}
 
-	public void addMidToBank(String midname, String allotedmid, String authkey) {
+	String	mid__name;
+	public String addMidToBank() {
 
+	mid__name=testData_CreateRoll.createMidNameAndAllotedMid();
+	String auth_Key="4197a83kt1qgqav51hflqpm1t4##s650foqq3fcmd9po47lp5q3n4b39431l2vtj85g18aqpcvkb3cl##fead5d6f-0945-44e0-a26c-1b7daab89bf1##5d9fde44-7b03-48fc-bdf8-751322db0600##2afc4c62-78ae-480c-ad72-c7edeb74c105";
+		
+		
 		actionDriver.clearText(createMID);
 		Reporter.log("User click on Add Mid Button", true);
 
-		actionDriver.enterText(midName, midname);
-		Reporter.log("User enter mid name in mid name textfield" + midname, true);
+		actionDriver.enterText(midName, mid__name);
+		Reporter.log("User enter mid name in mid name textfield" + mid__name, true);
 
-		actionDriver.enterText(allotedMID, allotedmid);
-		Reporter.log("User enter Alloted mid name in Alloted mid name textfield" + allotedmid, true);
+		actionDriver.enterText(allotedMID,mid__name);
+		Reporter.log("User enter Alloted mid name in Alloted mid name textfield" + mid__name, true);                                                                                                                                                    
 
-		actionDriver.enterText(authKey, authkey);
-		Reporter.log("User enter auth key in auth key text field" + authkey, true);
+		actionDriver.enterText(authKey, auth_Key);
+		Reporter.log("User enter auth key in auth key text field" + auth_Key, true);
+		
+		
+		
+		return mid__name;
 
 	}
 
@@ -341,13 +384,17 @@ public class allBanks {
 	}
 
 	private By viewBankDetails = By.xpath("//button[@class='btn btn-primary btn-sm ng-scope']");
-
-	public void view_Bank_Details() throws InterruptedException {
+    private By getBankName=By.xpath("(//span[@class='ng-binding'])[1]");
+    String bank_Name;
+	public String view_Bank_Details() throws InterruptedException {
+		 bank_Name = actionDriver.getText(getBankName);
+		if(actionDriver.isDisplayed(viewBankDetails) && actionDriver.isEnabled(viewBankDetails)) {
 		actionDriver.scrollToElement(viewBankDetails);
 		Thread.sleep(1200);
 		actionDriver.click(viewBankDetails);
 		Reporter.log("User click on Add MID Button", true);
 	}
+		return bank_Name;}
 	
 	List<String> bankMid;
 	public List<String> getAllMidFromBank() {
@@ -603,30 +650,126 @@ public void verifyTableHeaderInAllBanks() {
 	
 	
 	
+	public void checkbankNameOnAddMidPage() throws InterruptedException {
+		searchBank("Doremon");
+		view_Bank_Details();
+		String getPaymentProcessor = actionDriver.getText(paymentProcessor);
+		Assert.assertEquals(bank_Name,getPaymentProcessor,"If both Bank name is mismatch then our TC is in Failed condition");
+
+	}
+	
+	String banktext;
+
+	public String BackButtonViewMidPage() {
+	    banktext = actionDriver.getText(bank);
+	    Reporter.log("Bank text retrieved from View MID page: " + banktext, true);
+
+	    actionDriver.click(backButton);
+	    Reporter.log("User clicked on the Back button", true);
+
+	    return banktext;
+	}
+
 	
 	
+	public void checkbanksNameEvenAfterClickOnBackButtonOnViewMidsPage() {
+		Assert.assertEquals(banktext, BanksPageName,"If not matches then our TC is i failed condition");
+		Reporter.log("Validate that if user click on the Back Button on the View Mids page then user is on the banks Page", true);
+	}
+	
+
+	
+	public void verifyMidNameInSecondTable() {
+		WebDriver driver = baseClass.getDriver();
+		
+	    String dynamicXpath = "(//table[@class='table table-bordered'])[2]/tbody/tr/td[normalize-space()='" + mid__name + "']";
+	    By midLocator = By.xpath(dynamicXpath);
+
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebElement midElement = wait.until(ExpectedConditions.visibilityOfElementLocated(midLocator));
+
+	    Assert.assertTrue(midElement.isDisplayed(), "MID name not found in second table: " + mid__name);
+	    Reporter.log("Verified MID name is displayed in second table: " + mid__name, true);
+	}
+
+
+	String get_MidName;
+	String mdname;
+	public List<String> updatePageOfViewMidPage() {
+	    WebDriver driver = baseClass.getDriver();
+
+	    // Get the displayed mid name text
+	     get_MidName = actionDriver.getText(getMidName);
+
+	    // Click on "View Details / Update" button using JS
+	    actionDriver.clickUsingJS(viewDetailsUpdateButton);
+	    Reporter.log("User clicked on the View details button", true);
+
+	    // Wait or verify that the update form/input is visible (Optional: Add wait here)
+
+	    // Get the mid name from the input field
+	  mdname = MIDNAME.getAttribute("value");
+
+	    // Return both values as a list (or only one if needed)
+	    List<String> midNameDetails = new ArrayList<>();
+	    midNameDetails.add(get_MidName);
+	    midNameDetails.add(mdname);
+
+	    return midNameDetails;
+	}
+
+	public void verifyMidNameIsSameOnUpdatePage() {
+		Assert.assertEquals(get_MidName, mdname,"If Mid Name is not same then we are on the Wrong page");
+	    Reporter.log("Verify Mid name on update mids page", true);                                                                                           
+	}
 	
 	
+	public void selectCountry() {
+		actionDriver.scrollToElement(updateButton);
+		  Reporter.log("User scroll upto update button", true);   
+		actionDriver.selectByVisibleText(selectCountry,"Belarus");
+		  Reporter.log("User select country ", true);   
+	}
+	
+	public void updateMid() {
+		actionDriver.click(updateButton);
+		  Reporter.log("User click on the Update Button", true);   
+	}
+	
+	public void deleteMid() {
+		  actionDriver.click(deleteMID);
+		  Reporter.log("User click on the Delete Button", true);   
+		  
+		  actionDriver.isDisplayed(deleteMidMessage);
+		  Reporter.log("Verify If user click on the Delete Mid button then this Message display :- Do you want to delete BankMID", true);   
+	
+		  
+	      actionDriver.click(cancelMidMessage);
+	      Reporter.log("User click on the Cancel button on the Delete pop up", true);  
+	      
+	  	  actionDriver.click(deleteMID);
+		  Reporter.log("User click on the Delete Button", true);
+	
+	}
 	
 	
+	public void confirmDeleteMid() {
+		actionDriver.click(confirmButton);
+		Reporter.log("User click on the Confirm button", true);
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void blockMid() {
+		actionDriver.click(blockMid);
+		Reporter.log("User click on the Block button", true);
+		
+		if(actionDriver.isDisplayed(unblockMid)){
+			System.err.println("Validate that After click on the Block button then Unblock symbol 'U' is displays");
+			Reporter.log("Validate that After click on the Block button then Unblock symbol 'U' is displays", true);
+		}
+		
+		
+	}
 	
 	
 	

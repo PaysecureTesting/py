@@ -107,15 +107,31 @@ public class baseClass {
 		if (browser.equalsIgnoreCase("chrome")) {
 			// Create ChromeOptions
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--remote-allow-origins=*");
-		//	options.addArguments("--headless=new");
-		
-			options.addArguments("--disable-gpu"); // Disable GPU for headless mode
-			options.addArguments("--window-size=1920,1080");
+//			options.addArguments("--remote-allow-origins=*");
+//		//	options.addArguments("--headless=new");
+//		
+//			options.addArguments("--disable-gpu"); // Disable GPU for headless mode
+//			options.addArguments("--window-size=1920,1080");
+//			
+//			options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
+//			options.setExperimentalOption("useAutomationExtension", false);
+//			options.addArguments("--disable-blink-features=AutomationControlled");
 			
-			options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
-			options.setExperimentalOption("useAutomationExtension", false);
-			options.addArguments("--disable-blink-features=AutomationControlled");
+			//   options.addArguments("--headless=new"); // Use new headless for Chrome 109+
+		        options.addArguments("--window-size=1920,1080"); // Keep viewport large
+		        options.addArguments("--disable-gpu");
+		        options.addArguments("--no-sandbox");
+		        options.addArguments("--disable-dev-shm-usage");
+
+		        // ✅ Pretend to be a real browser
+		        options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
+		                             "AppleWebKit/537.36 (KHTML, like Gecko) " +
+		                             "Chrome/115.0.0.0 Safari/537.36");
+		        options.addArguments("--disable-blink-features=AutomationControlled");
+
+		        // ✅ Enable JS-heavy sites rendering
+		        options.addArguments("--enable-javascript");
+		        options.addArguments("--remote-allow-origins=*");
 			
 			Map<String, Object> prefs = new HashMap<>();
 

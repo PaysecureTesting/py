@@ -24,6 +24,10 @@ public class testData_CreateRoll {
         }
         return sb.toString();
     }
+    
+    public static String createMidNameAndAllotedMid() {
+    	 return "Sizuka" + UUID.randomUUID().toString().substring(0,2);
+    }
 	
 	
 }

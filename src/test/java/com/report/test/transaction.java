@@ -385,8 +385,7 @@ public class transaction extends baseClass {
 		bank.searchBank("doremon");
 		bank.view_Bank_Details();
 		bank.clickOnAddMid();
-		bank.addMidToBank("nobita25", "nobita25",
-				"4197a83kt1qgqav51hflqpm1t4##s650foqq3fcmd9po47lp5q3n4b39431l2vtj85g18aqpcvkb3cl##fead5d6f-0945-44e0-a26c-1b7daab89bf1##5d9fde44-7b03-48fc-bdf8-751322db0600##2afc4c62-78ae-480c-ad72-c7edeb74c105");
+		bank.addMidToBank();
 		bank.allowedCardsForCreateMID();
 		bank.allowedCurrencyForcreateMID("USD");
 

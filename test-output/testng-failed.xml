@@ -7,10 +7,10 @@
         <methods>
           <include name="failurMethod"/>
           <include name="loadConfig"/>
-          <include name="get_All_Bank_Name"/>
           <include name="tearDown"/>
-          <include name="setup"/>
           <include name="setupPages"/>
+          <include name="setup"/>
+          <include name="userUpdateMid"/>
         </methods>
       </class> <!-- com.paysecure.banks.allbanks -->
     </classes>
